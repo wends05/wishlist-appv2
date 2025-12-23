@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "wishlist-appv2",
   "private": true,
   "scripts": {
     "build": "turbo run build",
