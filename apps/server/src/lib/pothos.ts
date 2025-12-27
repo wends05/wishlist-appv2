@@ -1,10 +1,6 @@
 import SchemaBuilder from "@pothos/core";
 import ValidationPlugin from "@pothos/plugin-validation";
 import { DateResolver, JSONResolver } from "graphql-scalars";
-import type { Model } from "mongoose";
-import type { Category } from "@/models/category.ts";
-import type { User } from "@/models/user.ts";
-import type { Wish } from "@/models/wish.ts";
 
 //================================
 /**
@@ -28,9 +24,7 @@ type ScalarBuilders = {
  */
 //================================
 type ContextBuilder = {
-  UserModel: Model<User>;
-  CategoryModel: Model<Category>;
-  WishModel: Model<Wish>;
+  hello:"world"
 };
 
 const builder = new SchemaBuilder<{

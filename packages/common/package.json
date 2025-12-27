@@ -11,6 +11,7 @@
   "exports": {
     "./functions": "./src/functions/index.ts",
     "./schemas":"./src/schemas/index.ts",
-    "./internal":"./src/internal/index.ts"
+    "./internal":"./src/internal/index.ts",
+    "./enums":"./src/enums/index.ts"
   }
 }

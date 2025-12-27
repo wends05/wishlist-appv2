@@ -1,16 +1,7 @@
 import { WishSchema } from "@repo/common/schemas";
+import { WishRef } from "@/graphql/types/Wish.ts";
 import builder from "@/lib/pothos.ts";
-import { WishRef } from "@/models/wish.ts";
-
-builder.queryField("wishes", (t) =>
-  t.field({
-    type: [WishRef],
-    nullable: true,
-    resolve: async (_p, _a, c) => {
-      return c.WishModel.find({});
-    },
-  })
-);
+import { WishModel } from "@/models/wish.ts";
 
 builder.mutationField("createWish", (t) =>
   t.field({
@@ -22,12 +13,12 @@ builder.mutationField("createWish", (t) =>
       categoryId: t.arg.string({ required: true }),
     },
     validate: WishSchema,
-    resolve: async (_p, a, c) => {
-      return c.WishModel.create({
-        name: a.name,
-        description: a.description,
-        ownerId: a.ownerId,
-        categoryId: a.categoryId,
+    resolve: (_parent, args) => {
+      return WishModel.create({
+        name: args.name,
+        description: args.description,
+        ownerId: args.ownerId,
+        categoryId: args.categoryId,
       });
     },
   })

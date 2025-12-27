@@ -12,13 +12,9 @@ export function withID<T extends z.ZodRawShape>(schema: T) {
 /**
  * Include createdAt and updatedAt fields in a Zod Schema
  */
-export function withTimestamps<T extends z.ZodObject>(schema: T) {
-  return schema.extend({
-    createdAt: z.date().optional(),
-    updatedAt: z.date().optional(),
+export function withTimestamps<T extends z.ZodRawShape>(schema: T) {
+  return z.object(schema).extend({
+    createdAt: z.coerce.date().optional(),
+    updatedAt: z.coerce.date(),
   });
 }
-
-/**
- * Omits the ID field from a Zod Schema and c
- */
