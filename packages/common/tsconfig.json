@@ -1,0 +1,5 @@
+{
+  "extends": "@wishlist-appv2/tsconfig/base.json",
+  "exclude": ["dist"],
+  "include": ["src"]
+}

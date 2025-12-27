@@ -1,0 +1,17 @@
+{
+  "extends": "@wishlist-appv2/tsconfig/base.json",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
+    "target": "es2022",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["**/*.ts"]
+}

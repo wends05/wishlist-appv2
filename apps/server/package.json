@@ -1,0 +1,25 @@
+{
+  "name": "@repo/server",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun"
+  },
+  "dependencies": {
+    "@pothos/core": "^4.10.0",
+    "@pothos/plugin-add-graphql": "^4.2.4",
+    "@pothos/plugin-validation": "^4.2.0",
+    "@repo/common": "workspace:*",
+    "@typegoose/typegoose": "^13.0.0",
+    "graphql": "^16.12.0",
+    "graphql-scalars": "^1.25.0",
+    "graphql-yoga": "^5.18.0",
+    "hono": "^4.11.1",
+    "mongoose": "^9.0.2",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@types/bun": "latest"
+  }
+}
