@@ -1,8 +1,10 @@
-import type { IUser } from "@repo/common/schemas";
 import builder from "@/lib/pothos.ts";
 import type { DocumentType } from "@/lib/utils/DocumentType.ts";
+import type { User } from "@/models/user.ts";
 
-export const UserRef = builder.objectRef<DocumentType<IUser>>("User");
+type UserRefType = DocumentType<User>;
+
+export const UserRef = builder.objectRef<UserRefType>("User");
 
 UserRef.implement({
   description: "A user of the wishlist application",
@@ -13,5 +15,6 @@ UserRef.implement({
     }),
     name: t.exposeString("name"),
     email: t.exposeString("email"),
+    clerkId: t.exposeString("clerkId"),
   }),
 });

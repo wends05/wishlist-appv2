@@ -7,6 +7,9 @@ export class User implements IUser {
 
   @prop({ unique: true, type: () => String })
   public email!: string;
+
+  @prop({ unique: true, type: () => String })
+  public clerkId!: string;
 }
 
 export const UserModel = getModelForClass(User);

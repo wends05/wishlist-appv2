@@ -1,5 +1,5 @@
 {
-  "extends": "@wishlist-appv2/tsconfig/base.json",
+  "extends": "@repo/tsconfig/base.json",
   "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
     "target": "ES2022",
@@ -26,6 +26,19 @@
     "noUncheckedSideEffectImports": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+
+    /* Plugins */
+    "plugins": [
+      {
+        "name": "@0no-co/graphqlsp",
+        "schemas": [
+          {
+            "name": "default",
+            "schema": "./graffle/schema.graphql"
+          }
+        ]
+      }
+    ]
   }
 }

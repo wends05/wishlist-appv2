@@ -1,10 +1,10 @@
-import type { IChat, IMessage } from "@repo/common/schemas";
-import type { Ref } from "@typegoose/typegoose";
+import type { IMessage } from "@repo/common/schemas";
 import { ChatStatusRef } from "@/graphql/enums/ChatStatus.ts";
 import builder from "@/lib/pothos.ts";
 import type { DocumentType } from "@/lib/utils/DocumentType.ts";
-import { type User, UserModel } from "@/models/user.ts";
-import { type Wish, WishModel } from "@/models/wish.ts";
+import type { Chat } from "@/models/chat.ts";
+import { UserModel } from "@/models/user.ts";
+import { WishModel } from "@/models/wish.ts";
 import { UserRef } from "./User.ts";
 import { WishRef } from "./Wish.ts";
 
@@ -35,14 +35,7 @@ MessageRef.implement({
   }),
 });
 
-export type ChatDbType = Omit<
-  DocumentType<IChat>,
-  "grantorId" | "wisherId" | "wishId"
-> & {
-  grantorId: Ref<User>;
-  wisherId: Ref<User>;
-  wishId: Ref<Wish>;
-};
+export type ChatDbType = DocumentType<Chat>;
 
 export const ChatRef = builder.objectRef<ChatDbType>("Chat");
 
@@ -99,7 +92,7 @@ ChatRef.implement({
     status: t.expose("status", { type: ChatStatusRef }),
     messages: t.field({
       type: [MessageRef],
-      resolve: (parent) => parent.messages,
+      resolve: (parent) => parent.messages ??[],
     }),
   }),
 });

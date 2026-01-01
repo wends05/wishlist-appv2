@@ -18,3 +18,12 @@ export function withTimestamps<T extends z.ZodRawShape>(schema: T) {
     updatedAt: z.coerce.date(),
   });
 }
+
+/**
+ * Get the Document schema of a Database Document
+ */
+export function documentType<T extends z.ZodRawShape>(schema: T) {
+  return z.object(schema).extend({
+    _id: z.string()
+  });
+}

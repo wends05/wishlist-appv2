@@ -1,9 +1,9 @@
-import type { ICategory } from "@repo/common/schemas";
 import builder from "@/lib/pothos.ts";
 import type { DocumentType } from "@/lib/utils/DocumentType.ts";
+import type { Category } from "@/models/category.ts";
 
 export const CategoryRef =
-  builder.objectRef<DocumentType<ICategory>>("Category");
+  builder.objectRef<DocumentType<Category>>("Category");
 
 CategoryRef.implement({
   description: "A category for organizing wishes",

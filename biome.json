@@ -7,7 +7,16 @@
   },
   "linter": {
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "a11y": {
+        "useSemanticElements": "off"
+      },
+      "correctness": {
+        "noUnusedVariables": {
+          "level": "warn",
+          "fix": "safe"
+        }
+      }
     }
   },
   "formatter": {

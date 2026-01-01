@@ -1,16 +1,12 @@
-import type { IWish } from "@repo/common/schemas";
-import type { Ref } from "@typegoose/typegoose";
 import builder from "@/lib/pothos.ts";
 import type { DocumentType } from "@/lib/utils/DocumentType.ts";
-import { type Category, CategoryModel } from "@/models/category.ts";
-import { type User, UserModel } from "@/models/user.ts";
+import { CategoryModel } from "@/models/category.ts";
+import { UserModel } from "@/models/user.ts";
+import type { Wish } from "@/models/wish.ts";
 import { CategoryRef } from "./Category.ts";
 import { UserRef } from "./User.ts";
 
-type WishDbType = Omit<DocumentType<IWish>, "ownerId" | "categoryId"> & {
-  ownerId: Ref<User>;
-  categoryId: Ref<Category>;
-};
+type WishDbType = DocumentType<Wish>;
 
 export const WishRef = builder.objectRef<WishDbType>("Wish");
 

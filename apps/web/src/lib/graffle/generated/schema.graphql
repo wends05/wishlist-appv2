@@ -1,0 +1,79 @@
+"""A category for organizing wishes"""
+type Category {
+  _id: ID
+  description: String
+  name: String
+}
+
+"""A chat between a wisher and a grantor about a wish"""
+type Chat {
+  _id: ID
+  grantor: User
+  grantorId: ID
+  messages: [Message!]
+  status: ChatStatus
+  wish: Wish
+  wishId: ID
+  wisher: User
+  wisherId: ID
+}
+
+enum ChatStatus {
+  ACCEPTED
+  DECLINED
+  PENDING
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""A message sent in a chat between a wisher and a grantor"""
+type Message {
+  content: String
+  createdAt: Date
+  sender: User
+  senderId: ID
+  updatedAt: Date
+}
+
+type Mutation {
+  createCategory(description: String!, name: String!): Category
+  createUser(email: String!, name: String!): User
+  createWish(categoryId: String!, description: String!, name: String!, ownerId: String!): Wish
+}
+
+type Query {
+  authenticated: String
+  categories: [Category!]
+  me: User
+  myWishes: [Wish!]!
+  users: [User!]
+  wish(wishId: String!): Wish
+  wishes: [Wish!]
+}
+
+"""A user of the wishlist application"""
+type User {
+  _id: ID
+  clerkId: String
+  email: String
+  name: String
+}
+
+"""A wish item that will be on a user's wishlist"""
+type Wish {
+  _id: ID
+  category: Category
+  categoryId: ID
+  description: String
+  name: String
+  owner: User
+  ownerId: ID
+}
