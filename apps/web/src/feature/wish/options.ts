@@ -5,10 +5,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { toast } from "sonner";
-import getCategories from "./functions/query/getCategories";
-import getMyWishes from "./functions/query/getMyWishes";
-import getWishDetails from "./functions/query/getWishDetails";
-import createWish from "./server";
+import createWish, { getCategories, getMyWishes, getWishDetails } from "./server";
 
 export const wishQueryOptions = {
   getCategories: queryOptions({

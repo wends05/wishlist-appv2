@@ -12,7 +12,7 @@
         "useSemanticElements": "off"
       },
       "correctness": {
-        "noUnusedVariables": {
+        "noUnusedImports": {
           "level": "warn",
           "fix": "safe"
         }
