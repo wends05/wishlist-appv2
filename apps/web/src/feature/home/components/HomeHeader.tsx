@@ -5,7 +5,7 @@ export default function HomeHeader() {
   const { open } = useSidebar();
 
   return (
-    <nav className="p-4 w-full flex justify-between">
+    <nav className="flex w-full justify-between p-4">
       <div>
         <SidebarTrigger />
       </div>

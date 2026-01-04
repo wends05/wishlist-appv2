@@ -3,5 +3,6 @@ type FieldWrapperProps = {
   errorMessage?: string;
   description?: string;
   descriptionPosition?: "top" | "bottom";
+  className?: string;
 }
 export default FieldWrapperProps;

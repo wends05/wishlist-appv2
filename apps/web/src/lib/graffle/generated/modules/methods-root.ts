@@ -179,6 +179,59 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
+   * | **Type** | {@link $Schema.Wish}[]! |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Parent** | {@link $Schema.Query} |
+   * | **Path** | `Query.home` |
+   * | **Nullability** | Required |
+   * | **List** | Yes |
+   * | **Arguments** | 4 |
+   */
+
+  home: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
+    $Context,
+    <$SelectionSet>(
+      selectionSet: $$Utilities.NoExcess<
+        $SelectionSet,
+        $$SelectionSets.Query.home<{ scalars: $Context["scalars"] }>
+      >,
+    ) => GraphqlKit.Document.Object.Var.MethodReturn<
+      GraphqlKit.Document.Object.Var.InferFromQuery<
+        { home: $SelectionSet },
+        $$SchemaMap.SchemaDrivenDataMap
+      >,
+      (null | {}) &
+        $$Utilities.HandleOutputDocumentBuilderRootField<
+          $Context,
+          GraphqlKit.Document.Object.InferResult.OperationQuery<
+            { home: $SelectionSet },
+            $$Schema.Schema<$Context["scalars"]>
+          >,
+          "home"
+        >,
+      $$Utilities.DocumentRunnerDeferred<
+        GraphqlKit.Document.Object.Var.InferFromQuery<
+          { home: $SelectionSet },
+          $$SchemaMap.SchemaDrivenDataMap
+        >,
+        (null | {}) &
+          $$Utilities.HandleOutputDocumentBuilderRootField<
+            $Context,
+            GraphqlKit.Document.Object.InferResult.OperationQuery<
+              { home: $SelectionSet },
+              $$Schema.Schema<$Context["scalars"]>
+            >,
+            "home"
+          >
+      >
+    >
+  >;
+
+  /**
+   * # Info
+   *
+   * | | |
+   * | - | - |
    * | **Type** | {@link $Schema.User} |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Query} |
@@ -376,58 +429,6 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
               $$Schema.Schema<$Context["scalars"]>
             >,
             "wish"
-          >
-      >
-    >
-  >;
-
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
-   * | **Type** | {@link $Schema.Wish}[] |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $Schema.Query} |
-   * | **Path** | `Query.wishes` |
-   * | **Nullability** | Optional |
-   * | **List** | Yes |
-   */
-
-  wishes: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
-    $Context,
-    <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Query.wishes<{ scalars: $Context["scalars"] }>
-      >,
-    ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { wishes: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
-      (null | {}) &
-        $$Utilities.HandleOutputDocumentBuilderRootField<
-          $Context,
-          GraphqlKit.Document.Object.InferResult.OperationQuery<
-            { wishes: $SelectionSet },
-            $$Schema.Schema<$Context["scalars"]>
-          >,
-          "wishes"
-        >,
-      $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { wishes: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
-        (null | {}) &
-          $$Utilities.HandleOutputDocumentBuilderRootField<
-            $Context,
-            GraphqlKit.Document.Object.InferResult.OperationQuery<
-              { wishes: $SelectionSet },
-              $$Schema.Schema<$Context["scalars"]>
-            >,
-            "wishes"
           >
       >
     >

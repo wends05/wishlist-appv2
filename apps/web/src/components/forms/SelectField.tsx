@@ -1,6 +1,5 @@
 import { useFieldContext } from "@/hooks/_formHooks";
-import FieldWrapper from "./field-wrapper";
-import FieldWrapperProps from "@/types/FieldWrapperProps";
+import type FieldWrapperProps from "@/types/FieldWrapperProps";
 import {
   Select,
   SelectContent,
@@ -8,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import FieldWrapper from "./field-wrapper";
 
 interface SelectItemType {
   label: string;

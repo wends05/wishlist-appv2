@@ -54,6 +54,24 @@ export interface Query<
    *
    * | | |
    * | - | - |
+   * | **Type** | {@link $NamedTypes.$Wish}[]! |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Parent** | {@link $NamedTypes.$Query} |
+   * | **Path** | `Query.home` |
+   * | **Nullability** | Required |
+   * | **List** | Yes |
+   * | **Arguments** | 4 |
+   */
+  home?:
+    | $Fields.home.$Expanded<_$Context>
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
+        $Fields.home<_$Context>
+      >;
+  /**
+   * # Info
+   *
+   * | | |
+   * | - | - |
    * | **Type** | {@link $NamedTypes.$User} |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $NamedTypes.$Query} |
@@ -115,23 +133,6 @@ export interface Query<
     | $Fields.wish<_$Context>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
         $Fields.wish<_$Context>
-      >;
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
-   * | **Type** | {@link $NamedTypes.$Wish}[] |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $NamedTypes.$Query} |
-   * | **Path** | `Query.wishes` |
-   * | **Nullability** | Optional |
-   * | **List** | Yes |
-   */
-  wishes?:
-    | $Fields.wishes.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.wishes<_$Context>
       >;
 
   /**

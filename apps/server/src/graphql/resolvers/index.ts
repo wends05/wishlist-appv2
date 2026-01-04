@@ -11,4 +11,3 @@ export * from "./user/user.ts";
 export * from "./wish/createWish.ts";
 export * from "./wish/myWishes.ts";
 export * from "./wish/wish.ts";
-export * from "./wish/wishes.ts";

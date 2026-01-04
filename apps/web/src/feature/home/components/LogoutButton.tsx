@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import { SignOutButton } from "@clerk/clerk-react";
+import { Button } from "@/components/ui/button";
 
 export default function LogoutButton() {
   return (

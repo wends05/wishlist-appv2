@@ -52,11 +52,11 @@ type Mutation {
 type Query {
   authenticated: String
   categories: [Category!]
+  home(categoryId: String, limit: Int, search: String, skip: Int): [Wish!]!
   me: User
   myWishes: [Wish!]!
   users: [User!]
   wish(wishId: String!): Wish
-  wishes: [Wish!]
 }
 
 """A user of the wishlist application"""

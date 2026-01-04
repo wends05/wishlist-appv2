@@ -1,7 +1,7 @@
 import { useFieldContext } from "@/hooks/_formHooks";
+import type FieldWrapperProps from "@/types/FieldWrapperProps";
 import { Input } from "../ui/input";
 import FieldWrapper from "./field-wrapper";
-import FieldWrapperProps from "@/types/FieldWrapperProps";
 
 interface TextFieldProps
   extends React.ComponentProps<"input">,
@@ -16,17 +16,17 @@ export default function TextField({
   const field = useFieldContext<string>();
   return (
     <FieldWrapper
-      label={label}
       description={description}
       descriptionPosition={descriptionPosition}
+      label={label}
     >
       <Input
-        name={field.name}
         id={field.name}
+        name={field.name}
+        onBlur={field.handleBlur}
+        onChange={(e) => field.handleChange(e.target.value)}
         type="string"
         value={field.state.value}
-        onChange={(e) => field.handleChange(e.target.value)}
-        onBlur={field.handleBlur}
         {...rest}
       />
     </FieldWrapper>

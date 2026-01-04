@@ -61,6 +61,86 @@ export namespace categories {
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }
 
+export type home<
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
+    $DefaultSelectionContext,
+> = home.$SelectionSet<_$Context>;
+
+export namespace home {
+  export interface $SelectionSet<
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
+      $DefaultSelectionContext,
+  >
+    extends
+      GraphqlKit.Document.Object.Select.Bases.Base,
+      $Named.Wish<_$Context> {
+    /**
+     * Arguments for `home` field. No arguments are required so you may omit this.
+     */
+    readonly $?: $Arguments<_$Context>;
+  }
+
+  export interface $Arguments<
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
+      $DefaultSelectionContext,
+  > {
+    /**
+     * # Info
+     *
+     * | | |
+     * | - | - |
+     * | **GraphQL Type** | `String` |
+     * | **Parent** | {@link $NamedTypes.$Query}.home |
+     * | **Path** | `Query.home(categoryId)` |
+     * | **Nullability** | Optional |
+     */
+    readonly categoryId?: $Scalars.String<_$Context>;
+    /**
+     * # Info
+     *
+     * | | |
+     * | - | - |
+     * | **GraphQL Type** | `Int` |
+     * | **Parent** | {@link $NamedTypes.$Query}.home |
+     * | **Path** | `Query.home(limit)` |
+     * | **Nullability** | Optional |
+     */
+    readonly limit?: $Scalars.Int<_$Context>;
+    /**
+     * # Info
+     *
+     * | | |
+     * | - | - |
+     * | **GraphQL Type** | `String` |
+     * | **Parent** | {@link $NamedTypes.$Query}.home |
+     * | **Path** | `Query.home(search)` |
+     * | **Nullability** | Optional |
+     */
+    readonly search?: $Scalars.String<_$Context>;
+    /**
+     * # Info
+     *
+     * | | |
+     * | - | - |
+     * | **GraphQL Type** | `Int` |
+     * | **Parent** | {@link $NamedTypes.$Query}.home |
+     * | **Path** | `Query.home(skip)` |
+     * | **Nullability** | Optional |
+     */
+    readonly skip?: $Scalars.Int<_$Context>;
+  }
+
+  /**
+   * This is the "expanded" version of the `home` type. It is identical except for the fact
+   * that IDEs will display its contents (a union type) directly, rather than the name of this type.
+   * In some cases, this is a preferable DX, making the types easier to read for users.
+   */
+  export type $Expanded<
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
+      $DefaultSelectionContext,
+  > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
+}
+
 export type me<
   _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
     $DefaultSelectionContext,
@@ -174,31 +254,6 @@ export namespace wish {
 
   /**
    * This is the "expanded" version of the `wish` type. It is identical except for the fact
-   * that IDEs will display its contents (a union type) directly, rather than the name of this type.
-   * In some cases, this is a preferable DX, making the types easier to read for users.
-   */
-  export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
-}
-
-export type wishes<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> = wishes.$SelectionSet<_$Context>;
-
-export namespace wishes {
-  export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
-      $Named.Wish<_$Context> {}
-
-  /**
-   * This is the "expanded" version of the `wishes` type. It is identical except for the fact
    * that IDEs will display its contents (a union type) directly, rather than the name of this type.
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */

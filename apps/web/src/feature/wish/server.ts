@@ -1,4 +1,8 @@
-import { CreateWishDTO } from "@repo/common/dto";
+import {
+  CreateWishDTO,
+  HomeWishesInputSchema,
+  HomeWishesResponseSchema,
+} from "@repo/common/dto";
 import {
   CategoryDocumentSchema,
   WishDetailsSchema,
@@ -117,5 +121,44 @@ export const getWishDetails = createServerFn()
       return parsedWishDetails;
     } catch (error) {
       console.error("Error fetching wish details:", error);
+    }
+  });
+
+export const getHomeWishes = createServerFn()
+  .inputValidator(HomeWishesInputSchema)
+  .handler(async ({ data }) => {
+    try {
+      const client = await createClient();
+      const res = await client
+        .gql(
+          `
+      query ($search: String, $limit: Int, $skip: Int, $categoryId: String) {
+        home(search: $search, limit: $limit, skip: $skip, categoryId: $categoryId) {
+          _id
+          name
+          description
+          category {
+            _id
+            name
+          }
+        }
+      }
+    `
+        )
+        .$send({
+          search: data.search,
+          limit: data.limit,
+          skip: data.skip,
+          categoryId: data.categoryId,
+        });
+
+      const parsedWishes = HomeWishesResponseSchema.shape.wishes.parse(
+        res?.home
+      );
+
+      return parsedWishes;
+    } catch (error) {
+      console.error("Error fetching home wishes:", error);
+      return [];
     }
   });

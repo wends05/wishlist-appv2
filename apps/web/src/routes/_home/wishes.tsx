@@ -6,17 +6,14 @@ export const Route = createFileRoute("/_home/wishes")({
   staleTime: Infinity,
   component: RouteComponent,
   loader: async ({ context }) => {
-    return {
-      wishes: await context.queryClient.fetchQuery(wishQueryOptions.myWishes),
-    };
+    await context.queryClient.ensureQueryData(wishQueryOptions.myWishes);
   },
 });
 
 function RouteComponent() {
-  const { wishes } = Route.useLoaderData();
   return (
     <div>
-      <WishList wishes={wishes} />
+      <WishList />
     </div>
   );
 }

@@ -19,10 +19,10 @@ export interface Query {
     __typename: $Fields.__typename;
     authenticated: $Fields.authenticated;
     categories: $Fields.categories;
+    home: $Fields.home;
     me: $Fields.me;
     myWishes: $Fields.myWishes;
     users: $Fields.users;
     wish: $Fields.wish;
-    wishes: $Fields.wishes;
   };
 }

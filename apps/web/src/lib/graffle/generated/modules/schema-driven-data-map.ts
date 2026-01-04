@@ -157,6 +157,41 @@ interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
       readonly _tag: "outputField";
       readonly namedType: Category;
     };
+    readonly home: {
+      readonly _tag: "outputField";
+      readonly arguments: {
+        readonly categoryId: {
+          readonly _tag: "argumentOrInputField";
+          readonly namedType: $$Scalar.String;
+          readonly inlineType: [0];
+        };
+        readonly limit: {
+          readonly _tag: "argumentOrInputField";
+          readonly namedType: $$Scalar.Int;
+          readonly inlineType: [0];
+        };
+        readonly search: {
+          readonly _tag: "argumentOrInputField";
+          readonly namedType: $$Scalar.String;
+          readonly inlineType: [0];
+        };
+        readonly skip: {
+          readonly _tag: "argumentOrInputField";
+          readonly namedType: $$Scalar.Int;
+          readonly inlineType: [0];
+        };
+      };
+      readonly $argumentsType: {
+        categoryId?:
+          | $$Scalar.String["codec"]["_typeDecoded"]
+          | null
+          | undefined;
+        limit?: $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined;
+        search?: $$Scalar.String["codec"]["_typeDecoded"] | null | undefined;
+        skip?: $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined;
+      };
+      readonly namedType: Wish;
+    };
     readonly me: {
       readonly _tag: "outputField";
       readonly namedType: User;
@@ -181,10 +216,6 @@ interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
       readonly $argumentsType: {
         wishId: $$Scalar.String["codec"]["_typeDecoded"];
       };
-      readonly namedType: Wish;
-    };
-    readonly wishes: {
-      readonly _tag: "outputField";
       readonly namedType: Wish;
     };
   };
@@ -541,6 +572,50 @@ const Query: Query = {
       _tag: "outputField",
       namedType: null as any as Category,
     },
+    home: {
+      _tag: "outputField",
+      arguments: {
+        categoryId: {
+          _tag: "argumentOrInputField",
+          namedType: $$Scalar.String,
+          inlineType: [0],
+        },
+        limit: {
+          _tag: "argumentOrInputField",
+          namedType: $$Scalar.Int,
+          inlineType: [0],
+        },
+        search: {
+          _tag: "argumentOrInputField",
+          namedType: $$Scalar.String,
+          inlineType: [0],
+        },
+        skip: {
+          _tag: "argumentOrInputField",
+          namedType: $$Scalar.Int,
+          inlineType: [0],
+        },
+      },
+      $argumentsType: {
+        categoryId: null as any as
+          | $$Scalar.String["codec"]["_typeDecoded"]
+          | null
+          | undefined,
+        limit: null as any as
+          | $$Scalar.Int["codec"]["_typeDecoded"]
+          | null
+          | undefined,
+        search: null as any as
+          | $$Scalar.String["codec"]["_typeDecoded"]
+          | null
+          | undefined,
+        skip: null as any as
+          | $$Scalar.Int["codec"]["_typeDecoded"]
+          | null
+          | undefined,
+      },
+      namedType: null as any as Wish,
+    },
     me: {
       _tag: "outputField",
       namedType: null as any as User,
@@ -565,10 +640,6 @@ const Query: Query = {
       $argumentsType: {
         wishId: null as any as $$Scalar.String["codec"]["_typeDecoded"],
       },
-      namedType: null as any as Wish,
-    },
-    wishes: {
-      _tag: "outputField",
       namedType: null as any as Wish,
     },
   },
@@ -688,6 +759,8 @@ Wish.fields[`owner`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`categories`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+Query.fields[`home`]!.namedType = Wish;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`me`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`myWishes`]!.namedType = Wish;
@@ -695,8 +768,6 @@ Query.fields[`myWishes`]!.namedType = Wish;
 Query.fields[`users`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`wish`]!.namedType = Wish;
-// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Query.fields[`wishes`]!.namedType = Wish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Mutation.fields[`createCategory`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.

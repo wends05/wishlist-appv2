@@ -166,6 +166,53 @@ export interface QueryBuilder {
    *
    * | | |
    * | - | - |
+   * | **Type** | {@link $Schema.Wish}[]! |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Parent** | {@link $Schema.Query} |
+   * | **Path** | `Query.home` |
+   * | **Nullability** | Required |
+   * | **List** | Yes |
+   * | **Arguments** | 4 |
+   *
+   * @example
+   * ```ts
+   * const doc = query.home({
+   * // $: { ...variables }
+   * _id: true,
+   * category: true,
+   * categoryId: true,
+   * // ...
+   * })
+   * ```
+   */
+  home: <
+    const $SelectionSet extends
+      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["home"],
+  >(
+    selection?: $SelectionSet,
+  ) => GraphqlKit.Document.Typed.String<
+    $$Utilities.RequestResult.Simplify<
+      StaticDocumentContext,
+      GraphqlKit.Document.Object.InferResult.OperationQuery<
+        { home: $SelectionSet },
+        $$Schema.Schema
+      >
+    >,
+    $$Utilities.RequestResult.Simplify<
+      StaticDocumentContext,
+      GraphqlKit.Document.Object.Var.InferFromQuery<
+        { home: Exclude<$SelectionSet, undefined> },
+        SchemaMap.SchemaDrivenDataMap
+      >
+    >,
+    true
+  >;
+
+  /**
+   * # Info
+   *
+   * | | |
+   * | - | - |
    * | **Type** | {@link $Schema.User} |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Query} |
@@ -335,51 +382,6 @@ export interface QueryBuilder {
       StaticDocumentContext,
       GraphqlKit.Document.Object.Var.InferFromQuery<
         { wish: Exclude<$SelectionSet, undefined> },
-        SchemaMap.SchemaDrivenDataMap
-      >
-    >,
-    true
-  >;
-
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
-   * | **Type** | {@link $Schema.Wish}[] |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $Schema.Query} |
-   * | **Path** | `Query.wishes` |
-   * | **Nullability** | Optional |
-   * | **List** | Yes |
-   *
-   * @example
-   * ```ts
-   * const doc = query.wishes({
-   * _id: true,
-   * category: true,
-   * categoryId: true,
-   * // ...
-   * })
-   * ```
-   */
-  wishes: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["wishes"],
-  >(
-    selection?: $SelectionSet,
-  ) => GraphqlKit.Document.Typed.String<
-    $$Utilities.RequestResult.Simplify<
-      StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { wishes: $SelectionSet },
-        $$Schema.Schema
-      >
-    >,
-    $$Utilities.RequestResult.Simplify<
-      StaticDocumentContext,
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { wishes: Exclude<$SelectionSet, undefined> },
         SchemaMap.SchemaDrivenDataMap
       >
     >,

@@ -68,6 +68,54 @@ export interface categories {
  *
  * | | |
  * | - | - |
+ * | **Type** | {@link $Schema.Wish}[]! |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+ * | **Parent** | {@link $Schema.Query} |
+ * | **Path** | `Query.home` |
+ * | **Nullability** | Required |
+ * | **List** | Yes |
+ * | **Arguments** | 4 |
+ */
+export interface home {
+  kind: "OutputField";
+  name: "home";
+  arguments: {
+    categoryId: {
+      kind: "InputField";
+      name: "categoryId";
+      inlineType: [0];
+      namedType: $Schema.String;
+    };
+    limit: {
+      kind: "InputField";
+      name: "limit";
+      inlineType: [0];
+      namedType: $Schema.Int;
+    };
+    search: {
+      kind: "InputField";
+      name: "search";
+      inlineType: [0];
+      namedType: $Schema.String;
+    };
+    skip: {
+      kind: "InputField";
+      name: "skip";
+      inlineType: [0];
+      namedType: $Schema.Int;
+    };
+  };
+  inlineType: [1, [1]];
+  namedType: $Schema.Wish;
+}
+
+/**
+ * GraphQL {@link https://graphql.org/learn/queries/#fields | output field} ↗ on type {@link $Schema.Query}.
+ *
+ * # Info
+ *
+ * | | |
+ * | - | - |
  * | **Type** | {@link $Schema.User} |
  * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
  * | **Parent** | {@link $Schema.Query} |
@@ -152,27 +200,5 @@ export interface wish {
     };
   };
   inlineType: [0];
-  namedType: $Schema.Wish;
-}
-
-/**
- * GraphQL {@link https://graphql.org/learn/queries/#fields | output field} ↗ on type {@link $Schema.Query}.
- *
- * # Info
- *
- * | | |
- * | - | - |
- * | **Type** | {@link $Schema.Wish}[] |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
- * | **Parent** | {@link $Schema.Query} |
- * | **Path** | `Query.wishes` |
- * | **Nullability** | Optional |
- * | **List** | Yes |
- */
-export interface wishes {
-  kind: "OutputField";
-  name: "wishes";
-  arguments: {};
-  inlineType: [0, [1]];
   namedType: $Schema.Wish;
 }
