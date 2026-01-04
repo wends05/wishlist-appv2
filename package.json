@@ -7,7 +7,8 @@
     "check": "turbo run check",
     "check-types": "turbo run check-types",
     "write": "turbo run write",
-    "unsafe": "turbo run unsafe"
+    "unsafe": "turbo run unsafe",
+    "devtools": "turbo devtools"
   },
   "devDependencies": {
     "turbo": "^2.7.2",

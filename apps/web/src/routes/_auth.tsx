@@ -1,11 +1,7 @@
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/clerk-react";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  SignedIn,
-  SignedOut,
-  SignOutButton,
-} from "@clerk/clerk-react";
-import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_auth")({
   component: RouteComponent,
@@ -13,7 +9,7 @@ export const Route = createFileRoute("/_auth")({
 
 function RouteComponent() {
   return (
-    <main className="flex items-center justify-center h-screen">
+    <main className="flex h-screen items-center justify-center">
       <SignedIn>
         <Card>
           <CardContent>

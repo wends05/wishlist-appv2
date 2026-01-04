@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import WishDetails from "@/feature/wish/components/WishDetails";
-import { getWishDetailsQueryOptions } from "@/feature/wish/queryOptions/getWishDetailsQueryOptions";
+import { wishQueryOptions } from "@/feature/wish/options";
 
 export const Route = createFileRoute("/_home/wish/$id")({
   component: RouteComponent,
   beforeLoad: async ({ context, params: { id } }) => {
     return {
       wish: await context.queryClient.fetchQuery(
-        getWishDetailsQueryOptions(id)
+        wishQueryOptions.wishDetails(id)
       ),
     };
   },

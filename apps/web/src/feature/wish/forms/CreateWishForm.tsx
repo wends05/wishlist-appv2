@@ -2,8 +2,8 @@ import { CreateWishDTO } from "@repo/common/dto";
 import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
 import type React from "react";
 import { useAppForm } from "@/hooks/_formHooks";
-import { createWishMutationOptions } from "../mutationOptions/createWishMutationOptions";
-import { getCategoriesQueryOptions } from "../queryOptions/getCategoriesQueryOptions";
+// import { createWishMutationOptions } from "../mutationOptions/createWishMutationOptions";
+import { wishMutationOptions, wishQueryOptions } from "../options";
 
 interface CreateWishProps {
   firstCategoryId: string;
@@ -11,7 +11,7 @@ interface CreateWishProps {
 }
 
 const useCreateWish = ({ firstCategoryId, ownerId }: CreateWishProps) => {
-  const createWishMutation = useMutation(createWishMutationOptions());
+  const createWishMutation = useMutation(wishMutationOptions.createWish());
 
   const form = useAppForm({
     defaultValues: {
@@ -38,7 +38,7 @@ export default function CreateWishForm({
   firstCategoryId,
   ownerId,
 }: CreateWishProps) {
-  const { data: categories } = useSuspenseQuery(getCategoriesQueryOptions);
+  const { data: categories } = useSuspenseQuery(wishQueryOptions.getCategories);
   const form = useCreateWish({
     firstCategoryId,
     ownerId,

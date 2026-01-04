@@ -2,7 +2,7 @@ import { CreateWishDTO } from "@repo/common/dto";
 import { createServerFn } from "@tanstack/react-start";
 import createClient from "@/lib/graffle/client";
 
-const createWish = createServerFn({ method: "POST" })
+const createWish = createServerFn()
   .inputValidator(CreateWishDTO)
   .handler(async ({ data }) => {
     try {
