@@ -13,7 +13,7 @@ export const Route = createFileRoute("/_home/home")({
     search,
   }),
   loader: async ({ context, deps }) => {
-    await context.queryClient.ensureInfiniteQueryData(
+    await context.queryClient.prefetchInfiniteQuery(
       wishInfiniteQueryOptions.homeWishes({
         searchTerm: deps.search.search || undefined,
         categoryId: deps.search.categoryId || undefined,

@@ -1,5 +1,13 @@
 import type { HomeWishesResponse } from "@repo/common/dto";
-import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardAction,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import WishCardActions from "@/feature/wish/components/WishCardActions";
+import { UserIcon } from "@phosphor-icons/react";
 
 interface HomeWishItemProps {
   wish: HomeWishesResponse["wishes"][number];
@@ -8,12 +16,16 @@ interface HomeWishItemProps {
 export default function HomeWishItem({ wish }: HomeWishItemProps) {
   return (
     <Card>
-      <CardContent>
+      <CardHeader>
         <CardTitle>{wish.name}</CardTitle>
-        <CardDescription>
-          {wish.category.name}
+        <CardDescription>{wish.category.name}</CardDescription>
+        <CardDescription className="flex items-center gap-0.5">
+          <UserIcon /> {wish.owner.name}
         </CardDescription>
-      </CardContent>
+        <CardAction>
+          <WishCardActions _id={wish._id} />
+        </CardAction>
+      </CardHeader>
     </Card>
   );
 }

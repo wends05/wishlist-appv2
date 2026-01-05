@@ -4,7 +4,6 @@ export * from "./category/createCategory.ts";
 // test resolvers
 export * from "./testResolvers/authenticated.ts";
 // User Resolvers
-export * from "./user/createUser.ts";
 export * from "./user/me.ts";
 export * from "./user/user.ts";
 // Wish Resolvers

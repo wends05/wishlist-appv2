@@ -13,7 +13,7 @@ export default function SidebarWrapper({
       <HomeSidebar />
       <SidebarInset>
         <HomeHeader />
-        <div className="p-2">{children}</div>
+        {children}
       </SidebarInset>
     </SidebarProvider>
   );

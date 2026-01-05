@@ -1,27 +1,19 @@
-import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { HomeWishesInputSchema } from "@repo/common/dto";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { getRouteApi } from "@tanstack/react-router";
-import { Field } from "@/components/ui/field";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-} from "@/components/ui/input-group";
 import { wishQueryOptions } from "@/feature/wish/options";
 import { useAppForm } from "@/hooks/_formHooks";
 
 const homeRouteApi = getRouteApi("/_home/home");
 
-export default function WishSearchAndFilter() {
+const useSearchAndFilter = () => {
   const navigate = homeRouteApi.useNavigate();
-  const { data: categories } = useSuspenseQuery(wishQueryOptions.getCategories);
+  const { search, categoryId } = homeRouteApi.useSearch();
 
   const form = useAppForm({
     defaultValues: {
-      search: "",
-      categoryId: "All",
+      search: search || undefined,
+      categoryId: categoryId || "All",
     },
     validators: {
       onSubmit: HomeWishesInputSchema.pick({
@@ -38,6 +30,14 @@ export default function WishSearchAndFilter() {
       });
     },
   });
+
+  return form;
+};
+
+export default function WishSearchAndFilter() {
+  const { data: categories } = useSuspenseQuery(wishQueryOptions.getCategories);
+
+  const form = useSearchAndFilter();
 
   return (
     <form
@@ -57,27 +57,12 @@ export default function WishSearchAndFilter() {
         }}
         name="search"
       >
-        {(field) => (
-          <Field>
-            <InputGroup>
-              <InputGroupInput
-                onBlur={field.handleBlur}
-                onChange={(e) => field.handleChange(e.target.value)}
-                placeholder="Search wishes..."
-                value={field.state.value}
-              />
-              <InputGroupAddon align={"inline-end"}>
-                <InputGroupButton>
-                  <MagnifyingGlassIcon />
-                </InputGroupButton>
-              </InputGroupAddon>
-            </InputGroup>
-          </Field>
-        )}
+        {(field) => <field.TextField label="" placeholder="Search" />}
       </form.AppField>
       <form.AppField
         listeners={{
           onChange: () => {
+            console.log("categoryId changed");
             form.handleSubmit();
           },
         }}

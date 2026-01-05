@@ -45,7 +45,6 @@ type Message {
 
 type Mutation {
   createCategory(description: String!, name: String!): Category
-  createUser(email: String!, name: String!): User
   createWish(categoryId: String!, description: String!, name: String!, ownerId: String!): Wish
 }
 

@@ -23,8 +23,8 @@ export const getWishById = async (wishId: string) => {
   return WishModel.findOne({ _id: wishId });
 };
 
-export const getMyWishes = async (userId: Types.ObjectId) => {
-  return WishModel.find({ "ownerId._id": userId });
+export const getMyWishes = async (userId: string) => {
+  return WishModel.where("ownerId").equals(userId);
 };
 
 export const getHomeWishes = async (input: GetHomeWishesInput) => {
@@ -34,13 +34,14 @@ export const getHomeWishes = async (input: GetHomeWishesInput) => {
 
   // Build base filter - used in both search and non-search paths
   const baseFilter: QueryFilter<Wish> = {
-    "ownerId._id": { $ne: currentUserId },
     ...(categoryId && categoryId !== "all" && { "categoryId._id": categoryId }),
   };
 
   // No search - use simple query (more performant)
   if (!search) {
     return WishModel.find(baseFilter)
+      .where("ownerId")
+      .ne(currentUserId)
       .sort({ createdAt: -1 })
       .limit(limit)
       .skip(skip);

@@ -528,52 +528,6 @@ export interface MutationBuilder {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.User} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $Schema.Mutation} |
-   * | **Path** | `Mutation.createUser` |
-   * | **Nullability** | Optional |
-   * | **Arguments** | 2 |
-   *
-   * @example
-   * ```ts
-   * const doc = mutation.createUser({
-   * // $: { ...variables }
-   * _id: true,
-   * clerkId: true,
-   * email: true,
-   * // ...
-   * })
-   * ```
-   */
-  createUser: <
-    const $SelectionSet extends
-      SelectionSets.Mutation<GraphqlKit.Document.Object.Select.StaticBuilderContext>["createUser"],
-  >(
-    selection?: $SelectionSet,
-  ) => GraphqlKit.Document.Typed.String<
-    $$Utilities.RequestResult.Simplify<
-      StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationMutation<
-        { createUser: $SelectionSet },
-        $$Schema.Schema
-      >
-    >,
-    $$Utilities.RequestResult.Simplify<
-      StaticDocumentContext,
-      GraphqlKit.Document.Object.Var.InferFromMutation<
-        { createUser: Exclude<$SelectionSet, undefined> },
-        SchemaMap.SchemaDrivenDataMap
-      >
-    >,
-    true
-  >;
-
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
    * | **Type** | {@link $Schema.Wish} |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Mutation} |

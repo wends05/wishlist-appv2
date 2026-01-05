@@ -244,26 +244,6 @@ interface Mutation extends $$Utilities.SchemaDrivenDataMap.OutputObject {
       };
       readonly namedType: Category;
     };
-    readonly createUser: {
-      readonly _tag: "outputField";
-      readonly arguments: {
-        readonly email: {
-          readonly _tag: "argumentOrInputField";
-          readonly namedType: $$Scalar.String;
-          readonly inlineType: [1];
-        };
-        readonly name: {
-          readonly _tag: "argumentOrInputField";
-          readonly namedType: $$Scalar.String;
-          readonly inlineType: [1];
-        };
-      };
-      readonly $argumentsType: {
-        email: $$Scalar.String["codec"]["_typeDecoded"];
-        name: $$Scalar.String["codec"]["_typeDecoded"];
-      };
-      readonly namedType: User;
-    };
     readonly createWish: {
       readonly _tag: "outputField";
       readonly arguments: {
@@ -668,26 +648,6 @@ const Mutation: Mutation = {
       },
       namedType: null as any as Category,
     },
-    createUser: {
-      _tag: "outputField",
-      arguments: {
-        email: {
-          _tag: "argumentOrInputField",
-          namedType: $$Scalar.String,
-          inlineType: [1],
-        },
-        name: {
-          _tag: "argumentOrInputField",
-          namedType: $$Scalar.String,
-          inlineType: [1],
-        },
-      },
-      $argumentsType: {
-        email: null as any as $$Scalar.String["codec"]["_typeDecoded"],
-        name: null as any as $$Scalar.String["codec"]["_typeDecoded"],
-      },
-      namedType: null as any as User,
-    },
     createWish: {
       _tag: "outputField",
       arguments: {
@@ -770,8 +730,6 @@ Query.fields[`users`]!.namedType = User;
 Query.fields[`wish`]!.namedType = Wish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Mutation.fields[`createCategory`]!.namedType = Category;
-// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Mutation.fields[`createUser`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Mutation.fields[`createWish`]!.namedType = Wish;
 

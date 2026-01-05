@@ -561,58 +561,6 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.User} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $Schema.Mutation} |
-   * | **Path** | `Mutation.createUser` |
-   * | **Nullability** | Optional |
-   * | **Arguments** | 2 |
-   */
-
-  createUser: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
-    $Context,
-    <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Mutation.createUser<{ scalars: $Context["scalars"] }>
-      >,
-    ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromMutation<
-        { createUser: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
-      (null | {}) &
-        $$Utilities.HandleOutputDocumentBuilderRootField<
-          $Context,
-          GraphqlKit.Document.Object.InferResult.OperationMutation<
-            { createUser: $SelectionSet },
-            $$Schema.Schema<$Context["scalars"]>
-          >,
-          "createUser"
-        >,
-      $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromMutation<
-          { createUser: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
-        (null | {}) &
-          $$Utilities.HandleOutputDocumentBuilderRootField<
-            $Context,
-            GraphqlKit.Document.Object.InferResult.OperationMutation<
-              { createUser: $SelectionSet },
-              $$Schema.Schema<$Context["scalars"]>
-            >,
-            "createUser"
-          >
-      >
-    >
-  >;
-
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
    * | **Type** | {@link $Schema.Wish} |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Mutation} |

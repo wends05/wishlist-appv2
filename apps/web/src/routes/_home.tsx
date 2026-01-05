@@ -14,7 +14,9 @@ export const Route = createFileRoute("/_home")({
 function RouteComponent() {
   return (
     <SidebarWrapper>
-      <Outlet />
+      <div className="h-full">
+        <Outlet />
+      </div>
     </SidebarWrapper>
   );
 }

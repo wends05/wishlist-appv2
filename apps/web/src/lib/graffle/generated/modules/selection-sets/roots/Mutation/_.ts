@@ -36,23 +36,6 @@ export interface Mutation<
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $NamedTypes.$User} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $NamedTypes.$Mutation} |
-   * | **Path** | `Mutation.createUser` |
-   * | **Nullability** | Optional |
-   * | **Arguments** | 2 |
-   */
-  createUser?:
-    | $Fields.createUser<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.createUser<_$Context>
-      >;
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
    * | **Type** | {@link $NamedTypes.$Wish} |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $NamedTypes.$Mutation} |

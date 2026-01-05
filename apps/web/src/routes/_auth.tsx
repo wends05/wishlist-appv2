@@ -1,5 +1,5 @@
 import { SignedIn, SignedOut, SignOutButton } from "@clerk/clerk-react";
-import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -13,8 +13,12 @@ function RouteComponent() {
       <SignedIn>
         <Card>
           <CardContent>
-            You are already signed in.
-            <div>
+            <h4 className="pb-5">You are already signed in</h4>
+
+            <div className="flex w-full flex-col gap-2">
+              <Link to="/home">
+                <Button className={"w-full"}>Go to Home</Button>
+              </Link>
               <SignOutButton>
                 <Button>Log Out</Button>
               </SignOutButton>

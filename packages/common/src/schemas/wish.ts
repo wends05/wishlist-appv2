@@ -28,6 +28,10 @@ export const WishItemSchema = WishSchema.pick({
     _id: true,
     name: true,
   }),
+  owner: UserSchema.pick({
+    _id: true,
+    name: true,
+  }),
 });
 
 export interface IWishItem extends z.infer<typeof WishItemSchema> {}

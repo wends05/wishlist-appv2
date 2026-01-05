@@ -1,5 +1,4 @@
-import { SpinnerIcon } from "@phosphor-icons/react";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { wishInfiniteQueryOptions } from "@/feature/wish/options";
 import HomeWishItem from "./HomeWishItem";
@@ -13,21 +12,17 @@ export default function HomeWishes({
   searchTerm,
   categoryId,
 }: HomeWishesProps) {
-  const { data, fetchNextPage, isFetchingNextPage, hasNextPage, isLoading } =
-    useInfiniteQuery(
+  const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
+    useSuspenseInfiniteQuery(
       wishInfiniteQueryOptions.homeWishes({ searchTerm, categoryId })
     );
   return (
     <div className="flex flex-col px-4">
       {/* Wish List */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {isLoading ? (
-          <SpinnerIcon />
-        ) : (
-          data?.pages
-            .flat()
-            .map((wish) => <HomeWishItem key={wish._id} wish={wish} />)
-        )}
+        {data.pages.flat().map((wish) => (
+          <HomeWishItem key={wish._id} wish={wish} />
+        ))}
       </div>
 
       {/* Refresh */}

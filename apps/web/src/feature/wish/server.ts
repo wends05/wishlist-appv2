@@ -71,6 +71,10 @@ export const getMyWishes = createServerFn().handler(async () => {
           _id
           name
         }
+        owner {
+          _id
+          name
+        }
       }
     }
   `
@@ -138,6 +142,10 @@ export const getHomeWishes = createServerFn()
           name
           description
           category {
+            _id
+            name
+          }
+          owner {
             _id
             name
           }

@@ -10,7 +10,7 @@ builder.queryField("myWishes", (t) =>
     },
     nullable: false,
     resolve: (_parent, _args, context) => {
-      return getMyWishes(context.DbUser._id);
+      return getMyWishes(context.DbUser._id.toString());
     },
   })
 );

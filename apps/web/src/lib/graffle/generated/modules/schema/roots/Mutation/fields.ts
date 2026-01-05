@@ -60,41 +60,6 @@ export interface createCategory {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.User} |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
- * | **Parent** | {@link $Schema.Mutation} |
- * | **Path** | `Mutation.createUser` |
- * | **Nullability** | Optional |
- * | **Arguments** | 2 |
- */
-export interface createUser {
-  kind: "OutputField";
-  name: "createUser";
-  arguments: {
-    email: {
-      kind: "InputField";
-      name: "email";
-      inlineType: [1];
-      namedType: $Schema.String;
-    };
-    name: {
-      kind: "InputField";
-      name: "name";
-      inlineType: [1];
-      namedType: $Schema.String;
-    };
-  };
-  inlineType: [0];
-  namedType: $Schema.User;
-}
-
-/**
- * GraphQL {@link https://graphql.org/learn/queries/#fields | output field} ↗ on type {@link $Schema.Mutation}.
- *
- * # Info
- *
- * | | |
- * | - | - |
  * | **Type** | {@link $Schema.Wish} |
  * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
  * | **Parent** | {@link $Schema.Mutation} |

@@ -15,9 +15,10 @@ import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as PublicIndexRouteImport } from './routes/_public/index'
 import { Route as PublicAboutRouteImport } from './routes/_public/about'
 import { Route as HomeWishesRouteImport } from './routes/_home/wishes'
-import { Route as HomeProfileRouteImport } from './routes/_home/profile'
 import { Route as HomeHomeRouteImport } from './routes/_home/home'
+import { Route as HomeProfileIndexRouteImport } from './routes/_home/profile/index'
 import { Route as HomeWishIdRouteImport } from './routes/_home/wish.$id'
+import { Route as HomeProfileIdRouteImport } from './routes/_home/profile/$id'
 import { Route as AuthSignUpSplatRouteImport } from './routes/_auth/sign-up.$'
 import { Route as AuthSignInSplatRouteImport } from './routes/_auth/sign-in.$'
 
@@ -48,19 +49,24 @@ const HomeWishesRoute = HomeWishesRouteImport.update({
   path: '/wishes',
   getParentRoute: () => HomeRoute,
 } as any)
-const HomeProfileRoute = HomeProfileRouteImport.update({
-  id: '/profile',
-  path: '/profile',
-  getParentRoute: () => HomeRoute,
-} as any)
 const HomeHomeRoute = HomeHomeRouteImport.update({
   id: '/home',
   path: '/home',
   getParentRoute: () => HomeRoute,
 } as any)
+const HomeProfileIndexRoute = HomeProfileIndexRouteImport.update({
+  id: '/profile/',
+  path: '/profile/',
+  getParentRoute: () => HomeRoute,
+} as any)
 const HomeWishIdRoute = HomeWishIdRouteImport.update({
   id: '/wish/$id',
   path: '/wish/$id',
+  getParentRoute: () => HomeRoute,
+} as any)
+const HomeProfileIdRoute = HomeProfileIdRouteImport.update({
+  id: '/profile/$id',
+  path: '/profile/$id',
   getParentRoute: () => HomeRoute,
 } as any)
 const AuthSignUpSplatRoute = AuthSignUpSplatRouteImport.update({
@@ -76,23 +82,25 @@ const AuthSignInSplatRoute = AuthSignInSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/home': typeof HomeHomeRoute
-  '/profile': typeof HomeProfileRoute
   '/wishes': typeof HomeWishesRoute
   '/about': typeof PublicAboutRoute
   '/': typeof PublicIndexRoute
   '/sign-in/$': typeof AuthSignInSplatRoute
   '/sign-up/$': typeof AuthSignUpSplatRoute
+  '/profile/$id': typeof HomeProfileIdRoute
   '/wish/$id': typeof HomeWishIdRoute
+  '/profile': typeof HomeProfileIndexRoute
 }
 export interface FileRoutesByTo {
   '/home': typeof HomeHomeRoute
-  '/profile': typeof HomeProfileRoute
   '/wishes': typeof HomeWishesRoute
   '/about': typeof PublicAboutRoute
   '/': typeof PublicIndexRoute
   '/sign-in/$': typeof AuthSignInSplatRoute
   '/sign-up/$': typeof AuthSignUpSplatRoute
+  '/profile/$id': typeof HomeProfileIdRoute
   '/wish/$id': typeof HomeWishIdRoute
+  '/profile': typeof HomeProfileIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -100,48 +108,52 @@ export interface FileRoutesById {
   '/_home': typeof HomeRouteWithChildren
   '/_public': typeof PublicRouteWithChildren
   '/_home/home': typeof HomeHomeRoute
-  '/_home/profile': typeof HomeProfileRoute
   '/_home/wishes': typeof HomeWishesRoute
   '/_public/about': typeof PublicAboutRoute
   '/_public/': typeof PublicIndexRoute
   '/_auth/sign-in/$': typeof AuthSignInSplatRoute
   '/_auth/sign-up/$': typeof AuthSignUpSplatRoute
+  '/_home/profile/$id': typeof HomeProfileIdRoute
   '/_home/wish/$id': typeof HomeWishIdRoute
+  '/_home/profile/': typeof HomeProfileIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/home'
-    | '/profile'
     | '/wishes'
     | '/about'
     | '/'
     | '/sign-in/$'
     | '/sign-up/$'
+    | '/profile/$id'
     | '/wish/$id'
+    | '/profile'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/home'
-    | '/profile'
     | '/wishes'
     | '/about'
     | '/'
     | '/sign-in/$'
     | '/sign-up/$'
+    | '/profile/$id'
     | '/wish/$id'
+    | '/profile'
   id:
     | '__root__'
     | '/_auth'
     | '/_home'
     | '/_public'
     | '/_home/home'
-    | '/_home/profile'
     | '/_home/wishes'
     | '/_public/about'
     | '/_public/'
     | '/_auth/sign-in/$'
     | '/_auth/sign-up/$'
+    | '/_home/profile/$id'
     | '/_home/wish/$id'
+    | '/_home/profile/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -194,13 +206,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeWishesRouteImport
       parentRoute: typeof HomeRoute
     }
-    '/_home/profile': {
-      id: '/_home/profile'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof HomeProfileRouteImport
-      parentRoute: typeof HomeRoute
-    }
     '/_home/home': {
       id: '/_home/home'
       path: '/home'
@@ -208,11 +213,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeHomeRouteImport
       parentRoute: typeof HomeRoute
     }
+    '/_home/profile/': {
+      id: '/_home/profile/'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof HomeProfileIndexRouteImport
+      parentRoute: typeof HomeRoute
+    }
     '/_home/wish/$id': {
       id: '/_home/wish/$id'
       path: '/wish/$id'
       fullPath: '/wish/$id'
       preLoaderRoute: typeof HomeWishIdRouteImport
+      parentRoute: typeof HomeRoute
+    }
+    '/_home/profile/$id': {
+      id: '/_home/profile/$id'
+      path: '/profile/$id'
+      fullPath: '/profile/$id'
+      preLoaderRoute: typeof HomeProfileIdRouteImport
       parentRoute: typeof HomeRoute
     }
     '/_auth/sign-up/$': {
@@ -246,16 +265,18 @@ const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 interface HomeRouteChildren {
   HomeHomeRoute: typeof HomeHomeRoute
-  HomeProfileRoute: typeof HomeProfileRoute
   HomeWishesRoute: typeof HomeWishesRoute
+  HomeProfileIdRoute: typeof HomeProfileIdRoute
   HomeWishIdRoute: typeof HomeWishIdRoute
+  HomeProfileIndexRoute: typeof HomeProfileIndexRoute
 }
 
 const HomeRouteChildren: HomeRouteChildren = {
   HomeHomeRoute: HomeHomeRoute,
-  HomeProfileRoute: HomeProfileRoute,
   HomeWishesRoute: HomeWishesRoute,
+  HomeProfileIdRoute: HomeProfileIdRoute,
   HomeWishIdRoute: HomeWishIdRoute,
+  HomeProfileIndexRoute: HomeProfileIndexRoute,
 }
 
 const HomeRouteWithChildren = HomeRoute._addFileChildren(HomeRouteChildren)
