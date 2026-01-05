@@ -1,7 +1,7 @@
 import { CategorySchema } from "@repo/common/schemas";
 import { CategoryRef } from "@/graphql/types/Category.ts";
 import builder from "@/lib/pothos.ts";
-import { CategoryModel } from "@/models/category.ts";
+import { createCategory } from "@/services/Category.service.ts";
 
 builder.mutationField("createCategory", (t) =>
   t.field({
@@ -12,7 +12,7 @@ builder.mutationField("createCategory", (t) =>
     },
     validate: CategorySchema,
     resolve: (_parent, args) => {
-      return CategoryModel.create({
+      return createCategory({
         name: args.name,
         description: args.description,
       });

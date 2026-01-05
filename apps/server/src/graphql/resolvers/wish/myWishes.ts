@@ -1,6 +1,6 @@
 import { WishRef } from "@/graphql/types/Wish.ts";
 import builder from "@/lib/pothos.ts";
-import { WishModel } from "@/models/wish.ts";
+import { getMyWishes } from "@/services/Wish.service.ts";
 
 builder.queryField("myWishes", (t) =>
   t.field({
@@ -10,8 +10,7 @@ builder.queryField("myWishes", (t) =>
     },
     nullable: false,
     resolve: (_parent, _args, context) => {
-      return WishModel.find({
-        ownerId: context.DbUser
-      })
-    }
-  }))
+      return getMyWishes(context.DbUser._id);
+    },
+  })
+);

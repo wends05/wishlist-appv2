@@ -7,12 +7,14 @@ import {
   type Ref,
   Severity,
 } from "@typegoose/typegoose";
+import type { Types } from "mongoose";
 import { User } from "./user.ts";
 import { Wish } from "./wish.ts";
 
 @modelOptions({
   schemaOptions: {
     timestamps: true,
+    _id: false,
   },
   options: {
     allowMixed: Severity.ALLOW,
@@ -32,7 +34,11 @@ export class Message implements Omit<IMessage, "senderId"> {
   public updatedAt!: Date;
 }
 
-export class Chat implements Omit<IChat, "grantorId" | "wisherId" | "wishId"> {
+export class Chat
+  implements Omit<IChat, "_id" | "grantorId" | "wisherId" | "wishId">
+{
+  public _id!: Types.ObjectId;
+
   @prop({ ref: () => User })
   public grantorId!: Ref<User>;
 

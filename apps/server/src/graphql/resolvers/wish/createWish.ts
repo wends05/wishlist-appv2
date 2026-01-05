@@ -1,7 +1,7 @@
 import { WishSchema } from "@repo/common/schemas";
 import { WishRef } from "@/graphql/types/Wish.ts";
 import builder from "@/lib/pothos.ts";
-import { WishModel } from "@/models/wish.ts";
+import { createWish } from "@/services/Wish.service.ts";
 
 builder.mutationField("createWish", (t) =>
   t.field({
@@ -14,7 +14,7 @@ builder.mutationField("createWish", (t) =>
     },
     validate: WishSchema,
     resolve: (_parent, args) => {
-      return WishModel.create({
+      return createWish({
         name: args.name,
         description: args.description,
         ownerId: args.ownerId,

@@ -1,6 +1,6 @@
 import { UserRef } from "@/graphql/types/User.ts";
 import builder from "@/lib/pothos.ts";
-import { UserModel } from "@/models/user.ts";
+import { getUserById } from "@/services/User.service.ts";
 
 builder.queryField("me", (t) =>
   t.field({
@@ -10,8 +10,7 @@ builder.queryField("me", (t) =>
       isAuthenticated: true,
     },
     resolve: (_parent, _args, context) => {
-      const dbUser = UserModel.findById(context.DbUser._id).exec();
-      return dbUser;
+      return getUserById(context.DbUser._id);
     },
   })
 );

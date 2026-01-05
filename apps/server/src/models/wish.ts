@@ -5,6 +5,7 @@ import {
   prop,
   type Ref,
 } from "@typegoose/typegoose";
+import type { Types } from "mongoose";
 import { Category } from "./category.ts";
 import { User } from "./user.ts";
 
@@ -13,7 +14,9 @@ import { User } from "./user.ts";
     timestamps: true,
   },
 })
-export class Wish implements Omit<IWish, "ownerId" | "categoryId"> {
+export class Wish implements Omit<IWish, "_id" | "ownerId" | "categoryId"> {
+  public _id!: Types.ObjectId;
+
   @prop({ type: () => String })
   public name!: string;
 

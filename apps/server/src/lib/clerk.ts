@@ -1,7 +1,7 @@
-import { fetchOrCreateUserByClerkId } from "@/services/User.service.ts";
 import { createClerkClient } from "@clerk/backend";
 import { parse } from "cookie";
 import { createRemoteJWKSet, jwtVerify } from "jose";
+import { fetchOrCreateUserByClerkId } from "@/services/User.service.ts";
 
 export const clerkClient = () => {
   const secretKey = process.env.CLERK_SECRET_KEY;
