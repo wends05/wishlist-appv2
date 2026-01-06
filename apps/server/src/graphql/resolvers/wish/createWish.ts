@@ -1,11 +1,11 @@
 import { WishSchema } from "@repo/common/schemas";
-import { WishRef } from "@/graphql/types/Wish.ts";
+import { BaseWishRef } from "@/graphql/types/Wish.ts";
 import builder from "@/lib/pothos.ts";
 import { createWish } from "@/services/Wish.service.ts";
 
 builder.mutationField("createWish", (t) =>
   t.field({
-    type: WishRef,
+    type: BaseWishRef,
     args: {
       name: t.arg.string({ required: true }),
       description: t.arg.string({ required: true }),

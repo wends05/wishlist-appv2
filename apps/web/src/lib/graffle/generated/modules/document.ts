@@ -166,7 +166,7 @@ export interface QueryBuilder {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish}[]! |
+   * | **Type** | {@link $Schema.OpenWish}[]! |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Query} |
    * | **Path** | `Query.home` |
@@ -257,8 +257,8 @@ export interface QueryBuilder {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish}[]! |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $Schema.BaseWish}[]! |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $Schema.Query} |
    * | **Path** | `Query.myWishes` |
    * | **Nullability** | Required |
@@ -267,10 +267,10 @@ export interface QueryBuilder {
    * @example
    * ```ts
    * const doc = query.myWishes({
-   * _id: true,
-   * category: true,
-   * categoryId: true,
-   * // ...
+   * id: true,
+   * ___on_SomeImplementation: {
+   * // ... fields for this implementation
+   * }
    * })
    * ```
    */
@@ -347,8 +347,8 @@ export interface QueryBuilder {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $Schema.BaseWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $Schema.Query} |
    * | **Path** | `Query.wish` |
    * | **Nullability** | Optional |
@@ -357,11 +357,10 @@ export interface QueryBuilder {
    * @example
    * ```ts
    * const doc = query.wish({
-   * // $: { ...variables }
-   * _id: true,
-   * category: true,
-   * categoryId: true,
-   * // ...
+   * id: true,
+   * ___on_SomeImplementation: {
+   * // ... fields for this implementation
+   * }
    * })
    * ```
    */
@@ -528,8 +527,8 @@ export interface MutationBuilder {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $Schema.BaseWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $Schema.Mutation} |
    * | **Path** | `Mutation.createWish` |
    * | **Nullability** | Optional |
@@ -538,11 +537,10 @@ export interface MutationBuilder {
    * @example
    * ```ts
    * const doc = mutation.createWish({
-   * // $: { ...variables }
-   * _id: true,
-   * category: true,
-   * categoryId: true,
-   * // ...
+   * id: true,
+   * ___on_SomeImplementation: {
+   * // ... fields for this implementation
+   * }
    * })
    * ```
    */

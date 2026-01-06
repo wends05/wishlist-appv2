@@ -179,7 +179,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish}[]! |
+   * | **Type** | {@link $Schema.OpenWish}[]! |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Query} |
    * | **Path** | `Query.home` |
@@ -283,8 +283,8 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish}[]! |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $Schema.BaseWish}[]! |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $Schema.Query} |
    * | **Path** | `Query.myWishes` |
    * | **Nullability** | Required |
@@ -387,8 +387,8 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $Schema.BaseWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $Schema.Query} |
    * | **Path** | `Query.wish` |
    * | **Nullability** | Optional |
@@ -561,8 +561,8 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.Wish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $Schema.BaseWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $Schema.Mutation} |
    * | **Path** | `Mutation.createWish` |
    * | **Nullability** | Optional |

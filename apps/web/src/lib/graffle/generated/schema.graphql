@@ -1,3 +1,15 @@
+"""A wish item that will be on a user's wishlist"""
+interface BaseWish {
+  _id: ID
+  category: Category
+  categoryId: ID
+  description: String
+  name: String
+  owner: User
+  ownerId: ID
+  status: String
+}
+
 """A category for organizing wishes"""
 type Category {
   _id: ID
@@ -12,7 +24,7 @@ type Chat {
   grantorId: ID
   messages: [Message!]
   status: ChatStatus
-  wish: Wish
+  wish: BaseWish
   wishId: ID
   wisher: User
   wisherId: ID
@@ -28,6 +40,44 @@ enum ChatStatus {
 A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
 """
 scalar Date
+
+"""A wish that is currently being delivered"""
+type DeliveringWish implements BaseWish {
+  _id: ID
+  category: Category
+  categoryId: ID
+  deliveryDetails: DeliveryDetails
+  description: String
+  grantor: User
+  grantorId: ID
+  name: String
+  owner: User
+  ownerId: ID
+  status: String
+}
+
+"""Details about the delivery of a wish item"""
+type DeliveryDetails {
+  carrier: String
+  estimatedDeliveryDate: Date
+  trackingNumber: String
+}
+
+"""A wish that has been fulfilled"""
+type FulfilledWish implements BaseWish {
+  _id: ID
+  category: Category
+  categoryId: ID
+  deliveryDetails: DeliveryDetails
+  description: String
+  fulfilledAt: Date
+  grantor: User
+  grantorId: ID
+  name: String
+  owner: User
+  ownerId: ID
+  status: String
+}
 
 """
 The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
@@ -45,17 +95,44 @@ type Message {
 
 type Mutation {
   createCategory(description: String!, name: String!): Category
-  createWish(categoryId: String!, description: String!, name: String!, ownerId: String!): Wish
+  createWish(categoryId: String!, description: String!, name: String!, ownerId: String!): BaseWish
+}
+
+"""An open wish that is available for requests"""
+type OpenWish implements BaseWish {
+  _id: ID
+  category: Category
+  categoryId: ID
+  description: String
+  name: String
+  owner: User
+  ownerId: ID
+  status: String
+}
+
+"""A pending wish that has an accepted grantor"""
+type PendingWish implements BaseWish {
+  _id: ID
+  category: Category
+  categoryId: ID
+  description: String
+  fulfilledAt: Date
+  grantor: User
+  grantorId: ID
+  name: String
+  owner: User
+  ownerId: ID
+  status: String
 }
 
 type Query {
   authenticated: String
   categories: [Category!]
-  home(categoryId: String, limit: Int, search: String, skip: Int): [Wish!]!
+  home(categoryId: String, limit: Int, search: String, skip: Int): [OpenWish!]!
   me: User
-  myWishes: [Wish!]!
+  myWishes: [BaseWish!]!
   users: [User!]
-  wish(wishId: String!): Wish
+  wish(wishId: String!): BaseWish
 }
 
 """A user of the wishlist application"""
@@ -64,15 +141,4 @@ type User {
   clerkId: String
   email: String
   name: String
-}
-
-"""A wish item that will be on a user's wishlist"""
-type Wish {
-  _id: ID
-  category: Category
-  categoryId: ID
-  description: String
-  name: String
-  owner: User
-  ownerId: ID
 }

@@ -9,7 +9,7 @@ import {
 } from "@typegoose/typegoose";
 import type { Types } from "mongoose";
 import { User } from "./user.ts";
-import { Wish } from "./wish.ts";
+import { BaseWish } from "./wish.ts";
 
 @modelOptions({
   schemaOptions: {
@@ -45,8 +45,8 @@ export class Chat
   @prop({ ref: () => User })
   public wisherId!: Ref<User>;
 
-  @prop({ ref: () => Wish })
-  public wishId!: Ref<Wish>;
+  @prop({ ref: () => BaseWish })
+  public wishId!: Ref<BaseWish>;
 
   @prop({ enum: ChatStatus.options })
   public status!: IChat["status"];

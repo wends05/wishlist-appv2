@@ -1,5 +1,6 @@
 import { createServerOnlyFn } from "@tanstack/react-start";
 import { getRequestHeaders } from "@tanstack/react-start/server";
+import { DocumentBuilder } from "graffle";
 import { Graffle } from "./generated/_";
 
 async function createClientHandler(headers: Record<string, string>) {
@@ -9,17 +10,19 @@ async function createClientHandler(headers: Record<string, string>) {
     throw new Error("GRAFFLE_URL not defined.");
   }
 
-  const graffle = Graffle.create().transport({
-    url: url,
-    headers
-  });
+  const graffle = Graffle.create()
+    .transport({
+      url: url,
+      headers,
+    })
+    .use(DocumentBuilder());
 
   return graffle;
 }
 
 const createClient = createServerOnlyFn(async () => {
   const headers = getRequestHeaders();
-  
+
   const client = await createClientHandler(headers);
 
   return client;

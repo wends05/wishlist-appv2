@@ -68,7 +68,7 @@ export interface categories {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.Wish}[]! |
+ * | **Type** | {@link $Schema.OpenWish}[]! |
  * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
  * | **Parent** | {@link $Schema.Query} |
  * | **Path** | `Query.home` |
@@ -106,7 +106,7 @@ export interface home {
     };
   };
   inlineType: [1, [1]];
-  namedType: $Schema.Wish;
+  namedType: $Schema.OpenWish;
 }
 
 /**
@@ -137,8 +137,8 @@ export interface me {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.Wish}[]! |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+ * | **Type** | {@link $Schema.BaseWish}[]! |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
  * | **Parent** | {@link $Schema.Query} |
  * | **Path** | `Query.myWishes` |
  * | **Nullability** | Required |
@@ -149,7 +149,7 @@ export interface myWishes {
   name: "myWishes";
   arguments: {};
   inlineType: [1, [1]];
-  namedType: $Schema.Wish;
+  namedType: $Schema.BaseWish;
 }
 
 /**
@@ -181,8 +181,8 @@ export interface users {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.Wish} |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+ * | **Type** | {@link $Schema.BaseWish} |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
  * | **Parent** | {@link $Schema.Query} |
  * | **Path** | `Query.wish` |
  * | **Nullability** | Optional |
@@ -200,5 +200,5 @@ export interface wish {
     };
   };
   inlineType: [0];
-  namedType: $Schema.Wish;
+  namedType: $Schema.BaseWish;
 }

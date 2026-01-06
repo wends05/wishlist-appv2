@@ -74,7 +74,7 @@ export namespace createWish {
   >
     extends
       GraphqlKit.Document.Object.Select.Bases.Base,
-      $Named.Wish<_$Context> {
+      $Named.BaseWish<_$Context> {
     /**
      * Arguments for `createWish` field. All arguments are required so you must include this.
      */

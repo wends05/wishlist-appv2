@@ -30,9 +30,14 @@ export interface $MethodsSelect {
   Mutation: Mutation;
   Category: Category;
   Chat: Chat;
+  DeliveringWish: DeliveringWish;
+  DeliveryDetails: DeliveryDetails;
+  FulfilledWish: FulfilledWish;
   Message: Message;
+  OpenWish: OpenWish;
+  PendingWish: PendingWish;
   User: User;
-  Wish: Wish;
+  BaseWish: BaseWish;
 }
 
 //
@@ -108,6 +113,48 @@ export interface Chat {
 }
 
 /**
+ * A wish that is currently being delivered
+ *
+ * Build type-safe selection set for DeliveringWish.
+ */
+export interface DeliveringWish {
+  <$SelectionSet>(
+    selectionSet: $$Utilities.NoExcess<
+      $SelectionSet,
+      $$SelectionSets.DeliveringWish
+    >,
+  ): $SelectionSet;
+}
+
+/**
+ * Details about the delivery of a wish item
+ *
+ * Build type-safe selection set for DeliveryDetails.
+ */
+export interface DeliveryDetails {
+  <$SelectionSet>(
+    selectionSet: $$Utilities.NoExcess<
+      $SelectionSet,
+      $$SelectionSets.DeliveryDetails
+    >,
+  ): $SelectionSet;
+}
+
+/**
+ * A wish that has been fulfilled
+ *
+ * Build type-safe selection set for FulfilledWish.
+ */
+export interface FulfilledWish {
+  <$SelectionSet>(
+    selectionSet: $$Utilities.NoExcess<
+      $SelectionSet,
+      $$SelectionSets.FulfilledWish
+    >,
+  ): $SelectionSet;
+}
+
+/**
  * A message sent in a chat between a wisher and a grantor
  *
  * Build type-safe selection set for Message.
@@ -119,6 +166,31 @@ export interface Message {
 }
 
 /**
+ * An open wish that is available for requests
+ *
+ * Build type-safe selection set for OpenWish.
+ */
+export interface OpenWish {
+  <$SelectionSet>(
+    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.OpenWish>,
+  ): $SelectionSet;
+}
+
+/**
+ * A pending wish that has an accepted grantor
+ *
+ * Build type-safe selection set for PendingWish.
+ */
+export interface PendingWish {
+  <$SelectionSet>(
+    selectionSet: $$Utilities.NoExcess<
+      $SelectionSet,
+      $$SelectionSets.PendingWish
+    >,
+  ): $SelectionSet;
+}
+
+/**
  * A user of the wishlist application
  *
  * Build type-safe selection set for User.
@@ -126,17 +198,6 @@ export interface Message {
 export interface User {
   <$SelectionSet>(
     selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.User>,
-  ): $SelectionSet;
-}
-
-/**
- * A wish item that will be on a user's wishlist
- *
- * Build type-safe selection set for Wish.
- */
-export interface Wish {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Wish>,
   ): $SelectionSet;
 }
 
@@ -171,3 +232,14 @@ export interface Wish {
 //
 //
 //
+
+/**
+ * A wish item that will be on a user's wishlist
+ *
+ * Build type-safe selection set for BaseWish.
+ */
+export interface BaseWish {
+  <$SelectionSet>(
+    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.BaseWish>,
+  ): $SelectionSet;
+}

@@ -122,6 +122,42 @@ export namespace Select {
       $$Schema.Schema["allTypes"]["Chat"]
     >;
   /**
+   * A wish that is currently being delivered
+   *
+   * Infer result type for DeliveringWish selection sets.
+   */
+  export type DeliveringWish<
+    $SelectionSet extends $$SelectionSets.DeliveringWish,
+  > = GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+    $SelectionSet,
+    $$Schema.Schema,
+    $$Schema.Schema["allTypes"]["DeliveringWish"]
+  >;
+  /**
+   * Details about the delivery of a wish item
+   *
+   * Infer result type for DeliveryDetails selection sets.
+   */
+  export type DeliveryDetails<
+    $SelectionSet extends $$SelectionSets.DeliveryDetails,
+  > = GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+    $SelectionSet,
+    $$Schema.Schema,
+    $$Schema.Schema["allTypes"]["DeliveryDetails"]
+  >;
+  /**
+   * A wish that has been fulfilled
+   *
+   * Infer result type for FulfilledWish selection sets.
+   */
+  export type FulfilledWish<
+    $SelectionSet extends $$SelectionSets.FulfilledWish,
+  > = GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+    $SelectionSet,
+    $$Schema.Schema,
+    $$Schema.Schema["allTypes"]["FulfilledWish"]
+  >;
+  /**
    * A message sent in a chat between a wisher and a grantor
    *
    * Infer result type for Message selection sets.
@@ -131,6 +167,28 @@ export namespace Select {
       $SelectionSet,
       $$Schema.Schema,
       $$Schema.Schema["allTypes"]["Message"]
+    >;
+  /**
+   * An open wish that is available for requests
+   *
+   * Infer result type for OpenWish selection sets.
+   */
+  export type OpenWish<$SelectionSet extends $$SelectionSets.OpenWish> =
+    GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+      $SelectionSet,
+      $$Schema.Schema,
+      $$Schema.Schema["allTypes"]["OpenWish"]
+    >;
+  /**
+   * A pending wish that has an accepted grantor
+   *
+   * Infer result type for PendingWish selection sets.
+   */
+  export type PendingWish<$SelectionSet extends $$SelectionSets.PendingWish> =
+    GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+      $SelectionSet,
+      $$Schema.Schema,
+      $$Schema.Schema["allTypes"]["PendingWish"]
     >;
   /**
    * A user of the wishlist application
@@ -143,17 +201,6 @@ export namespace Select {
       $$Schema.Schema,
       $$Schema.Schema["allTypes"]["User"]
     >;
-  /**
-   * A wish item that will be on a user's wishlist
-   *
-   * Infer result type for Wish selection sets.
-   */
-  export type Wish<$SelectionSet extends $$SelectionSets.Wish> =
-    GraphqlKit.Document.Object.InferResult.OutputObjectLike<
-      $SelectionSet,
-      $$Schema.Schema,
-      $$Schema.Schema["allTypes"]["Wish"]
-    >;
 
   //                                               Union
   // --------------------------------------------------------------------------------------------------
@@ -162,4 +209,16 @@ export namespace Select {
   //                                             Interface
   // --------------------------------------------------------------------------------------------------
   //
+
+  /**
+   * A wish item that will be on a user's wishlist
+   *
+   * Infer result type for BaseWish selection sets.
+   */
+  export type BaseWish<$SelectionSet extends $$SelectionSets.BaseWish> =
+    GraphqlKit.Document.Object.InferResult.Interface<
+      $SelectionSet,
+      $$Schema.Schema,
+      $$Schema.Schema["allTypes"]["BaseWish"]
+    >;
 }

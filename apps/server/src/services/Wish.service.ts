@@ -1,6 +1,6 @@
 import type { CreateWishDTO } from "@repo/common/dto";
 import type { PipelineStage, QueryFilter, Types } from "mongoose";
-import { type Wish, WishModel } from "@/models/wish.ts";
+import { type OpenWish, OpenWishModel, WishModel } from "@/models/wish.ts";
 
 interface GetHomeWishesInput {
   search?: string | null;
@@ -33,13 +33,13 @@ export const getHomeWishes = async (input: GetHomeWishesInput) => {
   const skip = input.skip ?? 0;
 
   // Build base filter - used in both search and non-search paths
-  const baseFilter: QueryFilter<Wish> = {
+  const baseFilter: QueryFilter<OpenWish> = {
     ...(categoryId && categoryId !== "all" && { "categoryId._id": categoryId }),
   };
 
   // No search - use simple query (more performant)
   if (!search) {
-    return WishModel.find(baseFilter)
+    return OpenWishModel.find(baseFilter)
       .where("ownerId")
       .ne(currentUserId)
       .sort({ createdAt: -1 })

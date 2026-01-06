@@ -161,7 +161,7 @@ export namespace wish {
   >
     extends
       GraphqlKit.Document.Object.Select.Bases.Base,
-      $Named.Wish<_$Context> {}
+      $Named.BaseWish<_$Context> {}
 
   /**
    * This is the "expanded" version of the `wish` type. It is identical except for the fact

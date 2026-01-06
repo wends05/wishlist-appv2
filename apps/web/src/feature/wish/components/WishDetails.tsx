@@ -1,4 +1,4 @@
-import { ArrowLeftIcon } from "@phosphor-icons/react";
+import { ArrowLeftIcon, UserIcon } from "@phosphor-icons/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { getRouteApi, Link, useRouter } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
@@ -48,20 +48,17 @@ export default function WishDetails() {
           </CardTitle>
           <CardDescription>{wish.category.name}</CardDescription>
           <CardDescription>
-            {isOwner ? (
-              "You are the owner of this wish."
-            ) : (
-              <>
-                Owned by:{" "}
-                <Link
-                  params={{
-                    id: wish.owner._id,
-                  }}
-                  to={`/profile/$id`}
-                >
-                  {wish.owner.name}
-                </Link>
-              </>
+            {!isOwner && (
+              <Link
+                className="flex items-center gap-2"
+                params={{
+                  id: wish.owner._id,
+                }}
+                to={`/profile/$id`}
+              >
+                <UserIcon />
+                {wish.owner.name}
+              </Link>
             )}
           </CardDescription>
           <CardAction>

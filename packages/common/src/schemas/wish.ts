@@ -1,54 +1,121 @@
 import z from "zod";
-import { documentType, withID } from "../functions";
+import { WishStatus } from "../enums/WishStatus";
+import { documentType, withID, withNonEmptyID } from "../functions";
 import { CategorySchema } from "./category";
 import { UserSchema } from "./user";
 
-export const WishSchema = withID({
+const BaseWishFields = {
   name: z.string().min(1).max(200),
   description: z.string().min(10).max(1000),
   ownerId: z.string(),
   categoryId: z.string(),
+};
+
+export const BaseWishSchema = withID(BaseWishFields);
+
+export interface IBaseWish extends z.infer<typeof BaseWishSchema> {}
+
+export const OpenWishSchema = BaseWishSchema.extend({
+  status: WishStatus.enum.open,
 });
 
-export interface IWish extends z.infer<typeof WishSchema> {}
+export interface IOpenWish extends z.infer<typeof OpenWishSchema> {}
 
+export const PendingWishSchema = BaseWishSchema.extend({
+  status: WishStatus.enum.pending,
+  fulfilledAt: z.date(),
+  grantorId: z.string(),
+});
 
-export const WishDocumentSchema = documentType(WishSchema.shape);
+export interface IPendingWish extends z.infer<typeof PendingWishSchema> {}
 
-export interface IWishDocumentSchema extends z.infer<typeof WishDocumentSchema>{}
+export const DeliveringWishDetailsSchema = z.object({
+  trackingNumber: z.string().min(1).max(100),
+  carrier: z.string().min(1).max(100),
+  estimatedDeliveryDate: z.date(),
+});
+
+export interface IDeliveringWishDetails
+  extends z.infer<typeof DeliveringWishDetailsSchema> {}
+
+export const DeliveringWishSchema = BaseWishSchema.extend({
+  status: WishStatus.enum.delivering,
+  grantorId: z.string(),
+  deliveryDetails: DeliveringWishDetailsSchema,
+});
+
+export interface IDeliveringWish extends z.infer<typeof DeliveringWishSchema> {}
+
+export const FulfilledWishSchema = BaseWishSchema.extend({
+  status: WishStatus.enum.fulfilled,
+  fulfilledAt: z.date(),
+  grantorId: z.string(),
+  deliveryDetails: DeliveringWishDetailsSchema,
+});
+
+export interface IFulfilledWish extends z.infer<typeof FulfilledWishSchema> {}
+
+export const WishSchema = z.discriminatedUnion("status", [
+  OpenWishSchema,
+  PendingWishSchema,
+  DeliveringWishSchema,
+  FulfilledWishSchema,
+]);
+
+export const WishDocumentSchema = z.discriminatedUnion("status", [
+  documentType(
+    BaseWishSchema.extend({
+      status: z.literal("open"),
+    }).shape
+  ),
+  documentType(
+    BaseWishSchema.extend({
+      status: z.literal("pending"),
+      fulfilledAt: z.date(),
+      grantorId: z.string(),
+    }).shape
+  ),
+  documentType(
+    BaseWishSchema.extend({
+      status: z.literal("delivering"),
+      grantorId: z.string(),
+      deliveryDetails: z.object({
+        trackingNumber: z.string().min(1).max(100),
+        carrier: z.string().min(1).max(100),
+        estimatedDeliveryDate: z.date(),
+      }),
+    }).shape
+  ),
+  documentType(
+    BaseWishSchema.extend({
+      status: z.literal("fulfilled"),
+      fulfilledAt: z.date(),
+      grantorId: z.string(),
+    }).shape
+  ),
+]);
 
 /**
  * Used for rendering the Wish Item Card in the Wishes
  */
-export const WishItemSchema = WishSchema.pick({
-  name: true,
-}).extend({
-  _id: WishSchema.shape._id.nonoptional(),
-  category: CategorySchema.pick({
+export const WishItemSchema = withNonEmptyID(
+  BaseWishSchema.pick({
     _id: true,
     name: true,
-  }),
-  owner: UserSchema.pick({
-    _id: true,
-    name: true,
-  }),
-});
+  }).extend({
+    category: withNonEmptyID(
+      CategorySchema.pick({
+        _id: true,
+        name: true,
+      }).shape
+    ),
+    owner: withNonEmptyID(
+      UserSchema.pick({
+        _id: true,
+        name: true,
+      }).shape
+    ),
+  }).shape
+);
 
 export interface IWishItem extends z.infer<typeof WishItemSchema> {}
-
-/**
- * Full Details of the Wish for Wish Details Page
- */
-export const WishDetailsSchema = WishSchema.omit({
-  categoryId: true,
-  ownerId: true,
-}).extend({
-  category: CategorySchema,
-  owner: UserSchema.pick({
-    _id: true,
-    name: true,
-    email: true,
-  }),
-});
-
-export interface IWishDetails extends z.infer<typeof WishDetailsSchema> {}

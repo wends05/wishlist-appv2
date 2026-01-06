@@ -1,10 +1,16 @@
 import z from "zod";
-import { WishItemSchema, WishSchema } from "../schemas";
+import { withNonEmptyID } from "../functions";
+import {
+  BaseWishSchema,
+  CategorySchema,
+  UserSchema,
+  WishItemSchema,
+} from "../schemas";
 
 //===
 // Create Wish DTO
 //===
-export const CreateWishDTO = WishSchema.omit({
+export const CreateWishDTO = BaseWishSchema.omit({
   _id: true,
 });
 export type CreateWishDTO = z.infer<typeof CreateWishDTO>;
@@ -25,3 +31,28 @@ export const HomeWishesResponseSchema = z.object({
   nextCursor: z.string().optional().nullable(),
 });
 export type HomeWishesResponse = z.infer<typeof HomeWishesResponseSchema>;
+
+//===
+// Get Wish Details Response DTO
+//===
+export const WishDetailsSchema = withNonEmptyID(
+  BaseWishSchema.pick({
+    _id: true,
+    name: true,
+    description: true,
+  }).extend({
+    category: withNonEmptyID(
+      CategorySchema.pick({
+        _id: true,
+        name: true,
+      }).shape
+    ),
+    owner: withNonEmptyID(
+      UserSchema.pick({
+        _id: true,
+        name: true,
+      }).shape
+    ),
+  }).shape
+);
+export type WishDetails = z.infer<typeof WishDetailsSchema>;

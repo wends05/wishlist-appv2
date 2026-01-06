@@ -8,9 +8,14 @@ export type * from "./roots/Query/_.js";
 export type * from "./roots/Mutation/_.js";
 export type * from "./objects/Category/_.js";
 export type * from "./objects/Chat/_.js";
+export type * from "./objects/DeliveringWish/_.js";
+export type * from "./objects/DeliveryDetails/_.js";
+export type * from "./objects/FulfilledWish/_.js";
 export type * from "./objects/Message/_.js";
+export type * from "./objects/OpenWish/_.js";
+export type * from "./objects/PendingWish/_.js";
 export type * from "./objects/User/_.js";
-export type * from "./objects/Wish/_.js";
+export type * from "./interfaces/BaseWish/_.js";
 export type * from "./enums/ChatStatus.js";
 
 import type * as $$Utilities from "graffle/utilities-for-generated";

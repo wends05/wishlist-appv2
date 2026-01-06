@@ -25,19 +25,30 @@ export interface Schema<
     ChatStatus: $Types.ChatStatus;
     Category: $Types.Category;
     Chat: $Types.Chat;
+    DeliveringWish: $Types.DeliveringWish;
+    DeliveryDetails: $Types.DeliveryDetails;
+    FulfilledWish: $Types.FulfilledWish;
     Message: $Types.Message;
+    OpenWish: $Types.OpenWish;
+    PendingWish: $Types.PendingWish;
     User: $Types.User;
-    Wish: $Types.Wish;
+    BaseWish: $Types.BaseWish;
   };
   objects: {
     Category: $Types.Category;
     Chat: $Types.Chat;
+    DeliveringWish: $Types.DeliveringWish;
+    DeliveryDetails: $Types.DeliveryDetails;
+    FulfilledWish: $Types.FulfilledWish;
     Message: $Types.Message;
+    OpenWish: $Types.OpenWish;
+    PendingWish: $Types.PendingWish;
     User: $Types.User;
-    Wish: $Types.Wish;
   };
   unions: {};
-  interfaces: {};
+  interfaces: {
+    BaseWish: $Types.BaseWish;
+  };
   scalarNamesUnion:
     | "Date"
     | "JSON"

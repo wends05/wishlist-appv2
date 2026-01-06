@@ -54,7 +54,7 @@ export interface Query<
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $NamedTypes.$Wish}[]! |
+   * | **Type** | {@link $NamedTypes.$OpenWish}[]! |
    * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $NamedTypes.$Query} |
    * | **Path** | `Query.home` |
@@ -88,8 +88,8 @@ export interface Query<
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $NamedTypes.$Wish}[]! |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $NamedTypes.$BaseWish}[]! |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $NamedTypes.$Query} |
    * | **Path** | `Query.myWishes` |
    * | **Nullability** | Required |
@@ -122,8 +122,8 @@ export interface Query<
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $NamedTypes.$Wish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $NamedTypes.$BaseWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $NamedTypes.$Query} |
    * | **Path** | `Query.wish` |
    * | **Nullability** | Optional |

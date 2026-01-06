@@ -36,8 +36,8 @@ export interface Mutation<
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $NamedTypes.$Wish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Type** | {@link $NamedTypes.$BaseWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
    * | **Parent** | {@link $NamedTypes.$Mutation} |
    * | **Path** | `Mutation.createWish` |
    * | **Nullability** | Optional |

@@ -60,8 +60,8 @@ export interface createCategory {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.Wish} |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+ * | **Type** | {@link $Schema.BaseWish} |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
  * | **Parent** | {@link $Schema.Mutation} |
  * | **Path** | `Mutation.createWish` |
  * | **Nullability** | Optional |
@@ -97,5 +97,5 @@ export interface createWish {
     };
   };
   inlineType: [0];
-  namedType: $Schema.Wish;
+  namedType: $Schema.BaseWish;
 }

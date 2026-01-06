@@ -131,8 +131,8 @@ export interface status {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.Wish} |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+ * | **Type** | {@link $Schema.BaseWish} |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
  * | **Parent** | {@link $Schema.Chat} |
  * | **Path** | `Chat.wish` |
  * | **Nullability** | Optional |
@@ -142,7 +142,7 @@ export interface wish {
   name: "wish";
   arguments: {};
   inlineType: [0];
-  namedType: $Schema.Wish;
+  namedType: $Schema.BaseWish;
 }
 
 /**

@@ -6,7 +6,7 @@ import type { Chat } from "@/models/chat.ts";
 import { UserModel } from "@/models/user.ts";
 import { WishModel } from "@/models/wish.ts";
 import { UserRef } from "./User.ts";
-import { WishRef } from "./Wish.ts";
+import { BaseWishRef } from "./Wish.ts";
 
 export const MessageRef = builder.objectRef<IMessage>("Message");
 
@@ -83,7 +83,7 @@ ChatRef.implement({
       },
     }),
     wish: t.field({
-      type: WishRef,
+      type: BaseWishRef,
       resolve: (parent) => {
         return WishModel.findById(parent.wishId).exec();
       },
@@ -92,7 +92,7 @@ ChatRef.implement({
     status: t.expose("status", { type: ChatStatusRef }),
     messages: t.field({
       type: [MessageRef],
-      resolve: (parent) => parent.messages ??[],
+      resolve: (parent) => parent.messages ?? [],
     }),
   }),
 });

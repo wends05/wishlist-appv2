@@ -1,11 +1,11 @@
 import { HomeWishesInputSchema } from "@repo/common/dto";
-import { WishRef } from "@/graphql/types/Wish.ts";
+import { BaseWishRef, OpenWishRef } from "@/graphql/types/Wish.ts";
 import builder from "@/lib/pothos.ts";
 import { getHomeWishes, getWishById } from "@/services/Wish.service.ts";
 
 builder.queryField("wish", (t) =>
   t.field({
-    type: WishRef,
+    type: BaseWishRef,
     args: {
       wishId: t.arg.string({ required: true }),
     },
@@ -21,7 +21,7 @@ builder.queryField("wish", (t) =>
 
 builder.queryField("home", (t) =>
   t.field({
-    type: [WishRef],
+    type: [OpenWishRef],
     nullable: false,
     args: {
       search: t.arg.string(),

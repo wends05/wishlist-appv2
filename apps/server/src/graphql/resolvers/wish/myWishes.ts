@@ -1,10 +1,10 @@
-import { WishRef } from "@/graphql/types/Wish.ts";
+import { BaseWishRef } from "@/graphql/types/Wish.ts";
 import builder from "@/lib/pothos.ts";
 import { getMyWishes } from "@/services/Wish.service.ts";
 
 builder.queryField("myWishes", (t) =>
   t.field({
-    type: [WishRef],
+    type: [BaseWishRef],
     authScopes: {
       isAuthenticated: true,
     },

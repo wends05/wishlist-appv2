@@ -24,6 +24,15 @@ export function withTimestamps<T extends z.ZodRawShape>(schema: T) {
  */
 export function documentType<T extends z.ZodRawShape>(schema: T) {
   return z.object(schema).extend({
-    _id: z.string()
+    _id: z.string(),
+  });
+}
+
+/**
+ * Make a Zod Schema with a non-empty id
+ */
+export function withNonEmptyID<T extends z.ZodRawShape>(schema: T) {
+  return z.object(schema).extend({
+    _id: z.string().min(1),
   });
 }

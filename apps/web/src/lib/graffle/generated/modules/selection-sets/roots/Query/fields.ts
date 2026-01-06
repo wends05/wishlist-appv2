@@ -73,7 +73,7 @@ export namespace home {
   >
     extends
       GraphqlKit.Document.Object.Select.Bases.Base,
-      $Named.Wish<_$Context> {
+      $Named.OpenWish<_$Context> {
     /**
      * Arguments for `home` field. No arguments are required so you may omit this.
      */
@@ -178,7 +178,7 @@ export namespace myWishes {
   >
     extends
       GraphqlKit.Document.Object.Select.Bases.Base,
-      $Named.Wish<_$Context> {}
+      $Named.BaseWish<_$Context> {}
 
   /**
    * This is the "expanded" version of the `myWishes` type. It is identical except for the fact
@@ -228,7 +228,7 @@ export namespace wish {
   >
     extends
       GraphqlKit.Document.Object.Select.Bases.Base,
-      $Named.Wish<_$Context> {
+      $Named.BaseWish<_$Context> {
     /**
      * Arguments for `wish` field. All arguments are required so you must include this.
      */

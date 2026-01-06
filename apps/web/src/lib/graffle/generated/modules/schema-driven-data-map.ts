@@ -61,7 +61,7 @@ interface Chat extends $$Utilities.SchemaDrivenDataMap.OutputObject {
     };
     readonly wish: {
       readonly _tag: "outputField";
-      readonly namedType: Wish;
+      readonly namedType: BaseWish;
     };
     readonly wishId: {
       readonly _tag: "outputField";
@@ -71,6 +71,112 @@ interface Chat extends $$Utilities.SchemaDrivenDataMap.OutputObject {
       readonly namedType: User;
     };
     readonly wisherId: {
+      readonly _tag: "outputField";
+    };
+  };
+}
+
+interface DeliveringWish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+  readonly _tag: "outputObject";
+  readonly fields: {
+    readonly _id: {
+      readonly _tag: "outputField";
+    };
+    readonly category: {
+      readonly _tag: "outputField";
+      readonly namedType: Category;
+    };
+    readonly categoryId: {
+      readonly _tag: "outputField";
+    };
+    readonly deliveryDetails: {
+      readonly _tag: "outputField";
+      readonly namedType: DeliveryDetails;
+    };
+    readonly description: {
+      readonly _tag: "outputField";
+    };
+    readonly grantor: {
+      readonly _tag: "outputField";
+      readonly namedType: User;
+    };
+    readonly grantorId: {
+      readonly _tag: "outputField";
+    };
+    readonly name: {
+      readonly _tag: "outputField";
+    };
+    readonly owner: {
+      readonly _tag: "outputField";
+      readonly namedType: User;
+    };
+    readonly ownerId: {
+      readonly _tag: "outputField";
+    };
+    readonly status: {
+      readonly _tag: "outputField";
+    };
+  };
+}
+
+interface DeliveryDetails extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+  readonly _tag: "outputObject";
+  readonly fields: {
+    readonly carrier: {
+      readonly _tag: "outputField";
+    };
+    readonly estimatedDeliveryDate: {
+      readonly _tag: "outputField";
+      readonly namedType: $$Scalar.Date;
+    };
+    readonly trackingNumber: {
+      readonly _tag: "outputField";
+    };
+  };
+}
+
+interface FulfilledWish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+  readonly _tag: "outputObject";
+  readonly fields: {
+    readonly _id: {
+      readonly _tag: "outputField";
+    };
+    readonly category: {
+      readonly _tag: "outputField";
+      readonly namedType: Category;
+    };
+    readonly categoryId: {
+      readonly _tag: "outputField";
+    };
+    readonly deliveryDetails: {
+      readonly _tag: "outputField";
+      readonly namedType: DeliveryDetails;
+    };
+    readonly description: {
+      readonly _tag: "outputField";
+    };
+    readonly fulfilledAt: {
+      readonly _tag: "outputField";
+      readonly namedType: $$Scalar.Date;
+    };
+    readonly grantor: {
+      readonly _tag: "outputField";
+      readonly namedType: User;
+    };
+    readonly grantorId: {
+      readonly _tag: "outputField";
+    };
+    readonly name: {
+      readonly _tag: "outputField";
+    };
+    readonly owner: {
+      readonly _tag: "outputField";
+      readonly namedType: User;
+    };
+    readonly ownerId: {
+      readonly _tag: "outputField";
+    };
+    readonly status: {
       readonly _tag: "outputField";
     };
   };
@@ -100,25 +206,7 @@ interface Message extends $$Utilities.SchemaDrivenDataMap.OutputObject {
   };
 }
 
-interface User extends $$Utilities.SchemaDrivenDataMap.OutputObject {
-  readonly _tag: "outputObject";
-  readonly fields: {
-    readonly _id: {
-      readonly _tag: "outputField";
-    };
-    readonly clerkId: {
-      readonly _tag: "outputField";
-    };
-    readonly email: {
-      readonly _tag: "outputField";
-    };
-    readonly name: {
-      readonly _tag: "outputField";
-    };
-  };
-}
-
-interface Wish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+interface OpenWish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
   readonly _tag: "outputObject";
   readonly fields: {
     readonly _id: {
@@ -144,7 +232,76 @@ interface Wish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
     readonly ownerId: {
       readonly _tag: "outputField";
     };
+    readonly status: {
+      readonly _tag: "outputField";
+    };
   };
+}
+
+interface PendingWish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+  readonly _tag: "outputObject";
+  readonly fields: {
+    readonly _id: {
+      readonly _tag: "outputField";
+    };
+    readonly category: {
+      readonly _tag: "outputField";
+      readonly namedType: Category;
+    };
+    readonly categoryId: {
+      readonly _tag: "outputField";
+    };
+    readonly description: {
+      readonly _tag: "outputField";
+    };
+    readonly fulfilledAt: {
+      readonly _tag: "outputField";
+      readonly namedType: $$Scalar.Date;
+    };
+    readonly grantor: {
+      readonly _tag: "outputField";
+      readonly namedType: User;
+    };
+    readonly grantorId: {
+      readonly _tag: "outputField";
+    };
+    readonly name: {
+      readonly _tag: "outputField";
+    };
+    readonly owner: {
+      readonly _tag: "outputField";
+      readonly namedType: User;
+    };
+    readonly ownerId: {
+      readonly _tag: "outputField";
+    };
+    readonly status: {
+      readonly _tag: "outputField";
+    };
+  };
+}
+
+interface User extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+  readonly _tag: "outputObject";
+  readonly fields: {
+    readonly _id: {
+      readonly _tag: "outputField";
+    };
+    readonly clerkId: {
+      readonly _tag: "outputField";
+    };
+    readonly email: {
+      readonly _tag: "outputField";
+    };
+    readonly name: {
+      readonly _tag: "outputField";
+    };
+  };
+}
+
+interface BaseWish extends $$Utilities.SchemaDrivenDataMap.OutputObject {
+  readonly _tag: "outputObject";
+  readonly fields: $$Utilities.SchemaDrivenDataMap.OutputObject["fields"];
 }
 
 interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
@@ -190,7 +347,7 @@ interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
         search?: $$Scalar.String["codec"]["_typeDecoded"] | null | undefined;
         skip?: $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined;
       };
-      readonly namedType: Wish;
+      readonly namedType: OpenWish;
     };
     readonly me: {
       readonly _tag: "outputField";
@@ -198,7 +355,7 @@ interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
     };
     readonly myWishes: {
       readonly _tag: "outputField";
-      readonly namedType: Wish;
+      readonly namedType: BaseWish;
     };
     readonly users: {
       readonly _tag: "outputField";
@@ -216,7 +373,7 @@ interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
       readonly $argumentsType: {
         wishId: $$Scalar.String["codec"]["_typeDecoded"];
       };
-      readonly namedType: Wish;
+      readonly namedType: BaseWish;
     };
   };
 }
@@ -274,7 +431,7 @@ interface Mutation extends $$Utilities.SchemaDrivenDataMap.OutputObject {
         name: $$Scalar.String["codec"]["_typeDecoded"];
         ownerId: $$Scalar.String["codec"]["_typeDecoded"];
       };
-      readonly namedType: Wish;
+      readonly namedType: BaseWish;
     };
   };
 }
@@ -404,7 +561,7 @@ const Chat: Chat = {
     },
     wish: {
       _tag: "outputField",
-      namedType: null as any as Wish,
+      namedType: null as any as BaseWish,
     },
     wishId: {
       _tag: "outputField",
@@ -414,6 +571,112 @@ const Chat: Chat = {
       namedType: null as any as User,
     },
     wisherId: {
+      _tag: "outputField",
+    },
+  },
+};
+
+const DeliveringWish: DeliveringWish = {
+  _tag: "outputObject",
+  fields: {
+    _id: {
+      _tag: "outputField",
+    },
+    category: {
+      _tag: "outputField",
+      namedType: null as any as Category,
+    },
+    categoryId: {
+      _tag: "outputField",
+    },
+    deliveryDetails: {
+      _tag: "outputField",
+      namedType: null as any as DeliveryDetails,
+    },
+    description: {
+      _tag: "outputField",
+    },
+    grantor: {
+      _tag: "outputField",
+      namedType: null as any as User,
+    },
+    grantorId: {
+      _tag: "outputField",
+    },
+    name: {
+      _tag: "outputField",
+    },
+    owner: {
+      _tag: "outputField",
+      namedType: null as any as User,
+    },
+    ownerId: {
+      _tag: "outputField",
+    },
+    status: {
+      _tag: "outputField",
+    },
+  },
+};
+
+const DeliveryDetails: DeliveryDetails = {
+  _tag: "outputObject",
+  fields: {
+    carrier: {
+      _tag: "outputField",
+    },
+    estimatedDeliveryDate: {
+      _tag: "outputField",
+      namedType: $$Scalar.Date,
+    },
+    trackingNumber: {
+      _tag: "outputField",
+    },
+  },
+};
+
+const FulfilledWish: FulfilledWish = {
+  _tag: "outputObject",
+  fields: {
+    _id: {
+      _tag: "outputField",
+    },
+    category: {
+      _tag: "outputField",
+      namedType: null as any as Category,
+    },
+    categoryId: {
+      _tag: "outputField",
+    },
+    deliveryDetails: {
+      _tag: "outputField",
+      namedType: null as any as DeliveryDetails,
+    },
+    description: {
+      _tag: "outputField",
+    },
+    fulfilledAt: {
+      _tag: "outputField",
+      namedType: $$Scalar.Date,
+    },
+    grantor: {
+      _tag: "outputField",
+      namedType: null as any as User,
+    },
+    grantorId: {
+      _tag: "outputField",
+    },
+    name: {
+      _tag: "outputField",
+    },
+    owner: {
+      _tag: "outputField",
+      namedType: null as any as User,
+    },
+    ownerId: {
+      _tag: "outputField",
+    },
+    status: {
       _tag: "outputField",
     },
   },
@@ -443,25 +706,7 @@ const Message: Message = {
   },
 };
 
-const User: User = {
-  _tag: "outputObject",
-  fields: {
-    _id: {
-      _tag: "outputField",
-    },
-    clerkId: {
-      _tag: "outputField",
-    },
-    email: {
-      _tag: "outputField",
-    },
-    name: {
-      _tag: "outputField",
-    },
-  },
-};
-
-const Wish: Wish = {
+const OpenWish: OpenWish = {
   _tag: "outputObject",
   fields: {
     _id: {
@@ -487,6 +732,70 @@ const Wish: Wish = {
     ownerId: {
       _tag: "outputField",
     },
+    status: {
+      _tag: "outputField",
+    },
+  },
+};
+
+const PendingWish: PendingWish = {
+  _tag: "outputObject",
+  fields: {
+    _id: {
+      _tag: "outputField",
+    },
+    category: {
+      _tag: "outputField",
+      namedType: null as any as Category,
+    },
+    categoryId: {
+      _tag: "outputField",
+    },
+    description: {
+      _tag: "outputField",
+    },
+    fulfilledAt: {
+      _tag: "outputField",
+      namedType: $$Scalar.Date,
+    },
+    grantor: {
+      _tag: "outputField",
+      namedType: null as any as User,
+    },
+    grantorId: {
+      _tag: "outputField",
+    },
+    name: {
+      _tag: "outputField",
+    },
+    owner: {
+      _tag: "outputField",
+      namedType: null as any as User,
+    },
+    ownerId: {
+      _tag: "outputField",
+    },
+    status: {
+      _tag: "outputField",
+    },
+  },
+};
+
+const User: User = {
+  _tag: "outputObject",
+  fields: {
+    _id: {
+      _tag: "outputField",
+    },
+    clerkId: {
+      _tag: "outputField",
+    },
+    email: {
+      _tag: "outputField",
+    },
+    name: {
+      _tag: "outputField",
+    },
   },
 };
 
@@ -506,7 +815,14 @@ const Wish: Wish = {
 //
 //
 
-// None of your Interfaces have custom scalars.
+const BaseWish: BaseWish = {
+  _tag: "outputObject",
+  fields: {
+    ...DeliveringWish.fields,
+    ...FulfilledWish.fields,
+    ...PendingWish.fields,
+  },
+};
 
 //
 //
@@ -594,7 +910,7 @@ const Query: Query = {
           | null
           | undefined,
       },
-      namedType: null as any as Wish,
+      namedType: null as any as OpenWish,
     },
     me: {
       _tag: "outputField",
@@ -602,7 +918,7 @@ const Query: Query = {
     },
     myWishes: {
       _tag: "outputField",
-      namedType: null as any as Wish,
+      namedType: null as any as BaseWish,
     },
     users: {
       _tag: "outputField",
@@ -620,7 +936,7 @@ const Query: Query = {
       $argumentsType: {
         wishId: null as any as $$Scalar.String["codec"]["_typeDecoded"],
       },
-      namedType: null as any as Wish,
+      namedType: null as any as BaseWish,
     },
   },
 };
@@ -678,7 +994,7 @@ const Mutation: Mutation = {
         name: null as any as $$Scalar.String["codec"]["_typeDecoded"],
         ownerId: null as any as $$Scalar.String["codec"]["_typeDecoded"],
       },
-      namedType: null as any as Wish,
+      namedType: null as any as BaseWish,
     },
   },
 };
@@ -707,31 +1023,53 @@ Chat.fields[`grantor`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Chat.fields[`messages`]!.namedType = Message;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Chat.fields[`wish`]!.namedType = Wish;
+Chat.fields[`wish`]!.namedType = BaseWish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Chat.fields[`wisher`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+DeliveringWish.fields[`category`]!.namedType = Category;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+DeliveringWish.fields[`deliveryDetails`]!.namedType = DeliveryDetails;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+DeliveringWish.fields[`grantor`]!.namedType = User;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+DeliveringWish.fields[`owner`]!.namedType = User;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+FulfilledWish.fields[`category`]!.namedType = Category;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+FulfilledWish.fields[`deliveryDetails`]!.namedType = DeliveryDetails;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+FulfilledWish.fields[`grantor`]!.namedType = User;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+FulfilledWish.fields[`owner`]!.namedType = User;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Message.fields[`sender`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Wish.fields[`category`]!.namedType = Category;
+OpenWish.fields[`category`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Wish.fields[`owner`]!.namedType = User;
+OpenWish.fields[`owner`]!.namedType = User;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+PendingWish.fields[`category`]!.namedType = Category;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+PendingWish.fields[`grantor`]!.namedType = User;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+PendingWish.fields[`owner`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`categories`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Query.fields[`home`]!.namedType = Wish;
+Query.fields[`home`]!.namedType = OpenWish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`me`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Query.fields[`myWishes`]!.namedType = Wish;
+Query.fields[`myWishes`]!.namedType = BaseWish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Query.fields[`users`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Query.fields[`wish`]!.namedType = Wish;
+Query.fields[`wish`]!.namedType = BaseWish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Mutation.fields[`createCategory`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Mutation.fields[`createWish`]!.namedType = Wish;
+Mutation.fields[`createWish`]!.namedType = BaseWish;
 
 //
 //
@@ -776,9 +1114,14 @@ interface SchemaDrivenDataMap extends $$Utilities.SchemaDrivenDataMap {
     readonly ChatStatus: ChatStatus;
     readonly Category: Category;
     readonly Chat: Chat;
+    readonly DeliveringWish: DeliveringWish;
+    readonly DeliveryDetails: DeliveryDetails;
+    readonly FulfilledWish: FulfilledWish;
     readonly Message: Message;
+    readonly OpenWish: OpenWish;
+    readonly PendingWish: PendingWish;
     readonly User: User;
-    readonly Wish: Wish;
+    readonly BaseWish: BaseWish;
     readonly Query: Query;
     readonly Mutation: Mutation;
   };
@@ -820,9 +1163,14 @@ const $schemaDrivenDataMap: SchemaDrivenDataMap = {
     ChatStatus,
     Category,
     Chat,
+    DeliveringWish,
+    DeliveryDetails,
+    FulfilledWish,
     Message,
+    OpenWish,
+    PendingWish,
     User,
-    Wish,
+    BaseWish,
     Query,
     Mutation,
   },
