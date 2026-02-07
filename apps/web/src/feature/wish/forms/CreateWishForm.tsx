@@ -7,19 +7,19 @@ import { wishMutationOptions, wishQueryOptions } from "../options";
 
 interface CreateWishProps {
   firstCategoryId: string;
-  ownerId: string;
 }
 
-const useCreateWish = ({ firstCategoryId, ownerId }: CreateWishProps) => {
+const useCreateWish = ({ firstCategoryId }: CreateWishProps) => {
   const createWishMutation = useMutation(wishMutationOptions.createWish());
 
+  const defaultValues = {
+    categoryId: firstCategoryId,
+    description: "",
+    name: "",
+  };
+
   const form = useAppForm({
-    defaultValues: {
-      categoryId: firstCategoryId,
-      description: "",
-      name: "",
-      ownerId: ownerId,
-    },
+    defaultValues,
     validators: {
       onSubmit: CreateWishDTO,
     },
@@ -34,14 +34,10 @@ const useCreateWish = ({ firstCategoryId, ownerId }: CreateWishProps) => {
   return form;
 };
 
-export default function CreateWishForm({
-  firstCategoryId,
-  ownerId,
-}: CreateWishProps) {
+export default function CreateWishForm({ firstCategoryId }: CreateWishProps) {
   const { data: categories } = useSuspenseQuery(wishQueryOptions.getCategories);
   const form = useCreateWish({
     firstCategoryId,
-    ownerId,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -53,9 +49,7 @@ export default function CreateWishForm({
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <form.AppField name="name">
-        {(field) => (
-          <field.TextField description="The name of your wish." label="Name" />
-        )}
+        {(field) => <field.TextField description="The name of your wish." label="Name" />}
       </form.AppField>
       <form.AppField name="description">
         {(field) => (

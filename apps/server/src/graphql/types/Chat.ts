@@ -61,20 +61,6 @@ ChatRef.implement({
       },
     }),
 
-    // Wisher Fields
-    wisherId: t.field({
-      type: "ID",
-      resolve: (parent) => {
-        return parent.wisherId.toString();
-      },
-    }),
-    wisher: t.field({
-      type: UserRef,
-      resolve: (parent) => {
-        return UserModel.findById(parent.wisherId).exec();
-      },
-    }),
-
     // Wish Fields
     wishId: t.field({
       type: "ID",

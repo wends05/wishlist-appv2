@@ -111,8 +111,6 @@ export type $Registry = $$Utilities.Schema.Scalars.Registry<
     Date: Date;
     JSON: JSON;
   },
-  | $$Utilities.Codec.GetEncoded<Date["codec"]>
-  | $$Utilities.Codec.GetEncoded<JSON["codec"]>,
-  | $$Utilities.Codec.GetDecoded<Date["codec"]>
-  | $$Utilities.Codec.GetDecoded<JSON["codec"]>
+  $$Utilities.Codec.GetEncoded<Date["codec"]> | $$Utilities.Codec.GetEncoded<JSON["codec"]>,
+  $$Utilities.Codec.GetDecoded<Date["codec"]> | $$Utilities.Codec.GetDecoded<JSON["codec"]>
 >;

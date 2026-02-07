@@ -1,10 +1,5 @@
+import type { DeliveringWish, FulfilledWish, OpenWish, PendingWish } from "../../__.js";
 import type * as $Fields from "./fields.js";
-import type {
-  DeliveringWish,
-  FulfilledWish,
-  OpenWish,
-  PendingWish,
-} from "../../__.js";
 
 export * as BaseWish from "./fields.js";
 

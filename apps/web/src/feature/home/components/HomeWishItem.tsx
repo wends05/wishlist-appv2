@@ -1,13 +1,7 @@
 import { UserIcon } from "@phosphor-icons/react";
 import type { HomeWishesResponse } from "@repo/common/dto";
 import { Link } from "@tanstack/react-router";
-import {
-  Card,
-  CardAction,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import WishCardActions from "@/feature/wish/components/WishCardActions";
 
 interface HomeWishItemProps {

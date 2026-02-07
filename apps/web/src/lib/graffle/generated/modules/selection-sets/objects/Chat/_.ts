@@ -1,7 +1,6 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
+import type * as $Fields from "./fields.js";
 import type { $FragmentInline } from "./fragment.js";
 
 export type * as Chat from "./__.js";
@@ -16,12 +15,9 @@ export type * as Chat from "./__.js";
  * | | |
  * | - | - |
  * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | Object ↗} |
- * | **Fields** | 9 |
+ * | **Fields** | 7 |
  */
-export interface Chat<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
+export interface Chat<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext>
   extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
   /**
    * # Info
@@ -36,9 +32,7 @@ export interface Chat<
    */
   _id?:
     | $Fields._id.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields._id<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields._id<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -54,9 +48,7 @@ export interface Chat<
    */
   grantor?:
     | $Fields.grantor.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.grantor<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.grantor<_$Context>>;
   /**
    * # Info
    *
@@ -70,9 +62,7 @@ export interface Chat<
    */
   grantorId?:
     | $Fields.grantorId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.grantorId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.grantorId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -89,9 +79,7 @@ export interface Chat<
    */
   messages?:
     | $Fields.messages.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.messages<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.messages<_$Context>>;
   /**
    * # Info
    *
@@ -105,9 +93,7 @@ export interface Chat<
    */
   status?:
     | $Fields.status.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.status<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.status<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -123,9 +109,7 @@ export interface Chat<
    */
   wish?:
     | $Fields.wish.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.wish<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.wish<_$Context>>;
   /**
    * # Info
    *
@@ -139,43 +123,7 @@ export interface Chat<
    */
   wishId?:
     | $Fields.wishId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.wishId<_$Context>
-      >
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
-   * | **Type** | {@link $NamedTypes.$User} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
-   * | **Parent** | {@link $NamedTypes.$Chat} |
-   * | **Path** | `Chat.wisher` |
-   * | **Nullability** | Optional |
-   */
-  wisher?:
-    | $Fields.wisher.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.wisher<_$Context>
-      >;
-  /**
-   * # Info
-   *
-   * | | |
-   * | - | - |
-   * | **Type** | {@link $NamedTypes.$ID} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#scalars | ScalarStandard ↗} |
-   * | **Parent** | {@link $NamedTypes.$Chat} |
-   * | **Path** | `Chat.wisherId` |
-   * | **Nullability** | Optional |
-   */
-  wisherId?:
-    | $Fields.wisherId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.wisherId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.wishId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
 

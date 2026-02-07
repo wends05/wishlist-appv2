@@ -1,12 +1,11 @@
 import { createStaticRootType } from "graffle/extensions/document-builder";
-import { schemaDrivenDataMap as sddm } from "./schema-driven-data-map.js";
-import { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as SelectionSets from "./selection-sets/_.js";
-import type * as $$Scalar from "./scalar.js";
-import type * as SchemaMap from "./schema-driven-data-map.js";
-
 import type * as $$Utilities from "graffle/utilities-for-generated";
+import { GraphqlKit } from "graffle/utilities-for-generated";
+import type * as $$Scalar from "./scalar.js";
 import type * as $$Schema from "./schema/_.js";
+import type * as SchemaMap from "./schema-driven-data-map.js";
+import { schemaDrivenDataMap as sddm } from "./schema-driven-data-map.js";
+import type * as SelectionSets from "./selection-sets/_.js";
 
 /**
  * Context for static document type inference.
@@ -55,25 +54,16 @@ interface StaticDocumentContext {
  */
 
 export interface QueryBuilder {
-  $batch: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>,
-  >(
+  $batch: <const $SelectionSet extends SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>>(
     selection: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        $SelectionSet,
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<$SelectionSet, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        $SelectionSet,
-        SchemaMap.SchemaDrivenDataMap
-      >
+      GraphqlKit.Document.Object.Var.InferFromQuery<$SelectionSet, SchemaMap.SchemaDrivenDataMap>
     >,
     true
   >;
@@ -102,10 +92,7 @@ export interface QueryBuilder {
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { authenticated: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ authenticated: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -146,10 +133,7 @@ export interface QueryBuilder {
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { categories: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ categories: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -186,17 +170,13 @@ export interface QueryBuilder {
    * ```
    */
   home: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["home"],
+    const $SelectionSet extends SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["home"],
   >(
     selection?: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { home: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ home: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -229,18 +209,12 @@ export interface QueryBuilder {
    * })
    * ```
    */
-  me: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["me"],
-  >(
+  me: <const $SelectionSet extends SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["me"]>(
     selection?: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { me: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ me: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -275,17 +249,13 @@ export interface QueryBuilder {
    * ```
    */
   myWishes: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["myWishes"],
+    const $SelectionSet extends SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["myWishes"],
   >(
     selection?: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { myWishes: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ myWishes: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -320,17 +290,13 @@ export interface QueryBuilder {
    * ```
    */
   users: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["users"],
+    const $SelectionSet extends SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["users"],
   >(
     selection?: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { users: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ users: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -365,17 +331,13 @@ export interface QueryBuilder {
    * ```
    */
   wish: <
-    const $SelectionSet extends
-      SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["wish"],
+    const $SelectionSet extends SelectionSets.Query<GraphqlKit.Document.Object.Select.StaticBuilderContext>["wish"],
   >(
     selection?: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationQuery<
-        { wish: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationQuery<{ wish: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -423,10 +385,7 @@ export interface QueryBuilder {
  *
  * @see {@link https://graffle.js.org/guides/static-generation | Static Generation Guide}
  */
-export const query: QueryBuilder = createStaticRootType(
-  GraphqlKit.Schema.OperationType.QUERY,
-  { sddm },
-) as any;
+export const query: QueryBuilder = createStaticRootType(GraphqlKit.Schema.OperationType.QUERY, { sddm }) as any;
 
 /**
  * Static mutation builder for compile-time GraphQL document generation.
@@ -454,25 +413,16 @@ export const query: QueryBuilder = createStaticRootType(
  */
 
 export interface MutationBuilder {
-  $batch: <
-    const $SelectionSet extends
-      SelectionSets.Mutation<GraphqlKit.Document.Object.Select.StaticBuilderContext>,
-  >(
+  $batch: <const $SelectionSet extends SelectionSets.Mutation<GraphqlKit.Document.Object.Select.StaticBuilderContext>>(
     selection: $SelectionSet,
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationMutation<
-        $SelectionSet,
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationMutation<$SelectionSet, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.Var.InferFromMutation<
-        $SelectionSet,
-        SchemaMap.SchemaDrivenDataMap
-      >
+      GraphqlKit.Document.Object.Var.InferFromMutation<$SelectionSet, SchemaMap.SchemaDrivenDataMap>
     >,
     true
   >;
@@ -507,10 +457,7 @@ export interface MutationBuilder {
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationMutation<
-        { createCategory: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationMutation<{ createCategory: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
@@ -527,20 +474,21 @@ export interface MutationBuilder {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.BaseWish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
+   * | **Type** | {@link $Schema.OpenWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Mutation} |
    * | **Path** | `Mutation.createWish` |
    * | **Nullability** | Optional |
-   * | **Arguments** | 4 |
+   * | **Arguments** | 3 |
    *
    * @example
    * ```ts
    * const doc = mutation.createWish({
-   * id: true,
-   * ___on_SomeImplementation: {
-   * // ... fields for this implementation
-   * }
+   * // $: { ...variables }
+   * _id: true,
+   * category: true,
+   * categoryId: true,
+   * // ...
    * })
    * ```
    */
@@ -552,15 +500,55 @@ export interface MutationBuilder {
   ) => GraphqlKit.Document.Typed.String<
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
-      GraphqlKit.Document.Object.InferResult.OperationMutation<
-        { createWish: $SelectionSet },
-        $$Schema.Schema
-      >
+      GraphqlKit.Document.Object.InferResult.OperationMutation<{ createWish: $SelectionSet }, $$Schema.Schema>
     >,
     $$Utilities.RequestResult.Simplify<
       StaticDocumentContext,
       GraphqlKit.Document.Object.Var.InferFromMutation<
         { createWish: Exclude<$SelectionSet, undefined> },
+        SchemaMap.SchemaDrivenDataMap
+      >
+    >,
+    true
+  >;
+
+  /**
+   * # Info
+   *
+   * | | |
+   * | - | - |
+   * | **Type** | {@link $Schema.Chat} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Parent** | {@link $Schema.Mutation} |
+   * | **Path** | `Mutation.requestGrant` |
+   * | **Nullability** | Optional |
+   * | **Arguments** | 2 |
+   *
+   * @example
+   * ```ts
+   * const doc = mutation.requestGrant({
+   * // $: { ...variables }
+   * _id: true,
+   * grantor: true,
+   * grantorId: true,
+   * // ...
+   * })
+   * ```
+   */
+  requestGrant: <
+    const $SelectionSet extends
+      SelectionSets.Mutation<GraphqlKit.Document.Object.Select.StaticBuilderContext>["requestGrant"],
+  >(
+    selection?: $SelectionSet,
+  ) => GraphqlKit.Document.Typed.String<
+    $$Utilities.RequestResult.Simplify<
+      StaticDocumentContext,
+      GraphqlKit.Document.Object.InferResult.OperationMutation<{ requestGrant: $SelectionSet }, $$Schema.Schema>
+    >,
+    $$Utilities.RequestResult.Simplify<
+      StaticDocumentContext,
+      GraphqlKit.Document.Object.Var.InferFromMutation<
+        { requestGrant: Exclude<$SelectionSet, undefined> },
         SchemaMap.SchemaDrivenDataMap
       >
     >,
@@ -592,7 +580,6 @@ export interface MutationBuilder {
  *
  * @see {@link https://graffle.js.org/guides/static-generation | Static Generation Guide}
  */
-export const mutation: MutationBuilder = createStaticRootType(
-  GraphqlKit.Schema.OperationType.MUTATION,
-  { sddm },
-) as any;
+export const mutation: MutationBuilder = createStaticRootType(GraphqlKit.Schema.OperationType.MUTATION, {
+  sddm,
+}) as any;

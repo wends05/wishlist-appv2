@@ -12,9 +12,7 @@ export default function FieldWrapper({
   // We grab context here primarily to access errors and the field name for the label
   const field = useFieldContext();
 
-  const descriptionComponent = description ? (
-    <FieldDescription>{description}</FieldDescription>
-  ) : null;
+  const descriptionComponent = description ? <FieldDescription>{description}</FieldDescription> : null;
 
   return (
     <Field {...props}>

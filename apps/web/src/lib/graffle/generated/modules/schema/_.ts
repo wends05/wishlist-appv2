@@ -1,18 +1,13 @@
 import type * as $ from "graffle/utilities-for-generated";
-import * as $$Data from "../data.js";
-import * as $$Scalar from "../scalar.js";
-import * as $Types from "./__.js";
+import type * as $$Data from "../data.js";
+import type * as $$Scalar from "../scalar.js";
+import type * as $Types from "./__.js";
 
 export * as Schema from "./__.js";
 
-export interface Schema<
-  $Scalars extends $.Schema.Scalars.Registry = $$Scalar.$Registry,
-> {
+export interface Schema<$Scalars extends $.Schema.Scalars.Registry = $$Scalar.$Registry> {
   name: $$Data.Name;
-  operationsAvailable: [
-    $.GraphqlKit.Schema.OperationType.QUERY,
-    $.GraphqlKit.Schema.OperationType.MUTATION,
-  ];
+  operationsAvailable: [$.GraphqlKit.Schema.OperationType.QUERY, $.GraphqlKit.Schema.OperationType.MUTATION];
   RootUnion: $Types.Query | $Types.Mutation;
   Root: {
     query: $Types.Query;
@@ -49,14 +44,7 @@ export interface Schema<
   interfaces: {
     BaseWish: $Types.BaseWish;
   };
-  scalarNamesUnion:
-    | "Date"
-    | "JSON"
-    | "Boolean"
-    | "Float"
-    | "ID"
-    | "Int"
-    | "String";
+  scalarNamesUnion: "Date" | "JSON" | "Boolean" | "Float" | "ID" | "Int" | "String";
   scalars: {
     Date: $Types.Date;
     JSON: $Types.JSON;

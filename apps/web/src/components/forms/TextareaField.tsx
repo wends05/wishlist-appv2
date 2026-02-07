@@ -1,31 +1,20 @@
 import { useFieldContext } from "@/hooks/_formHooks";
-import FieldWrapper from "./field-wrapper";
+import type FieldWrapperProps from "@/types/FieldWrapperProps";
 import { Textarea } from "../ui/textarea";
-import FieldWrapperProps from "@/types/FieldWrapperProps";
+import FieldWrapper from "./field-wrapper";
 
-interface TextareaFieldProps
-  extends React.ComponentProps<"textarea">,
-    FieldWrapperProps {}
-    
-export default function TextareaField({
-  label,
-  description,
-  descriptionPosition,
-  ...rest
-}: TextareaFieldProps) {
+interface TextareaFieldProps extends React.ComponentProps<"textarea">, FieldWrapperProps {}
+
+export default function TextareaField({ label, description, descriptionPosition, ...rest }: TextareaFieldProps) {
   const field = useFieldContext<string>();
   return (
-    <FieldWrapper
-      label={label}
-      description={description}
-      descriptionPosition={descriptionPosition}
-    >
+    <FieldWrapper description={description} descriptionPosition={descriptionPosition} label={label}>
       <Textarea
-        name={field.name}
         id={field.name}
-        value={field.state.value}
-        onChange={(e) => field.handleChange(e.target.value)}
+        name={field.name}
         onBlur={field.handleBlur}
+        onChange={(e) => field.handleChange(e.target.value)}
+        value={field.state.value}
         {...rest}
       />
     </FieldWrapper>

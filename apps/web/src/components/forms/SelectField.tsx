@@ -1,12 +1,6 @@
 import { useFieldContext } from "@/hooks/_formHooks";
 import type FieldWrapperProps from "@/types/FieldWrapperProps";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import FieldWrapper from "./field-wrapper";
 
 interface SelectItemType {
@@ -17,23 +11,12 @@ interface SelectItemType {
 interface SelectFieldProps extends FieldWrapperProps {
   items: SelectItemType[];
 }
-export default function SelectField({
-  items,
-  descriptionPosition = "bottom",
-  ...fieldWrapperProps
-}: SelectFieldProps) {
+export default function SelectField({ items, descriptionPosition = "bottom", ...fieldWrapperProps }: SelectFieldProps) {
   const field = useFieldContext<string>();
 
   return (
-    <FieldWrapper
-      {...fieldWrapperProps}
-      descriptionPosition={descriptionPosition}
-    >
-      <Select
-        items={items}
-        onValueChange={(val) => field.handleChange(val ?? "")}
-        value={field.state.value}
-      >
+    <FieldWrapper {...fieldWrapperProps} descriptionPosition={descriptionPosition}>
+      <Select items={items} onValueChange={(val) => field.handleChange(val ?? "")} value={field.state.value}>
         <SelectTrigger>
           <SelectValue />
         </SelectTrigger>

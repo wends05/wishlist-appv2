@@ -9,6 +9,7 @@ const BaseWishFields = {
   description: z.string().min(10).max(1000),
   ownerId: z.string(),
   categoryId: z.string(),
+  status: z.enum(WishStatus.enum).default(WishStatus.enum.open),
 };
 
 export const BaseWishSchema = withID(BaseWishFields);

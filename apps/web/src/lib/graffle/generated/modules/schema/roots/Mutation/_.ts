@@ -10,7 +10,7 @@ export * as Mutation from "./fields.js";
  * | | |
  * | - | - |
  * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | Object ↗} |
- * | **Fields** | 2 |
+ * | **Fields** | 3 |
  */
 export interface Mutation {
   kind: "Object";
@@ -19,5 +19,6 @@ export interface Mutation {
     __typename: $Fields.__typename;
     createCategory: $Fields.createCategory;
     createWish: $Fields.createWish;
+    requestGrant: $Fields.requestGrant;
   };
 }

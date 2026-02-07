@@ -26,7 +26,7 @@ export const getUserFromRequest = async (request: Request) => {
   // fetch the __session cookie from the request header
   const cookieHeader = request.headers.get("cookie");
   const cookies = parse(cookieHeader || "");
-  const sessionToken = cookies["__session"];
+  const sessionToken = cookies.__session;
 
   if (!sessionToken) {
     return null;

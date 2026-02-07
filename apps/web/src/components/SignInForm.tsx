@@ -1,16 +1,11 @@
-import { useAppForm, useFieldContext } from "@/hooks/_formHooks";
-import { Card, CardContent } from "./ui/card";
-import { Field, FieldError, FieldLabel } from "./ui/field";
-import { ComponentProps, useState } from "react";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupButton,
-  InputGroupInput,
-} from "./ui/input-group";
 import { EyeIcon } from "@phosphor-icons/react";
 import { SignUpSchema } from "@repo/common/dto";
 import { zodHandleSubmit } from "@repo/common/functions";
+import { type ComponentProps, useState } from "react";
+import { useAppForm, useFieldContext } from "@/hooks/_formHooks";
+import { Card, CardContent } from "./ui/card";
+import { Field, FieldError, FieldLabel } from "./ui/field";
+import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "./ui/input-group";
 
 export default function SignInForm() {
   const form = useAppForm({
@@ -29,7 +24,7 @@ export default function SignInForm() {
   });
   return (
     <Card>
-      <CardContent className="space-y-2 w-sm">
+      <CardContent className="w-sm space-y-2">
         <form
           className="space-y-3"
           onSubmit={(e) => {
@@ -38,18 +33,10 @@ export default function SignInForm() {
             form.handleSubmit();
           }}
         >
-          <form.AppField name="email">
-            {(field) => <field.TextField label="Email" />}
-          </form.AppField>
-          <form.AppField name="username">
-            {(field) => <field.TextField label="Username" />}
-          </form.AppField>
-          <form.AppField name="password">
-            {() => <PasswordField label="Password" />}
-          </form.AppField>
-          <form.AppField name="confirmPassword">
-            {() => <PasswordField label="Confirm Password" />}
-          </form.AppField>
+          <form.AppField name="email">{(field) => <field.TextField label="Email" />}</form.AppField>
+          <form.AppField name="username">{(field) => <field.TextField label="Username" />}</form.AppField>
+          <form.AppField name="password">{() => <PasswordField label="Password" />}</form.AppField>
+          <form.AppField name="confirmPassword">{() => <PasswordField label="Confirm Password" />}</form.AppField>
           <div className="pt-2">
             <form.AppForm>
               <form.SubmitButton />
@@ -75,10 +62,10 @@ function PasswordField({
       <FieldLabel>{label}</FieldLabel>
       <InputGroup>
         <InputGroupInput
-          value={field.state.value}
-          onChange={(e) => field.handleChange(e.target.value)}
           onBlur={field.handleBlur}
+          onChange={(e) => field.handleChange(e.target.value)}
           type={isHidden ? "password" : "text"}
+          value={field.state.value}
           {...rest}
         />
         <InputGroupAddon align={"inline-end"}>

@@ -1,12 +1,6 @@
 import type { IWishItem } from "@repo/common/schemas";
 import { Link } from "@tanstack/react-router";
-import {
-  Card,
-  CardAction,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardAction, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import WishCardActions from "./WishCardActions";
 
 interface WishCardProps extends IWishItem {}

@@ -1,7 +1,6 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
+import type * as $Fields from "./fields.js";
 import type { $FragmentInline } from "./fragment.js";
 
 export type * as Message from "./__.js";
@@ -19,10 +18,8 @@ export type * as Message from "./__.js";
  * | **Fields** | 5 |
  */
 export interface Message<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
-  extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+> extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
   /**
    * # Info
    *
@@ -36,9 +33,7 @@ export interface Message<
    */
   content?:
     | $Fields.content.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.content<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.content<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -54,9 +49,7 @@ export interface Message<
    */
   createdAt?:
     | $Fields.createdAt.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.createdAt<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.createdAt<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -72,9 +65,7 @@ export interface Message<
    */
   sender?:
     | $Fields.sender.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.sender<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.sender<_$Context>>;
   /**
    * # Info
    *
@@ -88,9 +79,7 @@ export interface Message<
    */
   senderId?:
     | $Fields.senderId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.senderId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.senderId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -106,9 +95,7 @@ export interface Message<
    */
   updatedAt?:
     | $Fields.updatedAt.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.updatedAt<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.updatedAt<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
 

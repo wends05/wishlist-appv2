@@ -1,25 +1,14 @@
-import type { CreateWishDTO } from "@repo/common/dto";
-import {
-  infiniteQueryOptions,
-  mutationOptions,
-  queryOptions,
-  useQueryClient,
-} from "@tanstack/react-query";
+import type { CreateWishDTO, RequestGrantInput } from "@repo/common/dto";
+import { infiniteQueryOptions, mutationOptions, queryOptions, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
-import createWish, {
-  getCategories,
-  getHomeWishes,
-  getMyWishes,
-  getWishDetails,
-} from "./server";
+import createWish, { getCategories, getHomeWishes, getMyWishes, getWishDetails, requestGrant } from "./server";
 
 // Query key factory - centralize keys to avoid typos
 export const wishKeys = {
   all: ["wishes"] as const,
   categories: () => [...wishKeys.all, "categories"] as const,
   myWishes: () => [...wishKeys.all, "my-wishes"] as const,
-  homeWishes: (search?: string, categoryId?: string) =>
-    [...wishKeys.all, "home", { search, categoryId }] as const,
+  homeWishes: (search?: string, categoryId?: string) => [...wishKeys.all, "home", { search, categoryId }] as const,
   details: () => [...wishKeys.all, "detail"] as const,
   detail: (id: string) => [...wishKeys.details(), id] as const,
 };
@@ -51,15 +40,7 @@ export const wishQueryOptions = {
 };
 
 export const wishInfiniteQueryOptions = {
-  homeWishes: ({
-    categoryId,
-    searchTerm,
-    limit = 3,
-  }: {
-    categoryId?: string;
-    searchTerm?: string;
-    limit?: number;
-  }) =>
+  homeWishes: ({ categoryId, searchTerm, limit = 3 }: { categoryId?: string; searchTerm?: string; limit?: number }) =>
     infiniteQueryOptions({
       queryKey: wishKeys.homeWishes(searchTerm, categoryId),
       initialPageParam: 0,
@@ -117,6 +98,27 @@ export const wishMutationOptions = {
       //   queryClient.setQueryData(wishKeys.myWishes(), (old) => [...(old ?? []), newWish]);
       //   return { previousWishes };
       // },
+    });
+  },
+  requestGrant: (wishId: string) => {
+    const queryClient = useQueryClient();
+
+    return mutationOptions({
+      mutationFn: async ({ message }: { message: RequestGrantInput["message"] }) => {
+        return await requestGrant({ data: { wishId, message } });
+      },
+      onSuccess: (message) => {
+        // Invalidate wish details to reflect new request status
+        queryClient.invalidateQueries({ queryKey: wishKeys.detail(wishId) });
+
+        // Invalidate home wishes in case the wish status affects its visibility
+        queryClient.invalidateQueries({ queryKey: wishKeys.homeWishes() });
+        toast.success(message);
+      },
+      onError: (error) => {
+        toast.error("Failed to request grant. Please try again.");
+        console.error("Request Grant Error:", error);
+      },
     });
   },
 };

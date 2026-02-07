@@ -1,8 +1,8 @@
-import type * as $$SelectionSets from "./selection-sets/_.js";
-import type * as $$Schema from "./schema/_.js";
 import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
+import type * as $$Schema from "./schema/_.js";
 import type * as $$SchemaMap from "./schema-driven-data-map.js";
+import type * as $$SelectionSets from "./selection-sets/_.js";
 
 /**
  * GraphQL {@link https://graphql.org/learn/schema/#the-query-and-mutation-types | Query} root methods.
@@ -20,10 +20,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
   $batch: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Query<{ scalars: $Context["scalars"] }>
-      >,
+      selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query<{ scalars: $Context["scalars"] }>>,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
       GraphqlKit.Document.Object.Var.InferFromQuery<
         $$Utilities.AssertExtendsObject<$SelectionSet>,
@@ -63,12 +60,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
   __typename: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     () => Promise<
-      (null | {}) &
-        $$Utilities.HandleOutputDocumentBuilderRootField<
-          $Context,
-          { __typename: "Query" },
-          "__typename"
-        >
+      (null | {}) & $$Utilities.HandleOutputDocumentBuilderRootField<$Context, { __typename: "Query" }, "__typename">
     >
   >;
   /**
@@ -91,10 +83,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
         $$SelectionSets.Query.authenticated<{ scalars: $Context["scalars"] }>
       >,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { authenticated: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ authenticated: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -143,10 +132,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
         $$SelectionSets.Query.categories<{ scalars: $Context["scalars"] }>
       >,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { categories: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ categories: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -157,10 +143,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
           "categories"
         >,
       $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { categories: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
+        GraphqlKit.Document.Object.Var.InferFromQuery<{ categories: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
         (null | {}) &
           $$Utilities.HandleOutputDocumentBuilderRootField<
             $Context,
@@ -191,15 +174,9 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
   home: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Query.home<{ scalars: $Context["scalars"] }>
-      >,
+      selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query.home<{ scalars: $Context["scalars"] }>>,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { home: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ home: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -210,10 +187,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
           "home"
         >,
       $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { home: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
+        GraphqlKit.Document.Object.Var.InferFromQuery<{ home: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
         (null | {}) &
           $$Utilities.HandleOutputDocumentBuilderRootField<
             $Context,
@@ -242,15 +216,9 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
   me: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Query.me<{ scalars: $Context["scalars"] }>
-      >,
+      selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query.me<{ scalars: $Context["scalars"] }>>,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { me: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ me: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -261,10 +229,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
           "me"
         >,
       $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { me: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
+        GraphqlKit.Document.Object.Var.InferFromQuery<{ me: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
         (null | {}) &
           $$Utilities.HandleOutputDocumentBuilderRootField<
             $Context,
@@ -299,10 +264,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
         $$SelectionSets.Query.myWishes<{ scalars: $Context["scalars"] }>
       >,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { myWishes: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ myWishes: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -313,10 +275,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
           "myWishes"
         >,
       $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { myWishes: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
+        GraphqlKit.Document.Object.Var.InferFromQuery<{ myWishes: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
         (null | {}) &
           $$Utilities.HandleOutputDocumentBuilderRootField<
             $Context,
@@ -346,15 +305,9 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
   users: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Query.users<{ scalars: $Context["scalars"] }>
-      >,
+      selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query.users<{ scalars: $Context["scalars"] }>>,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { users: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ users: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -365,10 +318,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
           "users"
         >,
       $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { users: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
+        GraphqlKit.Document.Object.Var.InferFromQuery<{ users: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
         (null | {}) &
           $$Utilities.HandleOutputDocumentBuilderRootField<
             $Context,
@@ -398,15 +348,9 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
   wish: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Query.wish<{ scalars: $Context["scalars"] }>
-      >,
+      selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query.wish<{ scalars: $Context["scalars"] }>>,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromQuery<
-        { wish: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromQuery<{ wish: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -417,10 +361,7 @@ export interface QueryMethods<$Context extends $$Utilities.Context> {
           "wish"
         >,
       $$Utilities.DocumentRunnerDeferred<
-        GraphqlKit.Document.Object.Var.InferFromQuery<
-          { wish: $SelectionSet },
-          $$SchemaMap.SchemaDrivenDataMap
-        >,
+        GraphqlKit.Document.Object.Var.InferFromQuery<{ wish: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
         (null | {}) &
           $$Utilities.HandleOutputDocumentBuilderRootField<
             $Context,
@@ -451,10 +392,7 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
   $batch: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     <$SelectionSet>(
-      selectionSet: $$Utilities.NoExcess<
-        $SelectionSet,
-        $$SelectionSets.Mutation<{ scalars: $Context["scalars"] }>
-      >,
+      selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Mutation<{ scalars: $Context["scalars"] }>>,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
       GraphqlKit.Document.Object.Var.InferFromMutation<
         $$Utilities.AssertExtendsObject<$SelectionSet>,
@@ -494,12 +432,7 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
   __typename: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
     $Context,
     () => Promise<
-      (null | {}) &
-        $$Utilities.HandleOutputDocumentBuilderRootField<
-          $Context,
-          { __typename: "Mutation" },
-          "__typename"
-        >
+      (null | {}) & $$Utilities.HandleOutputDocumentBuilderRootField<$Context, { __typename: "Mutation" }, "__typename">
     >
   >;
   /**
@@ -561,12 +494,12 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $Schema.BaseWish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
+   * | **Type** | {@link $Schema.OpenWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $Schema.Mutation} |
    * | **Path** | `Mutation.createWish` |
    * | **Nullability** | Optional |
-   * | **Arguments** | 4 |
+   * | **Arguments** | 3 |
    */
 
   createWish: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
@@ -577,10 +510,7 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
         $$SelectionSets.Mutation.createWish<{ scalars: $Context["scalars"] }>
       >,
     ) => GraphqlKit.Document.Object.Var.MethodReturn<
-      GraphqlKit.Document.Object.Var.InferFromMutation<
-        { createWish: $SelectionSet },
-        $$SchemaMap.SchemaDrivenDataMap
-      >,
+      GraphqlKit.Document.Object.Var.InferFromMutation<{ createWish: $SelectionSet }, $$SchemaMap.SchemaDrivenDataMap>,
       (null | {}) &
         $$Utilities.HandleOutputDocumentBuilderRootField<
           $Context,
@@ -603,6 +533,58 @@ export interface MutationMethods<$Context extends $$Utilities.Context> {
               $$Schema.Schema<$Context["scalars"]>
             >,
             "createWish"
+          >
+      >
+    >
+  >;
+
+  /**
+   * # Info
+   *
+   * | | |
+   * | - | - |
+   * | **Type** | {@link $Schema.Chat} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Parent** | {@link $Schema.Mutation} |
+   * | **Path** | `Mutation.requestGrant` |
+   * | **Nullability** | Optional |
+   * | **Arguments** | 2 |
+   */
+
+  requestGrant: $$Utilities.GraffleKit.Context.Configuration.Check.Preflight<
+    $Context,
+    <$SelectionSet>(
+      selectionSet: $$Utilities.NoExcess<
+        $SelectionSet,
+        $$SelectionSets.Mutation.requestGrant<{ scalars: $Context["scalars"] }>
+      >,
+    ) => GraphqlKit.Document.Object.Var.MethodReturn<
+      GraphqlKit.Document.Object.Var.InferFromMutation<
+        { requestGrant: $SelectionSet },
+        $$SchemaMap.SchemaDrivenDataMap
+      >,
+      (null | {}) &
+        $$Utilities.HandleOutputDocumentBuilderRootField<
+          $Context,
+          GraphqlKit.Document.Object.InferResult.OperationMutation<
+            { requestGrant: $SelectionSet },
+            $$Schema.Schema<$Context["scalars"]>
+          >,
+          "requestGrant"
+        >,
+      $$Utilities.DocumentRunnerDeferred<
+        GraphqlKit.Document.Object.Var.InferFromMutation<
+          { requestGrant: $SelectionSet },
+          $$SchemaMap.SchemaDrivenDataMap
+        >,
+        (null | {}) &
+          $$Utilities.HandleOutputDocumentBuilderRootField<
+            $Context,
+            GraphqlKit.Document.Object.InferResult.OperationMutation<
+              { requestGrant: $SelectionSet },
+              $$Schema.Schema<$Context["scalars"]>
+            >,
+            "requestGrant"
           >
       >
     >

@@ -3,11 +3,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import HomeHeader from "../HomeHeader";
 import HomeSidebar from "./HomeSidebar";
 
-export default function SidebarWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function SidebarWrapper({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <HomeSidebar />

@@ -1,18 +1,13 @@
+import type React from "react";
 import { useFormContext } from "@/hooks/_formHooks";
-
 import { Button } from "../ui/button";
-import React from "react";
 
 interface SubmitButtonProps extends React.ComponentProps<"button"> {
   submittingLabel?: string;
   label?: string;
 }
 
-export default function SubmitButton({
-  submittingLabel,
-  label,
-  ...rest
-}: SubmitButtonProps) {
+export default function SubmitButton({ submittingLabel, label, ...rest }: SubmitButtonProps) {
   const form = useFormContext();
   return (
     <form.Subscribe selector={(state) => state.isSubmitting}>

@@ -1,3 +1,3 @@
 import { createMiddleware } from "@tanstack/react-start";
 
-export const tryCatchMiddleware = createMiddleware()
+export const tryCatchMiddleware = createMiddleware();

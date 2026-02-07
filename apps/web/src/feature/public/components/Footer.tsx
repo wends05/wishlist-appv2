@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 import { GithubLogoIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 
 function Links() {
   return (
-    <div className="py-5 space-y-2 flex flex-col w-max">
+    <div className="flex w-max flex-col space-y-2 py-5">
       <Link to="/">
         <Button variant={"link"}>Home</Button>
       </Link>
@@ -27,10 +27,10 @@ function Links() {
 }
 function CreatedByArea() {
   return (
-    <div className="flex items-center text-sm gap-3">
+    <div className="flex items-center gap-3 text-sm">
       Created By:
-      <a href="http://github.com/wends05" className="flex items-center gap-1">
-        <span className="rounded-full border size-5 border-black flex items-center justify-center">
+      <a className="flex items-center gap-1" href="http://github.com/wends05">
+        <span className="flex size-5 items-center justify-center rounded-full border border-black">
           <GithubLogoIcon />
         </span>
         <h4>wends05</h4>
@@ -51,9 +51,9 @@ export default function Footer() {
         clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
       }}
     >
-      <div className="fixed bottom-0 pt-20 pb-10 px-10 h-150 w-full flex flex-col bg-neutral-400 justify-between">
+      <div className="fixed bottom-0 flex h-150 w-full flex-col justify-between bg-neutral-400 px-10 pt-20 pb-10">
         <Links />
-        <div className="flex justify-between ">
+        <div className="flex justify-between">
           <CreatedByArea />
           <Title />
         </div>

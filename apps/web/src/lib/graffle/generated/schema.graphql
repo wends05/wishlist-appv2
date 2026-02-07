@@ -1,4 +1,6 @@
-"""A wish item that will be on a user's wishlist"""
+"""
+A wish item that will be on a user's wishlist
+"""
 interface BaseWish {
   _id: ID
   category: Category
@@ -10,14 +12,18 @@ interface BaseWish {
   status: String
 }
 
-"""A category for organizing wishes"""
+"""
+A category for organizing wishes
+"""
 type Category {
   _id: ID
   description: String
   name: String
 }
 
-"""A chat between a wisher and a grantor about a wish"""
+"""
+A chat between a wisher and a grantor about a wish
+"""
 type Chat {
   _id: ID
   grantor: User
@@ -26,13 +32,11 @@ type Chat {
   status: ChatStatus
   wish: BaseWish
   wishId: ID
-  wisher: User
-  wisherId: ID
 }
 
 enum ChatStatus {
   ACCEPTED
-  DECLINED
+  CLOSED
   PENDING
 }
 
@@ -41,7 +45,9 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
-"""A wish that is currently being delivered"""
+"""
+A wish that is currently being delivered
+"""
 type DeliveringWish implements BaseWish {
   _id: ID
   category: Category
@@ -56,14 +62,18 @@ type DeliveringWish implements BaseWish {
   status: String
 }
 
-"""Details about the delivery of a wish item"""
+"""
+Details about the delivery of a wish item
+"""
 type DeliveryDetails {
   carrier: String
   estimatedDeliveryDate: Date
   trackingNumber: String
 }
 
-"""A wish that has been fulfilled"""
+"""
+A wish that has been fulfilled
+"""
 type FulfilledWish implements BaseWish {
   _id: ID
   category: Category
@@ -84,7 +94,9 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-"""A message sent in a chat between a wisher and a grantor"""
+"""
+A message sent in a chat between a wisher and a grantor
+"""
 type Message {
   content: String
   createdAt: Date
@@ -95,10 +107,13 @@ type Message {
 
 type Mutation {
   createCategory(description: String!, name: String!): Category
-  createWish(categoryId: String!, description: String!, name: String!, ownerId: String!): BaseWish
+  createWish(categoryId: String!, description: String!, name: String!): OpenWish
+  requestGrant(message: String!, wishId: ID!): Chat
 }
 
-"""An open wish that is available for requests"""
+"""
+An open wish that is available for requests
+"""
 type OpenWish implements BaseWish {
   _id: ID
   category: Category
@@ -110,7 +125,9 @@ type OpenWish implements BaseWish {
   status: String
 }
 
-"""A pending wish that has an accepted grantor"""
+"""
+A pending wish that has an accepted grantor
+"""
 type PendingWish implements BaseWish {
   _id: ID
   category: Category
@@ -135,7 +152,9 @@ type Query {
   wish(wishId: String!): BaseWish
 }
 
-"""A user of the wishlist application"""
+"""
+A user of the wishlist application
+"""
 type User {
   _id: ID
   clerkId: String

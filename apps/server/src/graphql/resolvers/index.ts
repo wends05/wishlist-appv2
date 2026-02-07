@@ -1,6 +1,8 @@
 // Category Resolvers
 export * from "./category/categories.ts";
 export * from "./category/createCategory.ts";
+// Chat Resolvers
+export * from "./chat/requestGrant.ts";
 // test resolvers
 export * from "./testResolvers/authenticated.ts";
 // User Resolvers

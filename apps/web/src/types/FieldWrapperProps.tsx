@@ -4,5 +4,5 @@ type FieldWrapperProps = {
   description?: string;
   descriptionPosition?: "top" | "bottom";
   className?: string;
-}
+};
 export default FieldWrapperProps;

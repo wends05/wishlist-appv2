@@ -1,6 +1,6 @@
-import * as $$Scalar from "./scalar.js";
-import { Schema as $$Schema } from "./schema/_.js";
 import type * as $$Utilities from "graffle/utilities-for-generated";
+import * as $$Scalar from "./scalar.js";
+import type { Schema as $$Schema } from "./schema/_.js";
 
 //
 //
@@ -64,13 +64,6 @@ interface Chat extends $$Utilities.SchemaDrivenDataMap.OutputObject {
       readonly namedType: BaseWish;
     };
     readonly wishId: {
-      readonly _tag: "outputField";
-    };
-    readonly wisher: {
-      readonly _tag: "outputField";
-      readonly namedType: User;
-    };
-    readonly wisherId: {
       readonly _tag: "outputField";
     };
   };
@@ -339,10 +332,7 @@ interface Query extends $$Utilities.SchemaDrivenDataMap.OutputObject {
         };
       };
       readonly $argumentsType: {
-        categoryId?:
-          | $$Scalar.String["codec"]["_typeDecoded"]
-          | null
-          | undefined;
+        categoryId?: $$Scalar.String["codec"]["_typeDecoded"] | null | undefined;
         limit?: $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined;
         search?: $$Scalar.String["codec"]["_typeDecoded"] | null | undefined;
         skip?: $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined;
@@ -419,19 +409,33 @@ interface Mutation extends $$Utilities.SchemaDrivenDataMap.OutputObject {
           readonly namedType: $$Scalar.String;
           readonly inlineType: [1];
         };
-        readonly ownerId: {
-          readonly _tag: "argumentOrInputField";
-          readonly namedType: $$Scalar.String;
-          readonly inlineType: [1];
-        };
       };
       readonly $argumentsType: {
         categoryId: $$Scalar.String["codec"]["_typeDecoded"];
         description: $$Scalar.String["codec"]["_typeDecoded"];
         name: $$Scalar.String["codec"]["_typeDecoded"];
-        ownerId: $$Scalar.String["codec"]["_typeDecoded"];
       };
-      readonly namedType: BaseWish;
+      readonly namedType: OpenWish;
+    };
+    readonly requestGrant: {
+      readonly _tag: "outputField";
+      readonly arguments: {
+        readonly message: {
+          readonly _tag: "argumentOrInputField";
+          readonly namedType: $$Scalar.String;
+          readonly inlineType: [1];
+        };
+        readonly wishId: {
+          readonly _tag: "argumentOrInputField";
+          readonly namedType: $$Scalar.ID;
+          readonly inlineType: [1];
+        };
+      };
+      readonly $argumentsType: {
+        message: $$Scalar.String["codec"]["_typeDecoded"];
+        wishId: $$Scalar.ID["codec"]["_typeDecoded"];
+      };
+      readonly namedType: Chat;
     };
   };
 }
@@ -487,7 +491,7 @@ interface Mutation extends $$Utilities.SchemaDrivenDataMap.OutputObject {
 const ChatStatus: ChatStatus = {
   _tag: "enum",
   name: "ChatStatus",
-  type: null as any as "ACCEPTED" | "DECLINED" | "PENDING",
+  type: null as any as "ACCEPTED" | "CLOSED" | "PENDING",
 };
 
 //
@@ -564,13 +568,6 @@ const Chat: Chat = {
       namedType: null as any as BaseWish,
     },
     wishId: {
-      _tag: "outputField",
-    },
-    wisher: {
-      _tag: "outputField",
-      namedType: null as any as User,
-    },
-    wisherId: {
       _tag: "outputField",
     },
   },
@@ -893,22 +890,10 @@ const Query: Query = {
         },
       },
       $argumentsType: {
-        categoryId: null as any as
-          | $$Scalar.String["codec"]["_typeDecoded"]
-          | null
-          | undefined,
-        limit: null as any as
-          | $$Scalar.Int["codec"]["_typeDecoded"]
-          | null
-          | undefined,
-        search: null as any as
-          | $$Scalar.String["codec"]["_typeDecoded"]
-          | null
-          | undefined,
-        skip: null as any as
-          | $$Scalar.Int["codec"]["_typeDecoded"]
-          | null
-          | undefined,
+        categoryId: null as any as $$Scalar.String["codec"]["_typeDecoded"] | null | undefined,
+        limit: null as any as $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined,
+        search: null as any as $$Scalar.String["codec"]["_typeDecoded"] | null | undefined,
+        skip: null as any as $$Scalar.Int["codec"]["_typeDecoded"] | null | undefined,
       },
       namedType: null as any as OpenWish,
     },
@@ -982,19 +967,33 @@ const Mutation: Mutation = {
           namedType: $$Scalar.String,
           inlineType: [1],
         },
-        ownerId: {
-          _tag: "argumentOrInputField",
-          namedType: $$Scalar.String,
-          inlineType: [1],
-        },
       },
       $argumentsType: {
         categoryId: null as any as $$Scalar.String["codec"]["_typeDecoded"],
         description: null as any as $$Scalar.String["codec"]["_typeDecoded"],
         name: null as any as $$Scalar.String["codec"]["_typeDecoded"],
-        ownerId: null as any as $$Scalar.String["codec"]["_typeDecoded"],
       },
-      namedType: null as any as BaseWish,
+      namedType: null as any as OpenWish,
+    },
+    requestGrant: {
+      _tag: "outputField",
+      arguments: {
+        message: {
+          _tag: "argumentOrInputField",
+          namedType: $$Scalar.String,
+          inlineType: [1],
+        },
+        wishId: {
+          _tag: "argumentOrInputField",
+          namedType: $$Scalar.ID,
+          inlineType: [1],
+        },
+      },
+      $argumentsType: {
+        message: null as any as $$Scalar.String["codec"]["_typeDecoded"],
+        wishId: null as any as $$Scalar.ID["codec"]["_typeDecoded"],
+      },
+      namedType: null as any as Chat,
     },
   },
 };
@@ -1024,8 +1023,6 @@ Chat.fields[`grantor`]!.namedType = User;
 Chat.fields[`messages`]!.namedType = Message;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Chat.fields[`wish`]!.namedType = BaseWish;
-// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Chat.fields[`wisher`]!.namedType = User;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 DeliveringWish.fields[`category`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
@@ -1069,7 +1066,9 @@ Query.fields[`wish`]!.namedType = BaseWish;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
 Mutation.fields[`createCategory`]!.namedType = Category;
 // @ts-expect-error Assignment to readonly property is needed for circular reference handling.
-Mutation.fields[`createWish`]!.namedType = BaseWish;
+Mutation.fields[`createWish`]!.namedType = OpenWish;
+// @ts-expect-error Assignment to readonly property is needed for circular reference handling.
+Mutation.fields[`requestGrant`]!.namedType = Chat;
 
 //
 //

@@ -41,7 +41,7 @@ export default function WishSearchAndFilter() {
 
   return (
     <form
-      className="flex w-full max-w-lg gap-3 self-center py-5"
+      className="flex w-full max-w-lg flex-col gap-3 self-center px-4 py-5 md:flex-row"
       onSubmit={(e) => {
         e.stopPropagation();
         e.preventDefault();
@@ -70,7 +70,7 @@ export default function WishSearchAndFilter() {
       >
         {(field) => (
           <field.SelectField
-            className="w-1/3"
+            className="md:w-1/3"
             items={[
               { label: "All", value: "all" },
               ...categories.map((categories) => ({

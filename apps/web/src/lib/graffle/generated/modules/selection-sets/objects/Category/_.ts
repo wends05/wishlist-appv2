@@ -1,7 +1,6 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
+import type * as $Fields from "./fields.js";
 import type { $FragmentInline } from "./fragment.js";
 
 export type * as Category from "./__.js";
@@ -19,10 +18,8 @@ export type * as Category from "./__.js";
  * | **Fields** | 3 |
  */
 export interface Category<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
-  extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+> extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
   /**
    * # Info
    *
@@ -36,9 +33,7 @@ export interface Category<
    */
   _id?:
     | $Fields._id.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields._id<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields._id<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -54,9 +49,7 @@ export interface Category<
    */
   description?:
     | $Fields.description.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.description<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.description<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -72,9 +65,7 @@ export interface Category<
    */
   name?:
     | $Fields.name.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.name<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.name<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
 

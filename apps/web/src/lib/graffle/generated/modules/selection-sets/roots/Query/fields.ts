@@ -5,8 +5,7 @@ import type * as $Named from "../../$named.js";
 import type * as $Scalars from "../../scalars/_.js";
 
 export type authenticated<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
 > =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -15,10 +14,8 @@ export type authenticated<
 
 export namespace authenticated {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `authenticated` type. It is identical except for the fact
@@ -26,8 +23,7 @@ export namespace authenticated {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -37,17 +33,13 @@ export namespace authenticated {
 }
 
 export type categories<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
 > = categories.$SelectionSet<_$Context>;
 
 export namespace categories {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base,
       $Named.Category<_$Context> {}
 
   /**
@@ -56,23 +48,17 @@ export namespace categories {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }
 
-export type home<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> = home.$SelectionSet<_$Context>;
+export type home<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
+  home.$SelectionSet<_$Context>;
 
 export namespace home {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base,
       $Named.OpenWish<_$Context> {
     /**
      * Arguments for `home` field. No arguments are required so you may omit this.
@@ -81,8 +67,7 @@ export namespace home {
   }
 
   export interface $Arguments<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > {
     /**
      * # Info
@@ -136,23 +121,17 @@ export namespace home {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }
 
-export type me<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> = me.$SelectionSet<_$Context>;
+export type me<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
+  me.$SelectionSet<_$Context>;
 
 export namespace me {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base,
       $Named.User<_$Context> {}
 
   /**
@@ -161,23 +140,17 @@ export namespace me {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }
 
-export type myWishes<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> = myWishes.$SelectionSet<_$Context>;
+export type myWishes<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
+  myWishes.$SelectionSet<_$Context>;
 
 export namespace myWishes {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base,
       $Named.BaseWish<_$Context> {}
 
   /**
@@ -186,23 +159,17 @@ export namespace myWishes {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }
 
-export type users<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> = users.$SelectionSet<_$Context>;
+export type users<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
+  users.$SelectionSet<_$Context>;
 
 export namespace users {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base,
       $Named.User<_$Context> {}
 
   /**
@@ -211,23 +178,17 @@ export namespace users {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }
 
-export type wish<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> = wish.$SelectionSet<_$Context>;
+export type wish<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
+  wish.$SelectionSet<_$Context>;
 
 export namespace wish {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends
-      GraphqlKit.Document.Object.Select.Bases.Base,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base,
       $Named.BaseWish<_$Context> {
     /**
      * Arguments for `wish` field. All arguments are required so you must include this.
@@ -236,8 +197,7 @@ export namespace wish {
   }
 
   export interface $Arguments<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > {
     /**
      * # Info
@@ -258,7 +218,6 @@ export namespace wish {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<$SelectionSet<_$Context>>;
 }

@@ -12,6 +12,8 @@ import {
 //===
 export const CreateWishDTO = BaseWishSchema.omit({
   _id: true,
+  ownerId: true,
+  status: true
 });
 export type CreateWishDTO = z.infer<typeof CreateWishDTO>;
 
@@ -56,3 +58,12 @@ export const WishDetailsSchema = withNonEmptyID(
   }).shape
 );
 export type WishDetails = z.infer<typeof WishDetailsSchema>;
+
+//===
+// Request Grant Input DTOs
+//===
+export const RequestGrantInputSchema = z.object({
+  wishId: z.string(),
+  message: z.string().min(10).max(1000),
+});
+export type RequestGrantInput = z.infer<typeof RequestGrantInputSchema>;

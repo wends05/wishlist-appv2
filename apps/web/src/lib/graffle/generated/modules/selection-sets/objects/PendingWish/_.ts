@@ -1,7 +1,6 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
+import type * as $Fields from "./fields.js";
 import type { $FragmentInline } from "./fragment.js";
 
 export type * as PendingWish from "./__.js";
@@ -20,10 +19,8 @@ export type * as PendingWish from "./__.js";
  * | **Implements** | {@link $Schema.BaseWish} |
  */
 export interface PendingWish<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
-  extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+> extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
   /**
    * # Info
    *
@@ -37,9 +34,7 @@ export interface PendingWish<
    */
   _id?:
     | $Fields._id.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields._id<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields._id<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -55,9 +50,7 @@ export interface PendingWish<
    */
   category?:
     | $Fields.category.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.category<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.category<_$Context>>;
   /**
    * # Info
    *
@@ -71,9 +64,7 @@ export interface PendingWish<
    */
   categoryId?:
     | $Fields.categoryId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.categoryId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.categoryId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -89,9 +80,7 @@ export interface PendingWish<
    */
   description?:
     | $Fields.description.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.description<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.description<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -107,9 +96,7 @@ export interface PendingWish<
    */
   fulfilledAt?:
     | $Fields.fulfilledAt.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.fulfilledAt<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.fulfilledAt<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -125,9 +112,7 @@ export interface PendingWish<
    */
   grantor?:
     | $Fields.grantor.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.grantor<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.grantor<_$Context>>;
   /**
    * # Info
    *
@@ -141,9 +126,7 @@ export interface PendingWish<
    */
   grantorId?:
     | $Fields.grantorId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.grantorId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.grantorId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -159,9 +142,7 @@ export interface PendingWish<
    */
   name?:
     | $Fields.name.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.name<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.name<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -177,9 +158,7 @@ export interface PendingWish<
    */
   owner?:
     | $Fields.owner.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.owner<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.owner<_$Context>>;
   /**
    * # Info
    *
@@ -193,9 +172,7 @@ export interface PendingWish<
    */
   ownerId?:
     | $Fields.ownerId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.ownerId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.ownerId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -211,9 +188,7 @@ export interface PendingWish<
    */
   status?:
     | $Fields.status.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.status<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.status<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
 

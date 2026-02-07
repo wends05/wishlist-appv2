@@ -1,9 +1,8 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
-import type { $FragmentInline } from "./fragment.js";
 import type * as $Named from "../../$named.js";
+import type * as $Fields from "./fields.js";
+import type { $FragmentInline } from "./fragment.js";
 
 export type * as BaseWish from "./__.js";
 
@@ -21,10 +20,8 @@ export type * as BaseWish from "./__.js";
  * | **Implementors** | {@link $Schema.DeliveringWish}, {@link $Schema.FulfilledWish}, {@link $Schema.OpenWish}, {@link $Schema.PendingWish} |
  */
 export interface BaseWish<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
-  extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+> extends GraphqlKit.Document.Object.Select.Bases.ObjectLike {
   /**
    * # Info
    *
@@ -38,9 +35,7 @@ export interface BaseWish<
    */
   _id?:
     | $Fields._id.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields._id<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields._id<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -56,9 +51,7 @@ export interface BaseWish<
    */
   category?:
     | $Fields.category.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.category<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.category<_$Context>>;
   /**
    * # Info
    *
@@ -72,9 +65,7 @@ export interface BaseWish<
    */
   categoryId?:
     | $Fields.categoryId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.categoryId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.categoryId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -90,9 +81,7 @@ export interface BaseWish<
    */
   description?:
     | $Fields.description.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.description<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.description<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -108,9 +97,7 @@ export interface BaseWish<
    */
   name?:
     | $Fields.name.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.name<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.name<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -126,9 +113,7 @@ export interface BaseWish<
    */
   owner?:
     | $Fields.owner.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.owner<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.owner<_$Context>>;
   /**
    * # Info
    *
@@ -142,9 +127,7 @@ export interface BaseWish<
    */
   ownerId?:
     | $Fields.ownerId.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.ownerId<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.ownerId<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -160,9 +143,7 @@ export interface BaseWish<
    */
   status?:
     | $Fields.status.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.status<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.status<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**

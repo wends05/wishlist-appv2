@@ -11,7 +11,6 @@ export interface IMessage extends z.infer<typeof MessageSchema> {}
 
 export const ChatSchema = withID({
   wishId: z.string().min(1),
-  wisherId: z.string().min(1),
   grantorId: z.string().min(1),
   status: ChatStatus,
   messages: z.array(MessageSchema),

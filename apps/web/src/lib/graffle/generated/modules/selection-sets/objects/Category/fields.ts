@@ -2,10 +2,7 @@ import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
 import type { $DefaultSelectionContext } from "../../_context.js";
 
-export type _id<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> =
+export type _id<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString
@@ -13,10 +10,8 @@ export type _id<
 
 export namespace _id {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `_id` type. It is identical except for the fact
@@ -24,8 +19,7 @@ export namespace _id {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -35,8 +29,7 @@ export namespace _id {
 }
 
 export type description<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
 > =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -45,10 +38,8 @@ export type description<
 
 export namespace description {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `description` type. It is identical except for the fact
@@ -56,8 +47,7 @@ export namespace description {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -66,10 +56,7 @@ export namespace description {
   >;
 }
 
-export type name<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> =
+export type name<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString
@@ -77,10 +64,8 @@ export type name<
 
 export namespace name {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `name` type. It is identical except for the fact
@@ -88,8 +73,7 @@ export namespace name {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort

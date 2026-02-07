@@ -2,10 +2,7 @@ import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
 import type { $DefaultSelectionContext } from "../../_context.js";
 
-export type carrier<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
-> =
+export type carrier<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext> =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString
@@ -13,10 +10,8 @@ export type carrier<
 
 export namespace carrier {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `carrier` type. It is identical except for the fact
@@ -24,8 +19,7 @@ export namespace carrier {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -35,8 +29,7 @@ export namespace carrier {
 }
 
 export type estimatedDeliveryDate<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
 > =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -45,10 +38,8 @@ export type estimatedDeliveryDate<
 
 export namespace estimatedDeliveryDate {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `estimatedDeliveryDate` type. It is identical except for the fact
@@ -56,8 +47,7 @@ export namespace estimatedDeliveryDate {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -67,8 +57,7 @@ export namespace estimatedDeliveryDate {
 }
 
 export type trackingNumber<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
 > =
   | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
   | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
@@ -77,10 +66,8 @@ export type trackingNumber<
 
 export namespace trackingNumber {
   export interface $SelectionSet<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
-  >
-    extends GraphqlKit.Document.Object.Select.Bases.Base {}
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+  > extends GraphqlKit.Document.Object.Select.Bases.Base {}
 
   /**
    * This is the "expanded" version of the `trackingNumber` type. It is identical except for the fact
@@ -88,8 +75,7 @@ export namespace trackingNumber {
    * In some cases, this is a preferable DX, making the types easier to read for users.
    */
   export type $Expanded<
-    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-      $DefaultSelectionContext,
+    _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
   > = $$Utilities.Simplify<
     | GraphqlKit.Document.Object.Select.Indicator.NoArgsIndicator
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort

@@ -2,18 +2,10 @@ import { ArrowLeftIcon, UserIcon } from "@phosphor-icons/react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { getRouteApi, Link, useRouter } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { authQueryOptions } from "@/feature/auth/options";
 import { wishQueryOptions } from "../options";
-import WishCardActions from "./WishCardActions";
+import WishRequestDialog from "./WishRequestDialog";
 
 const wishDetailsRouteApi = getRouteApi("/_home/wish/$id");
 export default function WishDetails() {
@@ -50,7 +42,7 @@ export default function WishDetails() {
           <CardDescription>
             {!isOwner && (
               <Link
-                className="flex items-center gap-2"
+                className="flex w-max items-center gap-2"
                 params={{
                   id: wish.owner._id,
                 }}
@@ -61,12 +53,20 @@ export default function WishDetails() {
               </Link>
             )}
           </CardDescription>
-          <CardAction>
-            <WishCardActions _id={wish._id} />
-          </CardAction>
         </CardHeader>
         <CardContent className="h-full">{wish.description}</CardContent>
-        <CardFooter></CardFooter>
+        <CardFooter>
+          {!isOwner && (
+            <WishRequestDialog
+              render={
+                <Button className="w-full" disabled={isOwner}>
+                  Request to Grant this Wish
+                </Button>
+              }
+              wishId={wish._id}
+            />
+          )}
+        </CardFooter>
       </Card>
     </div>
   );

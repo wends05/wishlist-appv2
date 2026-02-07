@@ -1,7 +1,6 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
+import type * as $Fields from "./fields.js";
 import type { $FragmentInline } from "./fragment.js";
 
 export type * as Query from "./__.js";
@@ -9,10 +8,7 @@ export type * as Query from "./__.js";
 /**
  * GraphQL root {@link https://graphql.org/learn/schema/#the-query-and-mutation-types | Query} type.
  */
-export interface Query<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
+export interface Query<_$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext>
   extends GraphqlKit.Document.Object.Select.Bases.RootObjectLike {
   /**
    * # Info
@@ -27,9 +23,7 @@ export interface Query<
    */
   authenticated?:
     | $Fields.authenticated.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.authenticated<_$Context>
-      >
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.authenticated<_$Context>>
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasShort
     | GraphqlKit.Document.Object.Select.SelectAlias.SelectAliasString;
   /**
@@ -46,9 +40,7 @@ export interface Query<
    */
   categories?:
     | $Fields.categories.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.categories<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.categories<_$Context>>;
   /**
    * # Info
    *
@@ -64,9 +56,7 @@ export interface Query<
    */
   home?:
     | $Fields.home.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.home<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.home<_$Context>>;
   /**
    * # Info
    *
@@ -80,9 +70,7 @@ export interface Query<
    */
   me?:
     | $Fields.me.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.me<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.me<_$Context>>;
   /**
    * # Info
    *
@@ -97,9 +85,7 @@ export interface Query<
    */
   myWishes?:
     | $Fields.myWishes.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.myWishes<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.myWishes<_$Context>>;
   /**
    * # Info
    *
@@ -114,9 +100,7 @@ export interface Query<
    */
   users?:
     | $Fields.users.$Expanded<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.users<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.users<_$Context>>;
   /**
    * # Info
    *
@@ -129,11 +113,7 @@ export interface Query<
    * | **Nullability** | Optional |
    * | **Arguments** | 1 |
    */
-  wish?:
-    | $Fields.wish<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.wish<_$Context>
-      >;
+  wish?: $Fields.wish<_$Context> | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.wish<_$Context>>;
 
   /**
    * Inline fragments for field groups.

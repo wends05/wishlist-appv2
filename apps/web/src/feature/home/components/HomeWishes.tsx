@@ -8,14 +8,10 @@ interface HomeWishesProps {
   categoryId?: string;
 }
 
-export default function HomeWishes({
-  searchTerm,
-  categoryId,
-}: HomeWishesProps) {
-  const { data, fetchNextPage, isFetchingNextPage, hasNextPage } =
-    useSuspenseInfiniteQuery(
-      wishInfiniteQueryOptions.homeWishes({ searchTerm, categoryId })
-    );
+export default function HomeWishes({ searchTerm, categoryId }: HomeWishesProps) {
+  const { data, fetchNextPage, isFetchingNextPage, hasNextPage } = useSuspenseInfiniteQuery(
+    wishInfiniteQueryOptions.homeWishes({ searchTerm, categoryId }),
+  );
   return (
     <div className="flex flex-col px-4">
       {/* Wish List */}
@@ -32,9 +28,7 @@ export default function HomeWishes({
             {isFetchingNextPage ? "Loading..." : "Load More"}
           </Button>
         ) : (
-          <p className="text-center text-gray-500 text-sm">
-            No more wishes to load.
-          </p>
+          <p className="text-center text-gray-500 text-sm">No more wishes to load.</p>
         )}
       </div>
     </div>

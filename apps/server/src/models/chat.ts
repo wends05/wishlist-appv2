@@ -2,6 +2,7 @@ import { ChatStatus } from "@repo/common/enums";
 import type { IChat, IMessage } from "@repo/common/schemas";
 import {
   getModelForClass,
+  index,
   modelOptions,
   prop,
   type Ref,
@@ -34,6 +35,15 @@ export class Message implements Omit<IMessage, "senderId"> {
   public updatedAt!: Date;
 }
 
+@modelOptions({
+  schemaOptions: {
+    timestamps: true,
+  },
+  options: {
+    allowMixed: Severity.ALLOW,
+  },
+})
+@index({ grantorId: 1, wishId: 1 }, { unique: true })
 export class Chat
   implements Omit<IChat, "_id" | "grantorId" | "wisherId" | "wishId">
 {
@@ -42,13 +52,14 @@ export class Chat
   @prop({ ref: () => User })
   public grantorId!: Ref<User>;
 
-  @prop({ ref: () => User })
-  public wisherId!: Ref<User>;
-
   @prop({ ref: () => BaseWish })
   public wishId!: Ref<BaseWish>;
 
-  @prop({ enum: ChatStatus.options })
+  @prop({
+    type: () => String,
+    enum: ChatStatus.options,
+    default: ChatStatus.enum.PENDING,
+  })
   public status!: IChat["status"];
 
   @prop({ type: () => [Message] })

@@ -22,11 +22,7 @@ export default function WishCardActions({ _id }: WishCardProps) {
         <DropdownMenuGroup>
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuItem>
-            <Link
-              className="flex w-full items-center gap-2"
-              params={{ id: _id }}
-              to="/wish/$id"
-            >
+            <Link className="flex w-full items-center gap-2" params={{ id: _id }} to="/wish/$id">
               <ArrowRightIcon />
               Details
             </Link>

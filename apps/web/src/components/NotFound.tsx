@@ -11,9 +11,7 @@ export default function NotFound() {
           <EmptyTitle>
             <h2>404</h2>
           </EmptyTitle>
-          <EmptyDescription>
-            The page you are looking for does not exist.
-          </EmptyDescription>
+          <EmptyDescription>The page you are looking for does not exist.</EmptyDescription>
         </EmptyHeader>
         <SignedIn>
           <Link to="/home">

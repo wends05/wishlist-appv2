@@ -7,7 +7,7 @@ export * as ChatStatus from "./members.js";
  *
  * **Members:**
  * - `ACCEPTED`
- * - `DECLINED`
+ * - `CLOSED`
  * - `PENDING`
  *
  * # Info
@@ -20,5 +20,5 @@ export * as ChatStatus from "./members.js";
 export interface ChatStatus {
   kind: "Enum";
   name: "ChatStatus";
-  members: $Members.ACCEPTED | $Members.DECLINED | $Members.PENDING;
+  members: $Members.ACCEPTED | $Members.CLOSED | $Members.PENDING;
 }

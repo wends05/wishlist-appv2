@@ -1,5 +1,5 @@
-import * as $$SelectionSets from "./selection-sets/_.js";
 import type * as $$Utilities from "graffle/utilities-for-generated";
+import type * as $$SelectionSets from "./selection-sets/_.js";
 
 //
 //
@@ -59,20 +59,16 @@ export interface $MethodsSelect {
 /**
  * Build type-safe selection set for Query.
  */
-export interface Query {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query>,
-  ): $SelectionSet;
-}
+export type Query = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Query>,
+) => $SelectionSet;
 
 /**
  * Build type-safe selection set for Mutation.
  */
-export interface Mutation {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Mutation>,
-  ): $SelectionSet;
-}
+export type Mutation = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Mutation>,
+) => $SelectionSet;
 
 //
 //
@@ -95,111 +91,81 @@ export interface Mutation {
  *
  * Build type-safe selection set for Category.
  */
-export interface Category {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Category>,
-  ): $SelectionSet;
-}
+export type Category = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Category>,
+) => $SelectionSet;
 
 /**
  * A chat between a wisher and a grantor about a wish
  *
  * Build type-safe selection set for Chat.
  */
-export interface Chat {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Chat>,
-  ): $SelectionSet;
-}
+export type Chat = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Chat>,
+) => $SelectionSet;
 
 /**
  * A wish that is currently being delivered
  *
  * Build type-safe selection set for DeliveringWish.
  */
-export interface DeliveringWish {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<
-      $SelectionSet,
-      $$SelectionSets.DeliveringWish
-    >,
-  ): $SelectionSet;
-}
+export type DeliveringWish = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.DeliveringWish>,
+) => $SelectionSet;
 
 /**
  * Details about the delivery of a wish item
  *
  * Build type-safe selection set for DeliveryDetails.
  */
-export interface DeliveryDetails {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<
-      $SelectionSet,
-      $$SelectionSets.DeliveryDetails
-    >,
-  ): $SelectionSet;
-}
+export type DeliveryDetails = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.DeliveryDetails>,
+) => $SelectionSet;
 
 /**
  * A wish that has been fulfilled
  *
  * Build type-safe selection set for FulfilledWish.
  */
-export interface FulfilledWish {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<
-      $SelectionSet,
-      $$SelectionSets.FulfilledWish
-    >,
-  ): $SelectionSet;
-}
+export type FulfilledWish = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.FulfilledWish>,
+) => $SelectionSet;
 
 /**
  * A message sent in a chat between a wisher and a grantor
  *
  * Build type-safe selection set for Message.
  */
-export interface Message {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Message>,
-  ): $SelectionSet;
-}
+export type Message = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.Message>,
+) => $SelectionSet;
 
 /**
  * An open wish that is available for requests
  *
  * Build type-safe selection set for OpenWish.
  */
-export interface OpenWish {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.OpenWish>,
-  ): $SelectionSet;
-}
+export type OpenWish = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.OpenWish>,
+) => $SelectionSet;
 
 /**
  * A pending wish that has an accepted grantor
  *
  * Build type-safe selection set for PendingWish.
  */
-export interface PendingWish {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<
-      $SelectionSet,
-      $$SelectionSets.PendingWish
-    >,
-  ): $SelectionSet;
-}
+export type PendingWish = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.PendingWish>,
+) => $SelectionSet;
 
 /**
  * A user of the wishlist application
  *
  * Build type-safe selection set for User.
  */
-export interface User {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.User>,
-  ): $SelectionSet;
-}
+export type User = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.User>,
+) => $SelectionSet;
 
 //
 //
@@ -238,8 +204,6 @@ export interface User {
  *
  * Build type-safe selection set for BaseWish.
  */
-export interface BaseWish {
-  <$SelectionSet>(
-    selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.BaseWish>,
-  ): $SelectionSet;
-}
+export type BaseWish = <$SelectionSet>(
+  selectionSet: $$Utilities.NoExcess<$SelectionSet, $$SelectionSets.BaseWish>,
+) => $SelectionSet;

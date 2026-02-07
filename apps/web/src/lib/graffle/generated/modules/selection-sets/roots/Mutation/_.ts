@@ -1,7 +1,6 @@
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
-import type * as $Fields from "./fields.js";
 import type { $DefaultSelectionContext } from "../../_context.js";
+import type * as $Fields from "./fields.js";
 import type { $FragmentInline } from "./fragment.js";
 
 export type * as Mutation from "./__.js";
@@ -10,10 +9,8 @@ export type * as Mutation from "./__.js";
  * GraphQL root {@link https://graphql.org/learn/schema/#the-mutation-and-mutation-types | Mutation} type.
  */
 export interface Mutation<
-  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext =
-    $DefaultSelectionContext,
->
-  extends GraphqlKit.Document.Object.Select.Bases.RootObjectLike {
+  _$Context extends GraphqlKit.Document.Object.Select.SelectionContext = $DefaultSelectionContext,
+> extends GraphqlKit.Document.Object.Select.Bases.RootObjectLike {
   /**
    * # Info
    *
@@ -28,26 +25,37 @@ export interface Mutation<
    */
   createCategory?:
     | $Fields.createCategory<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.createCategory<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.createCategory<_$Context>>;
   /**
    * # Info
    *
    * | | |
    * | - | - |
-   * | **Type** | {@link $NamedTypes.$BaseWish} |
-   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
+   * | **Type** | {@link $NamedTypes.$OpenWish} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
    * | **Parent** | {@link $NamedTypes.$Mutation} |
    * | **Path** | `Mutation.createWish` |
    * | **Nullability** | Optional |
-   * | **Arguments** | 4 |
+   * | **Arguments** | 3 |
    */
   createWish?:
     | $Fields.createWish<_$Context>
-    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<
-        $Fields.createWish<_$Context>
-      >;
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.createWish<_$Context>>;
+  /**
+   * # Info
+   *
+   * | | |
+   * | - | - |
+   * | **Type** | {@link $NamedTypes.$Chat} |
+   * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+   * | **Parent** | {@link $NamedTypes.$Mutation} |
+   * | **Path** | `Mutation.requestGrant` |
+   * | **Nullability** | Optional |
+   * | **Arguments** | 2 |
+   */
+  requestGrant?:
+    | $Fields.requestGrant<_$Context>
+    | GraphqlKit.Document.Object.Select.SelectAlias.SelectAlias<$Fields.requestGrant<_$Context>>;
 
   /**
    * Inline fragments for field groups.

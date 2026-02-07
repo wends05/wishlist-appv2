@@ -17,7 +17,7 @@ export const Route = createFileRoute("/_home/home")({
       wishInfiniteQueryOptions.homeWishes({
         searchTerm: deps.search.search || undefined,
         categoryId: deps.search.categoryId || undefined,
-      })
+      }),
     );
   },
   component: HomePage,

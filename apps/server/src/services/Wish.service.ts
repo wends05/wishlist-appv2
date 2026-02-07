@@ -1,17 +1,20 @@
-import type { CreateWishDTO } from "@repo/common/dto";
 import type { PipelineStage, QueryFilter, Types } from "mongoose";
-import { type OpenWish, OpenWishModel, WishModel } from "@/models/wish.ts";
+import {
+  type OpenWish,
+  OpenWishModel,
+  WishModel,
+} from "@/models/wish.ts";
 
-interface GetHomeWishesInput {
-  search?: string | null;
-  limit?: number | null;
-  skip?: number | null;
-  categoryId?: string | null;
-  currentUserId: Types.ObjectId;
+
+interface CreateWishInput {
+  name: string;
+  description: string;
+  ownerId: string;
+  categoryId: string;
 }
 
-export const createWish = async (data: CreateWishDTO) => {
-  return WishModel.create({
+export const createWish = async (data: CreateWishInput) => {
+  return OpenWishModel.create({
     name: data.name,
     description: data.description,
     ownerId: data.ownerId,
@@ -26,6 +29,14 @@ export const getWishById = async (wishId: string) => {
 export const getMyWishes = async (userId: string) => {
   return WishModel.where("ownerId").equals(userId);
 };
+
+interface GetHomeWishesInput {
+  search?: string | null;
+  limit?: number | null;
+  skip?: number | null;
+  categoryId?: string | null;
+  currentUserId: Types.ObjectId;
+}
 
 export const getHomeWishes = async (input: GetHomeWishesInput) => {
   const { search, categoryId, currentUserId } = input;

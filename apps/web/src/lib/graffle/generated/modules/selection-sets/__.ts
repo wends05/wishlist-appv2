@@ -1,11 +1,8 @@
-export * as $Named from "./$named.js";
-export * as $Scalars from "./scalars/_.js";
-
 export type * from "./_context.js";
 export type * from "./_document.js";
-
-export type * from "./roots/Query/_.js";
-export type * from "./roots/Mutation/_.js";
+export * as $Named from "./$named.js";
+export type * from "./enums/ChatStatus.js";
+export type * from "./interfaces/BaseWish/_.js";
 export type * from "./objects/Category/_.js";
 export type * from "./objects/Chat/_.js";
 export type * from "./objects/DeliveringWish/_.js";
@@ -15,10 +12,10 @@ export type * from "./objects/Message/_.js";
 export type * from "./objects/OpenWish/_.js";
 export type * from "./objects/PendingWish/_.js";
 export type * from "./objects/User/_.js";
-export type * from "./interfaces/BaseWish/_.js";
-export type * from "./enums/ChatStatus.js";
+export type * from "./roots/Mutation/_.js";
+export type * from "./roots/Query/_.js";
+export * as $Scalars from "./scalars/_.js";
 
-import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
 import type * as $$Schema from "../schema/_.js";
 
@@ -28,11 +25,10 @@ import type * as $$Schema from "../schema/_.js";
  * Given a selection set object, this type computes the exact TypeScript type
  * of the data that will be returned from executing the Query operation.
  */
-export type Query$Infer<$SelectionSet extends object> =
-  GraphqlKit.Document.Object.InferResult.OperationQuery<
-    $SelectionSet,
-    $$Schema.Schema
-  >;
+export type Query$Infer<$SelectionSet extends object> = GraphqlKit.Document.Object.InferResult.OperationQuery<
+  $SelectionSet,
+  $$Schema.Schema
+>;
 
 /**
  * Infer the variables type for a Query selection set.
@@ -47,11 +43,10 @@ export type Query$Variables<_$SelectionSet> = any; // Temporarily any - will be 
  * Given a selection set object, this type computes the exact TypeScript type
  * of the data that will be returned from executing the Mutation operation.
  */
-export type Mutation$Infer<$SelectionSet extends object> =
-  GraphqlKit.Document.Object.InferResult.OperationMutation<
-    $SelectionSet,
-    $$Schema.Schema
-  >;
+export type Mutation$Infer<$SelectionSet extends object> = GraphqlKit.Document.Object.InferResult.OperationMutation<
+  $SelectionSet,
+  $$Schema.Schema
+>;
 
 /**
  * Infer the variables type for a Mutation selection set.

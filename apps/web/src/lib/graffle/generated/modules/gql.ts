@@ -1,8 +1,8 @@
 import { createGql } from "graffle/extensions/document-builder";
 import type { Schema } from "./schema/_.js";
+import type * as $$SchemaMap from "./schema-driven-data-map.js";
 import { schemaDrivenDataMap as sddm } from "./schema-driven-data-map.js";
 import type * as $$SelectionSets from "./selection-sets/_.js";
-import type * as $$SchemaMap from "./schema-driven-data-map.js";
 
 /**
  * Unified `gql` function that accepts either:
@@ -25,10 +25,6 @@ import type * as $$SchemaMap from "./schema-driven-data-map.js";
  * // Returns: GraphqlKit.Document.SingleOperation with operation metadata
  * ```
  */
-export const gql = createGql<
-  Schema,
-  $$SelectionSets.$Document,
-  $$SchemaMap.SchemaDrivenDataMap
->({
+export const gql = createGql<Schema, $$SelectionSets.$Document, $$SchemaMap.SchemaDrivenDataMap>({
   sddm: sddm,
 });

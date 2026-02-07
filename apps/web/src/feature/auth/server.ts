@@ -15,7 +15,7 @@ export const getUser = createServerFn().handler(async () => {
         email
         clerkId
       }
-    }`
+    }`,
     )
     .$send();
 

@@ -12,7 +12,7 @@ export * as Chat from "./fields.js";
  * | | |
  * | - | - |
  * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | Object ↗} |
- * | **Fields** | 9 |
+ * | **Fields** | 7 |
  */
 export interface Chat {
   kind: "Object";
@@ -26,7 +26,5 @@ export interface Chat {
     status: $Fields.status;
     wish: $Fields.wish;
     wishId: $Fields.wishId;
-    wisher: $Fields.wisher;
-    wisherId: $Fields.wisherId;
   };
 }

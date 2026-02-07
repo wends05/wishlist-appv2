@@ -1,8 +1,8 @@
-import * as $$Data from "./data.js";
-import * as $$Schema from "./schema/_.js";
-import * as $$SelectionSets from "./selection-sets/_.js";
 import type * as $$Utilities from "graffle/utilities-for-generated";
 import type { GraphqlKit } from "graffle/utilities-for-generated";
+import * as $$Data from "./data.js";
+import type * as $$Schema from "./schema/_.js";
+import type * as $$SelectionSets from "./selection-sets/_.js";
 
 //
 //
@@ -79,12 +79,11 @@ export namespace Select {
   /**
    * Infer result type for Query operations.
    */
-  export type Query<$SelectionSet extends $$SelectionSets.Query> =
-    GraphqlKit.Document.Object.InferResult.Operation<
-      $SelectionSet,
-      $$Schema.Schema,
-      $$Utilities.GraphqlKit.Schema.OperationType.QUERY
-    >;
+  export type Query<$SelectionSet extends $$SelectionSets.Query> = GraphqlKit.Document.Object.InferResult.Operation<
+    $SelectionSet,
+    $$Schema.Schema,
+    $$Utilities.GraphqlKit.Schema.OperationType.QUERY
+  >;
   /**
    * Infer result type for Mutation operations.
    */
@@ -126,37 +125,34 @@ export namespace Select {
    *
    * Infer result type for DeliveringWish selection sets.
    */
-  export type DeliveringWish<
-    $SelectionSet extends $$SelectionSets.DeliveringWish,
-  > = GraphqlKit.Document.Object.InferResult.OutputObjectLike<
-    $SelectionSet,
-    $$Schema.Schema,
-    $$Schema.Schema["allTypes"]["DeliveringWish"]
-  >;
+  export type DeliveringWish<$SelectionSet extends $$SelectionSets.DeliveringWish> =
+    GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+      $SelectionSet,
+      $$Schema.Schema,
+      $$Schema.Schema["allTypes"]["DeliveringWish"]
+    >;
   /**
    * Details about the delivery of a wish item
    *
    * Infer result type for DeliveryDetails selection sets.
    */
-  export type DeliveryDetails<
-    $SelectionSet extends $$SelectionSets.DeliveryDetails,
-  > = GraphqlKit.Document.Object.InferResult.OutputObjectLike<
-    $SelectionSet,
-    $$Schema.Schema,
-    $$Schema.Schema["allTypes"]["DeliveryDetails"]
-  >;
+  export type DeliveryDetails<$SelectionSet extends $$SelectionSets.DeliveryDetails> =
+    GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+      $SelectionSet,
+      $$Schema.Schema,
+      $$Schema.Schema["allTypes"]["DeliveryDetails"]
+    >;
   /**
    * A wish that has been fulfilled
    *
    * Infer result type for FulfilledWish selection sets.
    */
-  export type FulfilledWish<
-    $SelectionSet extends $$SelectionSets.FulfilledWish,
-  > = GraphqlKit.Document.Object.InferResult.OutputObjectLike<
-    $SelectionSet,
-    $$Schema.Schema,
-    $$Schema.Schema["allTypes"]["FulfilledWish"]
-  >;
+  export type FulfilledWish<$SelectionSet extends $$SelectionSets.FulfilledWish> =
+    GraphqlKit.Document.Object.InferResult.OutputObjectLike<
+      $SelectionSet,
+      $$Schema.Schema,
+      $$Schema.Schema["allTypes"]["FulfilledWish"]
+    >;
   /**
    * A message sent in a chat between a wisher and a grantor
    *

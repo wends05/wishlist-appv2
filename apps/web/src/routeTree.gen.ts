@@ -10,8 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PublicRouteImport } from './routes/_public'
-import { Route as HomeRouteImport } from './routes/_home'
 import { Route as AuthRouteImport } from './routes/_auth'
+import { Route as HomeRouteRouteImport } from './routes/_home/route'
 import { Route as PublicIndexRouteImport } from './routes/_public/index'
 import { Route as PublicAboutRouteImport } from './routes/_public/about'
 import { Route as HomeWishesRouteImport } from './routes/_home/wishes'
@@ -26,12 +26,12 @@ const PublicRoute = PublicRouteImport.update({
   id: '/_public',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HomeRoute = HomeRouteImport.update({
-  id: '/_home',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AuthRoute = AuthRouteImport.update({
   id: '/_auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRouteRoute = HomeRouteRouteImport.update({
+  id: '/_home',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublicIndexRoute = PublicIndexRouteImport.update({
@@ -47,27 +47,27 @@ const PublicAboutRoute = PublicAboutRouteImport.update({
 const HomeWishesRoute = HomeWishesRouteImport.update({
   id: '/wishes',
   path: '/wishes',
-  getParentRoute: () => HomeRoute,
+  getParentRoute: () => HomeRouteRoute,
 } as any)
 const HomeHomeRoute = HomeHomeRouteImport.update({
   id: '/home',
   path: '/home',
-  getParentRoute: () => HomeRoute,
+  getParentRoute: () => HomeRouteRoute,
 } as any)
 const HomeProfileIndexRoute = HomeProfileIndexRouteImport.update({
   id: '/profile/',
   path: '/profile/',
-  getParentRoute: () => HomeRoute,
+  getParentRoute: () => HomeRouteRoute,
 } as any)
 const HomeWishIdRoute = HomeWishIdRouteImport.update({
   id: '/wish/$id',
   path: '/wish/$id',
-  getParentRoute: () => HomeRoute,
+  getParentRoute: () => HomeRouteRoute,
 } as any)
 const HomeProfileIdRoute = HomeProfileIdRouteImport.update({
   id: '/profile/$id',
   path: '/profile/$id',
-  getParentRoute: () => HomeRoute,
+  getParentRoute: () => HomeRouteRoute,
 } as any)
 const AuthSignUpSplatRoute = AuthSignUpSplatRouteImport.update({
   id: '/sign-up/$',
@@ -104,8 +104,8 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/_home': typeof HomeRouteRouteWithChildren
   '/_auth': typeof AuthRouteWithChildren
-  '/_home': typeof HomeRouteWithChildren
   '/_public': typeof PublicRouteWithChildren
   '/_home/home': typeof HomeHomeRoute
   '/_home/wishes': typeof HomeWishesRoute
@@ -142,8 +142,8 @@ export interface FileRouteTypes {
     | '/profile'
   id:
     | '__root__'
-    | '/_auth'
     | '/_home'
+    | '/_auth'
     | '/_public'
     | '/_home/home'
     | '/_home/wishes'
@@ -157,8 +157,8 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  HomeRouteRoute: typeof HomeRouteRouteWithChildren
   AuthRoute: typeof AuthRouteWithChildren
-  HomeRoute: typeof HomeRouteWithChildren
   PublicRoute: typeof PublicRouteWithChildren
 }
 
@@ -171,18 +171,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_home': {
-      id: '/_home'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof HomeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/_auth': {
       id: '/_auth'
       path: ''
       fullPath: ''
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_home': {
+      id: '/_home'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof HomeRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_public/': {
@@ -204,35 +204,35 @@ declare module '@tanstack/react-router' {
       path: '/wishes'
       fullPath: '/wishes'
       preLoaderRoute: typeof HomeWishesRouteImport
-      parentRoute: typeof HomeRoute
+      parentRoute: typeof HomeRouteRoute
     }
     '/_home/home': {
       id: '/_home/home'
       path: '/home'
       fullPath: '/home'
       preLoaderRoute: typeof HomeHomeRouteImport
-      parentRoute: typeof HomeRoute
+      parentRoute: typeof HomeRouteRoute
     }
     '/_home/profile/': {
       id: '/_home/profile/'
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof HomeProfileIndexRouteImport
-      parentRoute: typeof HomeRoute
+      parentRoute: typeof HomeRouteRoute
     }
     '/_home/wish/$id': {
       id: '/_home/wish/$id'
       path: '/wish/$id'
       fullPath: '/wish/$id'
       preLoaderRoute: typeof HomeWishIdRouteImport
-      parentRoute: typeof HomeRoute
+      parentRoute: typeof HomeRouteRoute
     }
     '/_home/profile/$id': {
       id: '/_home/profile/$id'
       path: '/profile/$id'
       fullPath: '/profile/$id'
       preLoaderRoute: typeof HomeProfileIdRouteImport
-      parentRoute: typeof HomeRoute
+      parentRoute: typeof HomeRouteRoute
     }
     '/_auth/sign-up/$': {
       id: '/_auth/sign-up/$'
@@ -251,6 +251,26 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface HomeRouteRouteChildren {
+  HomeHomeRoute: typeof HomeHomeRoute
+  HomeWishesRoute: typeof HomeWishesRoute
+  HomeProfileIdRoute: typeof HomeProfileIdRoute
+  HomeWishIdRoute: typeof HomeWishIdRoute
+  HomeProfileIndexRoute: typeof HomeProfileIndexRoute
+}
+
+const HomeRouteRouteChildren: HomeRouteRouteChildren = {
+  HomeHomeRoute: HomeHomeRoute,
+  HomeWishesRoute: HomeWishesRoute,
+  HomeProfileIdRoute: HomeProfileIdRoute,
+  HomeWishIdRoute: HomeWishIdRoute,
+  HomeProfileIndexRoute: HomeProfileIndexRoute,
+}
+
+const HomeRouteRouteWithChildren = HomeRouteRoute._addFileChildren(
+  HomeRouteRouteChildren,
+)
+
 interface AuthRouteChildren {
   AuthSignInSplatRoute: typeof AuthSignInSplatRoute
   AuthSignUpSplatRoute: typeof AuthSignUpSplatRoute
@@ -262,24 +282,6 @@ const AuthRouteChildren: AuthRouteChildren = {
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
-
-interface HomeRouteChildren {
-  HomeHomeRoute: typeof HomeHomeRoute
-  HomeWishesRoute: typeof HomeWishesRoute
-  HomeProfileIdRoute: typeof HomeProfileIdRoute
-  HomeWishIdRoute: typeof HomeWishIdRoute
-  HomeProfileIndexRoute: typeof HomeProfileIndexRoute
-}
-
-const HomeRouteChildren: HomeRouteChildren = {
-  HomeHomeRoute: HomeHomeRoute,
-  HomeWishesRoute: HomeWishesRoute,
-  HomeProfileIdRoute: HomeProfileIdRoute,
-  HomeWishIdRoute: HomeWishIdRoute,
-  HomeProfileIndexRoute: HomeProfileIndexRoute,
-}
-
-const HomeRouteWithChildren = HomeRoute._addFileChildren(HomeRouteChildren)
 
 interface PublicRouteChildren {
   PublicAboutRoute: typeof PublicAboutRoute
@@ -295,8 +297,8 @@ const PublicRouteWithChildren =
   PublicRoute._addFileChildren(PublicRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
+  HomeRouteRoute: HomeRouteRouteWithChildren,
   AuthRoute: AuthRouteWithChildren,
-  HomeRoute: HomeRouteWithChildren,
   PublicRoute: PublicRouteWithChildren,
 }
 export const routeTree = rootRouteImport

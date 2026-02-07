@@ -60,12 +60,12 @@ export interface createCategory {
  *
  * | | |
  * | - | - |
- * | **Type** | {@link $Schema.BaseWish} |
- * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlinterfacetype | Interface ↗} |
+ * | **Type** | {@link $Schema.OpenWish} |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
  * | **Parent** | {@link $Schema.Mutation} |
  * | **Path** | `Mutation.createWish` |
  * | **Nullability** | Optional |
- * | **Arguments** | 4 |
+ * | **Arguments** | 3 |
  */
 export interface createWish {
   kind: "OutputField";
@@ -89,13 +89,42 @@ export interface createWish {
       inlineType: [1];
       namedType: $Schema.String;
     };
-    ownerId: {
+  };
+  inlineType: [0];
+  namedType: $Schema.OpenWish;
+}
+
+/**
+ * GraphQL {@link https://graphql.org/learn/queries/#fields | output field} ↗ on type {@link $Schema.Mutation}.
+ *
+ * # Info
+ *
+ * | | |
+ * | - | - |
+ * | **Type** | {@link $Schema.Chat} |
+ * | **Kind** | {@link https://graphql.org/graphql-js/type/#graphqlobjecttype | OutputObject ↗} |
+ * | **Parent** | {@link $Schema.Mutation} |
+ * | **Path** | `Mutation.requestGrant` |
+ * | **Nullability** | Optional |
+ * | **Arguments** | 2 |
+ */
+export interface requestGrant {
+  kind: "OutputField";
+  name: "requestGrant";
+  arguments: {
+    message: {
       kind: "InputField";
-      name: "ownerId";
+      name: "message";
       inlineType: [1];
       namedType: $Schema.String;
     };
+    wishId: {
+      kind: "InputField";
+      name: "wishId";
+      inlineType: [1];
+      namedType: $Schema.ID;
+    };
   };
   inlineType: [0];
-  namedType: $Schema.BaseWish;
+  namedType: $Schema.Chat;
 }

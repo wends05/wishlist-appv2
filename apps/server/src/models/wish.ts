@@ -79,7 +79,7 @@ export class BaseWish implements Omit<IBaseWish, OmitWishFields> {
     enum: WishStatus.options,
     default: WishStatus.enum.open,
   })
-  public status!: string;
+  public status!: IBaseWish["status"]
 }
 
 /**

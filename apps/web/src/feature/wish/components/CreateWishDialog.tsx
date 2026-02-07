@@ -11,9 +11,7 @@ interface CreateWishDialogProps {
 
 export default function CreateWishDialog({ trigger }: CreateWishDialogProps) {
   const { data: me } = useSuspenseQuery(authQueryOptions.me);
-  const { data: categories, isLoading } = useSuspenseQuery(
-    wishQueryOptions.getCategories
-  );
+  const { data: categories, isLoading } = useSuspenseQuery(wishQueryOptions.getCategories);
 
   if (isLoading) {
     return <>...</>;
@@ -31,7 +29,7 @@ export default function CreateWishDialog({ trigger }: CreateWishDialogProps) {
     <Dialog>
       <DialogTrigger render={trigger} />
       <DialogContent>
-        <CreateWishForm firstCategoryId={categories[0]._id} ownerId={me._id} />
+        <CreateWishForm firstCategoryId={categories[0]._id} />
       </DialogContent>
     </Dialog>
   );

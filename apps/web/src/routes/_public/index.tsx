@@ -1,5 +1,5 @@
-import Hero from "@/feature/public/components/Hero";
 import { createFileRoute } from "@tanstack/react-router";
+import Hero from "@/feature/public/components/Hero";
 
 export const Route = createFileRoute("/_public/")({ component: App });
 

@@ -1,4 +1,4 @@
-import { Variants } from "motion/react";
+import type { Variants } from "motion/react";
 
 /**
  * Simple fade from bottom
