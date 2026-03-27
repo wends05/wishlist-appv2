@@ -14,7 +14,6 @@ function RouteComponent() {
         <Card>
           <CardContent>
             <h4 className="pb-5">You are already signed in</h4>
-
             <div className="flex w-full flex-col gap-2">
               <Link to="/home">
                 <Button className={"w-full"}>Go to Home</Button>
